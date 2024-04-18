@@ -1,0 +1,59 @@
+<!DOCTYPE html><html><body5 style="color:white"><body6 style="font-size:25px">
+<button onclick="buyOx();">1</button> Oxen<br>
+<button onclick="buyFood();">2</button> Foodlb<br>
+<button onclick="buyClothing();">3</button> Clothes<br>
+<button onclick="buyAmo();">4</button> Boxes_Of_Amo(20per-box)<br>
+<button onclick="buyAxel();">5</button> Wagon_Axel<br>
+<button onclick="buyToung();">6</button> Wagon_Toung<br>
+<button onclick="buyWheel();">7</button> Wagon_Wheel<br>
+<input type="text" size="10" id="box"><br>
+<button>8</button> Leave_Store
+<p id="$" style="color:white"></p>
+<script>
+var imoney = 1600
+document.getElementById("$").innerHTML = money
+function buyOx() {
+  var Oxen = docment.getElementById("box").value;
+  var oxPrice = Oxen * 20;
+  var money - oxPrice
+  document.getElementById("$").innerHTML = money
+}
+function buyFood() {
+  var Foodlb = document.getElementById("box").value;
+  var foodPrice = Foodlb * 0.2;
+  var money = money - foodPrice;
+  document.getElementById("$").innerHTML = money
+}
+function buyClothing() {
+  var Clothes = document.getElementById("box").value;
+  var clothingPrice = Clothes * 10;
+  var money = money - clothingPrice;
+  document.getElementById("$").innerHTML = money
+}
+function buyAmo() {
+  var Amo = document.getElementById("box").value * 20;
+  var amoPrice = Amo * 0.1;
+  var money = money - amoPrice;
+  document.getElementById("$").innerHTML = money
+}
+function buyAxel() {
+  var Axels = document.getElementById("box").value;
+  var axelPrice = Axels * 10;
+  var money = money - axelPrice;
+  document.getElementById("money").innerHTML = money
+}
+function buyTong() {
+  var Toungs = document.getElementById("box").value;
+  var toungPrice = Toungs * 10;
+  var money = money - toungPrice;
+  document.getElementById("money").innerHTML = money
+}
+function buyWheel() {
+  var Wheels = document.getElementById("box").value;
+  var wheelPrice = Wheels * 10
+  var money = money - wheelPrice
+  document.getElementById("money").innerHTML = money
+}
+</script></body5></body6></html><script>
+  document.body.style.background = "black";
+</script>
