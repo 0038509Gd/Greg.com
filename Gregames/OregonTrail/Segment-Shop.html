@@ -4,54 +4,68 @@
 <button onclick="buyClothing();">3</button> Clothes<br>
 <button onclick="buyAmo();">4</button> Boxes_Of_Amo(20per-box)<br>
 <button onclick="buyAxel();">5</button> Wagon_Axel<br>
-<button onclick="buyToung();">6</button> Wagon_Toung<br>
+<button onclick="buyToungue();">6</button> Wagon_Toungue<br>
 <button onclick="buyWheel();">7</button> Wagon_Wheel<br>
 <input type="text" size="10" id="box"><br>
 <button>8</button> Leave_Store
 <p id="$" style="color:white"></p>
 <script>
-document.getElementById("$").innerHTML = "money_left:" + money;
+var money = localStorage.getItem("money");
 function buyOx() {
   var Oxen = docment.getElementById("box").value;
+  localStorage.setItem("Oxen", Oxen + localStorage.getItem("Oxen"));
   var oxPrice = Oxen * 20;
-  money += -oxPrice
+  money += -oxPrice;
   document.getElementById("$").innerHTML = "money_left" + money;
+  localStorage.setItem("money", money);
 }
 function buyFood() {
   var Foodlb = document.getElementById("box").value;
+  localStorage.setItem("Foodlb", Foodlb + localStorage.getItem("Foodlb"));
   var foodPrice = Foodlb * 0.2;
   money += -foodPrice;
   document.getElementById("$").innerHTML = "money_left" + money;
+  localStorage.setItem("money", money);
 }
 function buyClothing() {
   var Clothes = document.getElementById("box").value;
+  localStorage.setItem("Clothes", Clothes + localStorage.getItem("Clothes"));
   var clothingPrice = Clothes * 10;
   money += -clothingPrice;
   document.getElementById("$").innerHTML = "money_left" + money;
+  localStorage.setItem("money", money);
 }
 function buyAmo() {
-  var Amo = document.getElementById("box").value * 20;
-  var amoPrice = Amo * 0.1;
-  money += -amoPrice;
+  var Ammo = document.getElementById("box").value * 20;
+  localStorage.setItem("Ammo", Ammo + localStorage.getItem("Ammo"));
+  var ammoPrice = Ammo * 0.1;
+  money += -ammoPrice;
   document.getElementById("$").innerHTML = "money_left" + money;
+  localStorage.setItem("money", money);
 }
 function buyAxel() {
   var Axels = document.getElementById("box").value;
+  localStorage.setItem("Axels", Axels + localStorage.getItem("Axels"));
   var axelPrice = Axels * 10;
   money += -axelPrice;
-  document.getElementById("money").innerHTML = "money_left" + money;
+  document.getElementById("$").innerHTML = "money_left" + money;
+  localStorage.setItem("money", money);
 }
-function buyTong() {
-  var Toungs = document.getElementById("box").value;
-  var toungPrice = Toungs * 10;
-  money += -toungPrice;
-  document.getElementById("money").innerHTML = "money_left" + money;
+function buyTongue() {
+  var Toungues = document.getElementById("box").value;
+  localStorage.setItem("Toungues", Toungues + localStorage.getItem("Toungues"));
+  var tounguePrice = Toungs * 10;
+  money += -tounguePrice;
+  document.getElementById("$").innerHTML = "money_left" + money;
+  localStorage.setItem("money", money);
 }
 function buyWheel() {
   var Wheels = document.getElementById("box").value;
+  localStorage.setItem("Wheels", Wheels + localStorage.getItem("Wheels"))
   var wheelPrice = Wheels * 10
   money += -wheelPrice
-  document.getElementById("money").innerHTML = "money_left" + money;
+  document.getElementById("$").innerHTML = "money_left" + money;
+  localStorage.setItem("money", money)
 }
 </script></body5></body6></html><script>
   document.body.style.background = "black";
