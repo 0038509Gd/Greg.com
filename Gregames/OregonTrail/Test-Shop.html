@@ -10,49 +10,48 @@
 <button>8</button> Leave_Store
 <p id="$" style="color:white"></p>
 <script>
-var imoney = 1600
-document.getElementById("$").innerHTML = money
+document.getElementById("$").innerHTML = "money_left:" + money
 function buyOx() {
   var Oxen = docment.getElementById("box").value;
   var oxPrice = Oxen * 20;
-  var money - oxPrice
-  document.getElementById("$").innerHTML = money
+  money += -oxPrice
+  document.getElementById("$").innerHTML = "money_left" + money
 }
 function buyFood() {
   var Foodlb = document.getElementById("box").value;
   var foodPrice = Foodlb * 0.2;
-  var money = money - foodPrice;
-  document.getElementById("$").innerHTML = money
+  money += -foodPrice;
+  document.getElementById("$").innerHTML = "money_left" + money
 }
 function buyClothing() {
   var Clothes = document.getElementById("box").value;
   var clothingPrice = Clothes * 10;
-  var money = money - clothingPrice;
-  document.getElementById("$").innerHTML = money
+  money += -clothingPrice;
+  document.getElementById("$").innerHTML = "money_left" + money
 }
 function buyAmo() {
   var Amo = document.getElementById("box").value * 20;
   var amoPrice = Amo * 0.1;
-  var money = money - amoPrice;
-  document.getElementById("$").innerHTML = money
+  money += -amoPrice;
+  document.getElementById("$").innerHTML = "money_left" + money
 }
 function buyAxel() {
   var Axels = document.getElementById("box").value;
   var axelPrice = Axels * 10;
-  var money = money - axelPrice;
-  document.getElementById("money").innerHTML = money
+  money += -axelPrice;
+  document.getElementById("money").innerHTML = "money_left" + money
 }
 function buyTong() {
   var Toungs = document.getElementById("box").value;
   var toungPrice = Toungs * 10;
-  var money = money - toungPrice;
-  document.getElementById("money").innerHTML = money
+  money += -toungPrice;
+  document.getElementById("money").innerHTML = "money_left" + money
 }
 function buyWheel() {
   var Wheels = document.getElementById("box").value;
   var wheelPrice = Wheels * 10
-  var money = money - wheelPrice
-  document.getElementById("money").innerHTML = money
+  money += -wheelPrice
+  document.getElementById("money").innerHTML = "money_left" + money
 }
 </script></body5></body6></html><script>
   document.body.style.background = "black";
