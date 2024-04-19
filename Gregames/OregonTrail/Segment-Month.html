@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><body1 style="color:white">
+<!DOCTYPE html><html><body1 style="color:white"><body2 style="font-size:25px;">
 <button onclick="Febuary();" popovertarget="Continue" popovertargetaction="show">1</button> Febuary<br>
 <button onclick="March();" popovertarget="Continue" popovertargetaction="show">2</button> March<br>
 <button onclick="April();" popovertarget="Continue" popovertargetaction="show">3</button> April<br>
@@ -10,25 +10,45 @@
 <script>
 function Febuary() {
 localStorage.setItem("Month", "Febuary");
+localStorage.setItem("Wheather", "cool");
+Setup();
 }
 function March() {
 localStorage.setItem("Month", "March");
+localStorage.setItem("Wheather", "cold");
+Setup();
 }
 function April() {
 localStorage.setItem("Month", "April");
+localStorage.setItem("Wheather", "cool");
+Setup();
 }
 function May() {
 localStorage.setItem("Month", "May");
+localStorage.setItem("Wheather", "warm");
+Setup();
 }
 function June() {
 localStorage.setItem("Month", "June");
+localStorage.setItem("Wheather", "rainy");
+Setup();
 }
 function July() {
 localStorage.setItem("Month", "July");
+localStorage.setItem("Wheather", "hot");
+Setup();
 }
 function August() {
 localStorage.setItem("Month", "August");
+localStorage.setItem("Wheather", "cool");
+Setup();
 }
-</script></body></html><script>
+function Setup() {
+localStorage.setItem("Day", 1);
+localStorage.setItem("Health", "Good");
+localStorage.setItem("milesD", 0);
+localStorage.setItem("Year", 1848);
+}
+</script></body2></body1></html><script>
   document.body.style.background = "black";
 </script>
