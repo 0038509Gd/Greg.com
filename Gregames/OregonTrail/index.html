@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><body1 style="color:white;">
-<button onclick="run();"></button>
+<button onclick="run();">Continue</button>
 <script>
 var I = localStorage.getItem("I");
   document.getElementById('youName').innerHTML = I;
@@ -58,9 +58,9 @@ function run() {
   localStorage.setItem("milesD", milesD);
   miles2LM += hr * -2;
   localStorage.setItem("miles2LM", miles2LM);
-  
+  Day += 1;
+  localStorage.setItem("Day", Day);
 }
 </script></body1></html><script>
   document.body.style.background = "black";
 </script>
-  
