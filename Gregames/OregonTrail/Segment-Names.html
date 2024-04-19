@@ -1,28 +1,36 @@
 <!DOCTYPE html><html><body1 style="color:white;"><body2 style="font-size:25px;">
 What_Is_The_First_Name_Of_The_Wagon_Leader?<br>
-<input type="text" id="You" value="Greg"><br>
+<input type="text" id="You" value="Greg" onkeydown="you(event)"><br>
 What_Is_The_First_Name_Of_The_Wagon_Leaders_Wife?<br>
-<input type="text" id="Wife" value="Mrs.Gary"><br>
+<input type="text" id="Wife" value="Mrs.Gary" onkeydown="wife(event)"><br>
 What_Are_The_First_Names_Of_The_Wagon_Leaders_3_Kids?<br>
-<input type="text" id="1" value="Greg.jr"><br>
-<input type="text" id="2" value="Gordy"><br>
-<input type="text" id="3" Value="Derik"><br>
-Are_These_Names_Correct?<button type="button" onclick="names()">Y</button><br><br>
+<input type="text" id="1" value="Greg.jr" onkeydown="kid1(event)"><br>
+<input type="text" id="2" value="Gordy" onkeydown="kid2(event)"><br>
+<input type="text" id="3" Value="Derik" onkeydown="kid3(event)"><br>
+Are_These_Names_Correct?<button type="button" onclick="done">Y</button><br><br>
 <p id="I">is your name</p>
 <p id="W">is your wifes name</p>
 <p id="K1">is kid 1s name</p>
 <p id="K2">is kid 2s name</p>
 <p id="K3">is kid 3s name</p>
 <script>
-function names() {
+function you(event) {
   var I = document.getElementById("You").value;
   document.getElementById("I").innerHTML = I;
+}
+function wife(event) {
   var W = document.getElementById("Wife").value;
   document.getElementById("W").innerHTML = W;
+}
+function kid1(event) {
   var K1 = document.getElementById("1").value;
   document.getElementById("K1").innerHTML = K1;
+}
+function kid2(event) {
   var K2 = document.getElementById("2").value;
   document.getElementById("K2").innerHTML = K2;
+}
+function kid3(event) {
   var K3 = document.getElementById("3").value;
   document.getElementById("K3").innerHTML = K3;
 }
