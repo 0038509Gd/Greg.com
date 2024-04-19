@@ -17,22 +17,26 @@ Are_These_Names_Correct?<button type="button" onclick="done">Y</button><br><br>
 function you(event) {
   var I = document.getElementById("You").value;
     localStorage.setItem("I", I)
-    document.getElementById("I").innerHTML = localStorage.getItem("I");
+    document.getElementById("I").innerHTML = I;
 }
 function wife(event) {
   var W = document.getElementById("Wife").value;
+  localStorage.setItem("W", W)
   document.getElementById("W").innerHTML = W;
 }
 function kid1(event) {
   var K1 = document.getElementById("1").value;
+  localStorage.setItem("K1", K1)
   document.getElementById("K1").innerHTML = K1;
 }
 function kid2(event) {
   var K2 = document.getElementById("2").value;
+  localStorage.setItem("K2", K2)
   document.getElementById("K2").innerHTML = K2;
 }
 function kid3(event) {
   var K3 = document.getElementById("3").value;
+  localStorage.setItem("K3", K3)
   document.getElementById("K3").innerHTML = K3;
 }
 </script></body2></body1><script>
