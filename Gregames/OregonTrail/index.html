@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<!DOCTYPE html><html><body1 style="color:white;">
+<button onclick="run();"></button>
 <script>
 var I = localStorage.getItem("I");
   document.getElementById('youName').innerHTML = I;
@@ -38,6 +39,8 @@ var Wheather = localStorage.getItem("Wheather");
   document.getElementById('Wheather').innerHTML = Wheather;
 var Health = localStorage.getItem("Health");
   document.getElementById('Health').innerHTML = Health;
+var HealthNum = localStorage.getItem("HealthNum");
+  document.getElementById('HealthNum').innerHTML = HealthNum;
 var miles2LM = ([num}miles-next-landmark);
   document.getElementById('miles2LM').innerHTML = miles2LM;
 var milesD = localStorage.getItem("milesD");
@@ -50,4 +53,14 @@ var Rations = localStorage.getItem("Rations");
   document.getElementById('Rations').innerHTML = Rations;
 var FPD = localStorage.getItem("FPD");
   document.getElementById('FPD').innerHTML = FPD;
+function run() {
+  milesD += hr * 2;
+  localStorage.setItem("milesD", milesD);
+  miles2LM += hr * -2;
+  localStorage.setItem("miles2LM", miles2LM);
+  
+}
+</script></body1></html><script>
+  document.body.style.background = "black";
 </script>
+  
