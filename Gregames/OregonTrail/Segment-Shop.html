@@ -28,9 +28,9 @@ function buyFood() {
   localStorage.setItem("money", money);
 }
 function buyClothing() {
-  var Clothes = document.getElementById("box").value;
-  localStorage.setItem("Clothes", Clothes + localStorage.getItem("Clothes"));
-  var clothingPrice = Clothes * 10;
+  var Clothing = document.getElementById("box").value;
+  localStorage.setItem("Clothing", Clothing + localStorage.getItem("Clothing"));
+  var clothingPrice = Clothing * 10;
   money += -clothingPrice;
   document.getElementById("$").innerHTML = "money_left" + money;
   localStorage.setItem("money", money);
