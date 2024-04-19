@@ -16,7 +16,8 @@ Are_These_Names_Correct?<button type="button" onclick="done">Y</button><br><br>
 <script>
 function you(event) {
   var I = document.getElementById("You").value;
-  document.getElementById("I").innerHTML = I;
+    localStorage.setItem("I", I)
+    document.getElementById("I").innerHTML = localStorage.getItem("I");
 }
 function wife(event) {
   var W = document.getElementById("Wife").value;
