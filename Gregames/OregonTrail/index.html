@@ -60,6 +60,33 @@ function run() {
   localStorage.setItem("miles2LM", miles2LM);
   Day += 1;
   localStorage.setItem("Day", Day);
+  if (Day = "28") {
+    if (Month = 2) {
+      var Day = 1;
+      localStorage.setItem("Day", 1);
+      Month += 1;
+      localStorage.setItem("Month", Month);
+    }
+  } else if (Day = 30) {
+    if ((Month = 4||Month = 6)||(Month = 9||Month = 11)) {
+      var Day = 1;
+      localStorage.setItem("Day", 1);
+      Month += 1;
+      localStorage.setItem("Month", Month);
+    } 
+  } else if (Day = 31) {
+    if ((Month = 1||Month = 3)||((Momth = 5||Month = 7)||(Month = 8||Month = 10))) {
+      var Day = 1;
+      localStorage.setItem("Day", 1);
+      Month += 1;
+      localStorage.setItem("Month", Month);
+    } else if (Month = 12) {
+      var Day = 1;
+      localStorage.setItem("Day", 1);
+      var Month = 1;
+      localStorage.setItem("Month", Month);
+    }
+  }
 }
 </script></body1></html><script>
   document.body.style.background = "black";
