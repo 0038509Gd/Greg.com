@@ -3,14 +3,24 @@
 <script>
 var I = localStorage.getItem("I");
   document.getElementById('youName').innerHTML = I;
+var Idied = localStorage.getItem("Idied");
+var Isick = localStorage.getItem("Isick");
 var W = localStorage.getItem("W");
   document.getElementById('wifeName').innerHTML = W;
+var Wdied = localStorage.getItem("Wdied");
+var Isick = localStorage.getItem("Wsick");
 var K1 = localStorage.getItem("K1");
-  ducumant.getElementById('kid1Name').innerHTML = K1;
+  document.getElementById('kid1Name').innerHTML = K1;
+var K1died = localStorage.getItem("K1died");
+var K1sick = localStorage.getItem("K1sick");
 var K2 = localStorage.getItem("K2");
   document.getElementById('kid2Name').innerHTML = K2;
+var K2died = localStorage.getItem("K2died");
+var K2sick = localStorage.getItem("k2sick");
 var K3 = localStorage.getItem("K3");
   document.getElementById('kid3Name').innerHTML = K3;
+var K3died = localStorage.getItem("K3died");
+var K3sick = localStorage.getItem("K3sick");
 var job = localStorage.getItem("job");
   document.getElementById('job').innerHTML = job
 var money = localStorage.getItem("money");
@@ -65,15 +75,16 @@ loops.everyInterval(24000, function () {
   } else if (Wheather = "snowy" && Math.percentChance(25)) {
     var Pace = "stoped";
     Day();
-    var Pace = localStorage.getItem("Pace")
+    var Pace = localStorage.getItem("Pace");
     alert("Bliserd_Lose-1-Day");
   } else if (Wheather = "rainy" && Math.percentChance(25)) {
     var Pace = "stoped";
     Day();
-    var Pace = localStorage.getItem("Pace")
+    var Pace = localStorage.getItem("Pace");
     alert("Thunderstorm_Lose-1-Day");
   }
   if (Math.percentChance(25)) {
+    var Pace = "stoped";
     var Randomizer = randint(1, 4);
     if (Randomizer = 2) {
       aler("Ox Wondered Of Lose 2 Days");
@@ -88,11 +99,13 @@ loops.everyInterval(24000, function () {
     for(var loop = 0; loop < Randomizer; loop++) {
       Day();
     }
+    var Pace = localStorage.getItem("Pace");
   }
   if (Math.percentChance(2)) {
     var Randomizer = randint(1, 3)
+    var Pace = "stoped";
     if (Randomizer = 1) {
-      for(var loop = 0; loop < 1; loop++)
+      for(var loop = 0; loop < 1; loop++) {
         if (confirm("Your_Wagon_Wheel_Broke. Would_You_Like_To_Fix_It?")) {
           if (Math.percentChance(50)) {
             alert("You_Were_Able_To_Fix_The_Broken_Wagon_Wheel");
@@ -102,48 +115,69 @@ loops.everyInterval(24000, function () {
             if (Wheels = 0) {
               loop += -1
             } else {
-              var Pace = "stoped"
               Day();
-              var Pace = localStorage.getItem("Pace")
               Wheels += -1;
             }
           }
         } else {
-        if (Wheels = 0) {
-          loop += -1
-        } else {
-          var Pace = "stoped"
-          Day();
-          var Pace = localStorage.getItem("Pace")
-          Wheels += -1;
-        }
+          if (Wheels = 0) {
+            loop += -1
+          } else {
+            Day();
+            Wheels += -1;
+          }
         }
       }
-  
     } else if (Randomizer = 2) {
       for(var loop = 0; loop < 1; loop++) {
-        if (confirm("Your Wagon Tongue Broke. Would You Like To Fix It?")) {
-          Toungues += -1;
-          var Pace = "stoped";
-          Day();
-          var Pace = localStorage.getItem("Pace");
+        if (confirm("Your_Wagon_Toungue_Broke. Would_You_Like_To_Fix_It?")) {
+          if (Math.percentChance(50)) {
+            alert("You_Were_Able_To_Fix_The_Broken_Wagon_Toungue");
+          } else {
+            alert("You_Were_Unable_To_Fix_The_Broken_Wagon_Toungue.");
+            alert("You_Must_Replace_It_With_A_Spare_Part");
+            if (Toungues = 0) {
+              loop += -1
+            } else {
+              Day();
+              Toungues += -1;
+            }
+          }
         } else {
-          alert("You Can Not Contunue With A Broken Toungue");
-          loop += -1;
-          Day();
+          if (Toungue = 0) {
+            loop += -1
+          } else {
+            Day();
+            Toungues += -1;
+          }
         }
       }
     } else if (Randomizer = 3) {
-      if (confirm("Your Wagon Axel Broke. Would You Like To Fix It?")) {
-        Axels += -1;
-        Day();
-      } else {
-        alert("You Can Not Contunue With A Broken Axel");
-        loop += -1;
-        Day();
+      for(var loop = 0; loop < 1; loop++) {
+        if (confirm("Your_Wagon_Axel_Broke. Would_You_Like_To_Fix_It?")) {
+          if (Math.percentChance(50)) {
+            alert("You_Were_Able_To_Fix_The_Broken_Wagon_Axel");
+          } else {
+            alert("You_Were_Unable_To_Fix_The_Broken_Wagon_Axel.");
+            alert("You_Must_Replace_It_With_A_Spare_Part");
+            if (Axels = 0) {
+              loop += -1
+            } else {
+              Day();
+              Axels += -1;
+            }
+          }
+        } else {
+          if (Axels = 0) {
+            loop += -1
+          } else {
+            Day();
+            Axels += -1;
+          }
+        }
       }
-    }
-}
+    var Pace = localStorage.getItem("Pace");
+  }
 function Day() {
   if (Pace == "stoped") {
     if (FPD == 3) {
@@ -196,7 +230,7 @@ function Day() {
       localStorage.setItem("Day", 1);
       var Month = 1;
       localStorage.setItem("Month", Month);
-    }
+    } 
   }
     if (Month = 1||Month = 2) {
     var Randomizer = randint(1, 3);
@@ -259,8 +293,6 @@ function Day() {
       var Wheather = "snowy";
     }
   }
-  localStorage.setItem("Wheather", Wheather);    
-  localStorage.setItem("HealthNum", HealthNum);
   if (HealthNum > 400) {
     var Health = "good";
     if (HelathNum < 500) {
@@ -273,8 +305,50 @@ function Day() {
       }
     }
   }
+Maintain();
+}
+function Maintain() {
+  localStorage.setItem("Idied", Idied);
+  localStorage.setItem("Isick", Isick);
+  localStorage.setItem("Wdied", Wdied);
+  localStorage.setItem("Wsick", Wsick);
+  localStorage.setItem("K1died", K1died);
+  localStorage.setItem("K1sick", K1sick);
+  localStorage.setItem("K2died", K2died);
+  localStorage.setItem("K2sick", K2sick);
+  localStorage.setItem("K3died", K3died);
+  localStorage.setItem("K3sick", K3sick);
+  localStorage.setItem("Oxen", Oxen);
+  document.getElementById('Oxen').innerHTML = Oxen;
+  localStorage.setItem("Foodlb", Foodlb);
+  document.getElementById('Foodlb').innerHTML = Foodlb;
+  localStorage.setItem("Clothing", Clothing);
+  document.getElementById('Clothing').innerHTML = Clothing;
+  localStorage.setItem("Ammo", Ammo);
+  document.getElementById('Ammo').innerHTML = Ammo;
+  localStorage.setItem("Axels", Axels);
+  document.getElementById('Axels').innerHTML = Axels; 
+  localStorage.setItem("Toungues", Toungues);
+  document.getElementById('Tongues').innerHTML = Toungues;
+  localStorage.setItem("Wheels", Wheels);
+  document.getElementById('Wheels').innerHTML = Wheels;
+  localStorage.setItem("Day", Day);
+  document.getElementById('Day').innerHTML = Day;
+  localStorage.setItem("Month", Month);
+  document.getElementById('Month').innerHTML = Month;
+  localStorage.setItem("Year", Year);
+  document.getElementById('Year').innerHTML = Year;
+  localStorage.setItem("Wheather", Wheather);
+  document.getElementById('Wheather').innerHTML = Wheather;
   localStorage.setItem("Health", Health);
-  }
+  document.getElementById('Health').innerHTML = Health;
+  localStorage.setItem("HealthNum", HealthNum);
+  document.getElementById('HealthNum').innerHTML = HealthNum;
+  localStorage.setItem("miles2LM", miles2LM);
+  document.getElementById('miles2LM').innerHTML = miles2LM;
+  localStorage.setItem("milesD", milesD);
+  document.getElementById('milesD').innerHTML = milesD;
+}
 </script></body1></html><script>
   document.body.style.background = "black";
 </script>
