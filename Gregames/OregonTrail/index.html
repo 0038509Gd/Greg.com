@@ -1,44 +1,31 @@
 <!DOCTYPE html><html><body1 style="color:white;">
-<button onclick="run();">Continue</button>
+<a href="https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Segment-Action-Menue"><button>Size_Up_The_Situation</button></a>
 <script>
 var I = localStorage.getItem("I");
-  document.getElementById('youName').innerHTML = I;
 var Idied = localStorage.getItem("Idied");
 var Isick = localStorage.getItem("Isick");
 var W = localStorage.getItem("W");
-  document.getElementById('wifeName').innerHTML = W;
 var Wdied = localStorage.getItem("Wdied");
 var Isick = localStorage.getItem("Wsick");
 var K1 = localStorage.getItem("K1");
-  document.getElementById('kid1Name').innerHTML = K1;
 var K1died = localStorage.getItem("K1died");
 var K1sick = localStorage.getItem("K1sick");
 var K2 = localStorage.getItem("K2");
-  document.getElementById('kid2Name').innerHTML = K2;
 var K2died = localStorage.getItem("K2died");
 var K2sick = localStorage.getItem("k2sick");
 var K3 = localStorage.getItem("K3");
-  document.getElementById('kid3Name').innerHTML = K3;
 var K3died = localStorage.getItem("K3died");
 var K3sick = localStorage.getItem("K3sick");
 var job = localStorage.getItem("job");
-  document.getElementById('job').innerHTML = job
 var money = localStorage.getItem("money");
-  document.getElementById('money').innerHTML = money;
 var Oxen = localStorage.getItem("Oxen");
-  document.getElementById('Oxen').innerHTML = Oxen;
 var Foodlb = localStorage.getItem("Foodlb");
   document.getElementById('Foodlb').innerHTML = Foodlb;
 var Clothing = localStorage.getItem("Clothing");
-  document.getElementById('Clothing').innerHTML = Clothing;
 var Ammo = localStorage.getItem("Ammo");
-  document.getElementById('Ammo').innerHTML = Ammo;
 var Axels = localStorage.getItem("Axels");
-  document.getElementById('Axels').innerHTML = Axels;
 var Toungues = localStorage.getItem("Toungues");
-  document.getElementById('Tongues').innerHTML = Toungues;
 var Wheels = localStorage.getItem("Wheels");
-  document.getElementById('Wheels').innerHTML = Wheels;
 var Day = localStorage.getItem("Day");
   document.getElementById('Day').innerHTML = Day;
 var Month = localStorage.getItem("Month");
@@ -50,19 +37,15 @@ var Wheather = localStorage.getItem("Wheather");
 var Health = localStorage.getItem("Health");
   document.getElementById('Health').innerHTML = Health;
 var HealthNum = localStorage.getItem("HealthNum");
-  document.getElementById('HealthNum').innerHTML = HealthNum;
 var miles2LM = ([num}miles-next-landmark);
   document.getElementById('miles2LM').innerHTML = miles2LM;
 var milesD = localStorage.getItem("milesD");
   document.getElementById('milesD').innerHTML = milesD;
 var Pace = localStorage.getItem("Pace");
-  document.getElementById('Pace').innerHTML = Pace;
 var hr = localStorage.getItem("hr");
-  document.getElementById('hr').innerHTML = hr;
 var Rations = localStorage.getItem("Rations");
-  document.getElementById('Rations').innerHTML = Rations;
 var FPD = localStorage.getItem("FPD");
-  document.getElementById('FPD').innerHTML = FPD;
+
 loops.everyInterval(24000, function () {
   milesD += hr * 2;
   localStorage.setItem("milesD", milesD);
@@ -115,7 +98,6 @@ loops.everyInterval(24000, function () {
             if (Wheels = 0) {
               loop += -1
             } else {
-              Day();
               Wheels += -1;
             }
           }
@@ -123,7 +105,6 @@ loops.everyInterval(24000, function () {
           if (Wheels = 0) {
             loop += -1
           } else {
-            Day();
             Wheels += -1;
           }
         }
@@ -139,7 +120,6 @@ loops.everyInterval(24000, function () {
             if (Toungues = 0) {
               loop += -1
             } else {
-              Day();
               Toungues += -1;
             }
           }
@@ -147,7 +127,6 @@ loops.everyInterval(24000, function () {
           if (Toungue = 0) {
             loop += -1
           } else {
-            Day();
             Toungues += -1;
           }
         }
@@ -163,7 +142,6 @@ loops.everyInterval(24000, function () {
             if (Axels = 0) {
               loop += -1
             } else {
-              Day();
               Axels += -1;
             }
           }
@@ -171,12 +149,19 @@ loops.everyInterval(24000, function () {
           if (Axels = 0) {
             loop += -1
           } else {
-            Day();
             Axels += -1;
           }
         }
       }
+    Day();
     var Pace = localStorage.getItem("Pace");
+  if (Math.percentChance(50) && Wheather = "hot"||Math.percentChance(25) && Wheather = "warm") {
+    Foodlb *= randint(0, 5) / 100;
+    Clothing *= randint(0, 80) / 100;
+    Ammo *= randint(0, 50) / 100;
+    alert("Wagon_Fire_You_Lost_"localStorage.getItem("Foodlb") - Foodlb"lb_Of_Food,_"localStorage.getItem("Clothing") - Clothing"_Sets_Of_Clothing_And_"localStorage.getItem("Ammo") - Ammo"_Bullets");
+  }
+    
   }
 function Day() {
   if (Pace == "stoped") {
