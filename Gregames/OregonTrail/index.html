@@ -65,14 +65,16 @@ loops.everyInterval(24000, function () {
   } else if (Wheather = "snowy" && Math.percentChance(25)) {
     var Pace = "stoped";
     Day();
-    alert("Bliserd Lose 1 Day");
+    var Pace = localStorage.getItem("Pace")
+    alert("Bliserd_Lose-1-Day");
   } else if (Wheather = "rainy" && Math.percentChance(25)) {
     var Pace = "stoped";
     Day();
-    alert("Thunderstorm Lose 1 Day");
+    var Pace = localStorage.getItem("Pace")
+    alert("Thunderstorm_Lose-1-Day");
   }
   if (Math.percentChance(25)) {
-    var Randomizer = randint(1, 3);
+    var Randomizer = randint(1, 4);
     if (Randomizer = 2) {
       aler("Ox Wondered Of Lose 2 Days");
     } else if (Randomizer = 1) {
@@ -80,7 +82,9 @@ loops.everyInterval(24000, function () {
     } else if (Randomizer = 3) {
       var Randomiser = randint(1, 8);
       alert("Impassable Tail Lose "Randomizer" Days");
-    }
+    } else if (Randomizer = 4) {
+      var Randomizer = randint(1, 6);
+      alert("Wrong Way Lose "Randomizer"_Days");
     for(var loop = 0; loop < Randomizer; loop++) {
       Day();
     }
@@ -105,8 +109,14 @@ loops.everyInterval(24000, function () {
             }
           }
         } else {
+        if (Wheels = 0) {
+          loop += -1
+        } else {
+          var Pace = "stoped"
+          Day();
+          var Pace = localStorage.getItem("Pace")
           Wheels += -1;
-          
+        }
         }
       }
   
