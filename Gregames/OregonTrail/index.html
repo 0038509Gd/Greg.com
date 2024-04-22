@@ -1,5 +1,6 @@
 <!DOCTYPE html><html><body1 style="color:Green;"><body2 style="font-size:25px;">
 <a href="https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Segment-Action-Menu"><button>Size_Up_The_Situation</button></a>
+<p id="Date"></p><p id=""Wheather></p><p id="Health"></p><p id="Foodlb"></p><p id="milesLM"></p><p id="milesD"></p>
 <script>
 var I = localStorage.getItem("I");
 var Idied = localStorage.getItem("Idied");
@@ -155,13 +156,22 @@ loops.everyInterval(24000, function () {
       }
     Day();
     var Pace = localStorage.getItem("Pace");
-  if (Math.percentChance(50) && Wheather = "hot"||Math.percentChance(25) && Wheather = "warm") {
+    }
+  if (Math.percentChance(25) && Wheather = "hot"||Math.percentChance(10) && Wheather = "warm") {
     Foodlb *= randint(0, 5) / 100;
     Clothing *= randint(0, 80) / 100;
     Ammo *= randint(0, 50) / 100;
     alert("Wagon_Fire_You_Lost_"localStorage.getItem("Foodlb") - Foodlb"lb_Of_Food,_"localStorage.getItem("Clothing") - Clothing"_Sets_Of_Clothing_And_"localStorage.getItem("Ammo") - Ammo"_Bullets");
-  }
-    
+  } else if (((Math.percentChance(75) && Wheather = "very-cold"||Math.percentChance(50) && Wheather = "cold")||Math.percentChance(25))){
+    Clothing += randint(1, 10);
+    Ammo += randint(1, 275);
+    Axels += randint(1, 5);
+    Toungues += randint(1, 5);
+    Wheels += randint(1, 5);
+    if (Math.percentChance(5)) {
+      Oxen += randint(1,4);
+    }
+    alert("You_Found_An_Abandened_Wagon");
   }
 function Day() {
   if (Pace == "stoped") {
@@ -212,9 +222,8 @@ function Day() {
       localStorage.setItem("Month", Month);
     } else if (Month = 12) {
       var Day = 1;
-      localStorage.setItem("Day", 1);
       var Month = 1;
-      localStorage.setItem("Month", Month);
+      Year += 1;
     } 
   }
     if (Month = 1||Month = 2) {
@@ -376,7 +385,7 @@ function Day() {
         }
         if (HealthNum < 200) {
           var Health = "very-poor";
-          if (Math.percentChance(75)) {
+          if (Math.percentChance(25)) {
           if (K3sick) {
             if (K3died) {
               if (K2sick) {
@@ -484,35 +493,26 @@ function Maintain() {
   localStorage.setItem("K3died", K3died);
   localStorage.setItem("K3sick", K3sick);
   localStorage.setItem("Oxen", Oxen);
-  document.getElementById('Oxen').innerHTML = Oxen;
   localStorage.setItem("Foodlb", Foodlb);
-  document.getElementById('Foodlb').innerHTML = Foodlb;
+  document.getElementById('Foodlb').innerHTML = "Food:" + Foodlb + "pounds";
   localStorage.setItem("Clothing", Clothing);
-  document.getElementById('Clothing').innerHTML = Clothing;
   localStorage.setItem("Ammo", Ammo);
-  document.getElementById('Ammo').innerHTML = Ammo;
   localStorage.setItem("Axels", Axels);
-  document.getElementById('Axels').innerHTML = Axels; 
   localStorage.setItem("Toungues", Toungues);
-  document.getElementById('Tongues').innerHTML = Toungues;
   localStorage.setItem("Wheels", Wheels);
-  document.getElementById('Wheels').innerHTML = Wheels;
   localStorage.setItem("Day", Day);
-  document.getElementById('Day').innerHTML = Day;
   localStorage.setItem("Month", Month);
-  document.getElementById('Month').innerHTML = Month;
   localStorage.setItem("Year", Year);
-  document.getElementById('Year').innerHTML = Year;
+  document.getElementById('Date').innerHTML = "Date:" + Day + "th_Of_" + Month + "_in_" + Year;
   localStorage.setItem("Wheather", Wheather);
-  document.getElementById('Wheather').innerHTML = Wheather;
+  document.getElementById('Wheather').innerHTML = "Wheather:" + Wheather;
   localStorage.setItem("Health", Health);
-  document.getElementById('Health').innerHTML = Health;
+  document.getElementById('Health').innerHTML = "Health:" + Health;
   localStorage.setItem("HealthNum", HealthNum);
-  document.getElementById('HealthNum').innerHTML = HealthNum;
   localStorage.setItem("miles2LM", miles2LM);
-  document.getElementById('miles2LM').innerHTML = miles2LM;
+  document.getElementById('miles2LM').innerHTML = "Next_Landmark" + miles2LM + "miles";
   localStorage.setItem("milesD", milesD);
-  document.getElementById('milesD').innerHTML = milesD;
+  document.getElementById('milesD').innerHTML = "Miles_Traveled:" + milesD + "miles";
 }
 </script></body2></body1></html><script>
   document.body.style.background = "black";
