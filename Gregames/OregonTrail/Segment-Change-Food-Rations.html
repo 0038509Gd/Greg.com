@@ -1,0 +1,35 @@
+<!DOCTYPE html><html><body1 style="color:Green;"><body2 style="font-size:25px;">
+<p id="Rations"></p>
+<button onclick="Filling();">1</button> Filling<br>
+<button onclick="Meager();">2</button> Meager<br>
+<button onclick="BareBones();">3</button> Bare_Bones<br>
+<a href="https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Rations-Eplained"><button>4</button></a> Find_Out_The_Difference_Between_These_Options
+<br>
+Press""To_Continue<a href="https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Segment-Action-Menu"><button>Space</button></a>
+<script>
+var Rations = localStorage.getItem("Rations");
+var FPD = localStorage.getItem("FPD");
+document.getElementById('Rations').innerHTML = "Your_Current_Rations_Are_" + Rations;
+function Maintain() {
+  localStorage.setItem("Rations", Rations);
+  localStorage.setItem("FPD", FPD);
+  document.getElementById('Rations').innerHTML = "Your_Current_Rations_Are_" + Rations;
+}
+function Filling() {
+  var Rations = "filling";
+  var FPD = 3;
+  Maintain();
+}
+function Meager() {
+  var Rations = "meager";
+  var FPD = 2;
+  Maintain();
+}
+function BareBones() {
+  var Rations = "bare-bones";
+  var FPD = 1;
+  Maintain();
+}
+</script></body2></body1></html><script>
+  document.body.style.background = "black";
+</script>
