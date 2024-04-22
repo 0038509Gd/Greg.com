@@ -1,32 +1,39 @@
 <!DOCTYPE html><html><body1 style="color:white"><body2 style="font-size:25px">
-<button onclick="Steady">1</button> Steady_Pace<br>
-<a href="https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Segment-Check-Supplies"><button>2</button></a> Check_Supplies<br>
-<a href=""><button>3</button></a> Look_At_Map<br>
-<a href=""><button>4</button></a> Change_Pace<br>
-<a href=""><button>5</button></a> Change_Food_Rations<br>
-<button popovertarget="box" popovertargetaction="show">6</button> Stop_And_Rest<br>
-<a href=""><button onclick="Day();">7</button></a> Attempt_To_Trade<br>
-<a href=""><button onclick="Day();">8</button></a> Hunt_For_Food<br>
-<button onclick="kill();">9</button> Kill_Ox_For_Food
-<body3 popover id="box"><input type="text" id="box"><button onclick="day();">Enter</button></body3><br>
+  <p id="pace"></p>
+<button onclick="Steady();">1</button> Steady_Pace<br>
+<button onclick="Tireing();">2</button> Tireing_Pace<br>
+<button onclick="Strenguous();">3</button> Strenguous_Pace<br>
+<button onclick="Grueling();">4</button> Grueling_Pace<br>
+<a href="https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Paces-Explained"><button>5</button></a> Find_Out_The_Difference_Between_These_Options<br><br>
+Press"Space"To_Coninue <a href="https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Segment-Action-Menu"><button>Space</button></a>
 <script>
 var Pace = localStorage.getItem("Pace");
 var hr = localStorage.getItem("hr");
+document.getElementById('pace').innerHTML = "Your_Current_Pace_Is_" + Pace;
 function Maintain() {
   localStorage.setItem("hr", hr);
   localStorage.setItem("Pace", Pace);
+  document.getElementById('pace').innerHTML = "Your_Current_Pace_Is_" + Pace;
 }
 function Steady() {
-  var Pace = "steady"
-  var hr = "8"
+  var Pace = "steady";
+  var hr = "8";
   Maintain();
 }
 function Tireing() {
-  var Pace = "tireing"
-  var hr = 12
+  var Pace = "tireing";
+  var hr = 12;
   Maintain();
 }
-function Setrenguous {
+function Strenguous {
+  var Pace = "strenguous";
+  var hr = 16;
+  Maintain();
+}
+function Grueling {
+  var Pace = "grueling";
+  var hr = 20;
+  Maintain();
 }
 </script></body2></body1></html><script>
   document.body.style.background = "black";
