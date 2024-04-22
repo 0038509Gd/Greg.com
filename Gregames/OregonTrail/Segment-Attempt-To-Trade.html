@@ -1,7 +1,9 @@
 <!DOCTYPE html><html><body1 style="color:Green;">
 <p id="Oxen"></p><p id="Foodlb"></p><p id="Clothing"></p><p id="Ammo"></p><p id="Axels"></p><p id="Toungues"></p><p id="Wheels"></p><p id="money"></p><body2 style="font-size:25px;"><br><br><br><br><br>
 <p id="trade"></p>
+<a href="https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Segment-Action-Menu"><button>N</button></a><button onclick="Y();">Y</button>
 <script>
+var Tradable = false;
 var money = localStorage.getItem("money");
   document.getElementById('money').innerHTML = "money: " + money;
 var Oxen = localStorage.getItem("Oxen");
@@ -42,7 +44,7 @@ if (Math.percentChance(50)) {
     var Tradede = "_Wagon_Wheels_";
     var numTrade = randint(1,3);
   } else if (Randomizer = 8) {
-    var Trade = "_Cash_";
+    var Trade = "_$_";
     var numTrade = randint(0.01, 10);
   }
   if (Trade = "_Oxen_") {
@@ -58,12 +60,113 @@ if (Math.percentChance(50)) {
       Trade();
     }
   } else if (Trade = "_Sets_Of_Clothing_") {
+    if (Clothing < numTrade) {
+      document.getElementById('trade').innerHTML = "An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.";
+    } else {
+      Trade();
+    }
+  } else if (Trade = "_Bullets_") {
+    if (Ammo < numTrade) {
+      document.getElementById('trade').innerHTML = "An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.";
+    } else {
+      Trade();
+    }
+  } else if (Trade = "_Wagon_Axels_") {
+    if (Axels < numTrade) {
+      document.getElementById('trade').innerHTML = "An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.";
+    } else {
+      Trade();
+    }
+  } else if (Trade = "_Wagon_Toungues_") {
+    if (Toungues < numTrade) {
+      document.getElementById('trade').innerHTML = "An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.";
+    } else {
+      Trade();
+    }
+  } else if (Trade = "_Wagon_Wheels_") {
+    if (Wheels < numTrade) {
+      document.getElementById('trade').innerHTML = "An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.";
+    } else {
+      Trade();
+    }
+  } else if (Trade = "_$_") {
+    if (money < numTrade) {
+      document.getElementById('trade').innerHTML = "An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.";
+    } else {
+      Trade();
+    }
   }
 } else {
   document.getElementById('trade').innerHTML = "Nobody_Wants_To_Trade_With_You_Today";
 }
 function Trade() {
-  
+  var Tradable = true;
+  var Randomizer = randint(1, 8);
+  if (Randomizer = 1) {
+    var Traded = "_Oxen_";
+    var numTraded = 1;
+  } else if (Randomizer = 2) {
+    var Traded = "lb_Of_Food_";
+    var numTraded = randint(10, 275);
+  } else if (Randomizer = 3) {
+    var Traded = "_Sets_Of_Clothing_";
+    var numTraded = randint(1,7);
+  } else if (Randomizer = 4) {
+    var Traded = "_Bullets_";
+    var numTraded = randint(10,275);
+  } else if (Randomizer = 5) {
+    var Traded = "_Wagon_Axels_";
+    var numTraded = randint(1,3);
+  } else if (Randomizer = 6) {
+    var Traded = "_Wagon_Toungues_";
+    var numTraded = randint(1,3);
+  } else if (Randomizer = 7) {
+    var Traded = "_Wagon_Wheels_";
+    var numTraded = randint(1,3);
+  } else if (Randomizer = 8) {
+    var Traded = "_$_";
+    var numTraded = randint(0.01, 10);
+  }
+  document.getElementById('trade').innerHTML = "An_Immagrant_Wants_To_Trade_You_" + numTrade + Trade + "For" + numTraded + Traded + "Would_You_Like_To_Make_The_Trade?";
+}
+function Y() {
+  if (Trade = "_Oxen_") {
+    Oxen -= numTrade;
+  } else if (Trade = "lb_Of_Food_") {
+    Foodlb -= numTrade;
+  } else if (Trade = "_Sets_Of_Clothing_") {
+    Clothing -= numTrade;
+  } else if (Trade = "_Bullets_") {
+    Ammo -= numTrade;
+  } else if (Trade = "_Wagon_Axels_") {
+    Axels -= numTrade;
+  } else if (Trade = "_Wagon_Toungues_") {
+    Toungues -= numTrade;
+  } else if (Trade = "_Wagon_Wheels_") {
+    Wheels -= numTrade;
+  } else if (Trade = "_$_") {
+    money -= numTrade;
+  }
+  if (Traded = "_Oxen_") {
+    Oxen += numTraded;
+  } else if (Traded = "lb_Of_Food_") {
+    Foodlb += numTraded;
+  } else if (Traded = "_Sets_Of_Clothing_") {
+    Clothing += numTraded;
+  } else if (Traded = "_Bullets_") {
+    Ammo += numTraded;
+  } else if (Traded = "_Wagon_Axel_") {
+    Axel += numTraded;
+  } else if (Traded = "_Wagon_Toungues_") {
+    Toungues += numTraded;
+  } else if (Traded = "_Wagon_Wheels_") {
+    Wheels += numTraded;
+  } else if (Traded = "_$_") {
+    money += numTraded;
+  }
+  if (Tradable) {
+    
+  }
 }
 </script></body2></body1></html><script>
   document.body.style.background = "black";
