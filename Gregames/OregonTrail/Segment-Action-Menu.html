@@ -5,9 +5,9 @@
 <a href=""><button onclick="Day();">4</button></a> Change_Pace<br>
 <a href=""><button onclick="Day();">5</button></a> Change_Food_Rations<br>
 <button popovertarget="box" popovertargetaction="show">6</button> Stop_And_Rest<br>
-<a href=""><button>7</button></a> Attempt_To_Trade<br>
-<a href=""><button>8</button></a> Hunt_For_Food<br>
-<>
+<a href=""><button onclick="Day();">7</button></a> Attempt_To_Trade<br>
+<a href=""><button onclick="Day();">8</button></a> Hunt_For_Food<br>
+<button onclick="kill();">9</button> Kill_Ox_For_Food
 <body3 popover id="box"><input type="text" id="box"><button onclick="day();">Enter</button></body3><br>
 <script>
 var I = localStorage.getItem("I");
@@ -411,6 +411,11 @@ function Maintain() {
   document.getElementById('miles2LM').innerHTML = miles2LM;
   localStorage.setItem("milesD", milesD);
   document.getElementById('milesD').innerHTML = milesD;
+}
+function kill() {
+  Oxen -= 1;
+  Foodlb += 150;
+  Maintain();
 }
 </script></body2></body1></html><script>
   document.body.style.background = "black";
