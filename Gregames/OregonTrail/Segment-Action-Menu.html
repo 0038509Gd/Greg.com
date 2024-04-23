@@ -6,7 +6,7 @@
 <a href="https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Segment-Change-Food-Rations"><button>5</button></a> Change_Food_Rations<br>
 <button popovertarget="box" popovertargetaction="show">6</button> Stop_And_Rest<br>
 <a href=""><button onclick="Day();">7</button></a> Attempt_To_Trade<br>
-<a href=""><button onclick="Day();">8</button></a> Hunt_For_Food(comming soon)<br>
+<a href=""><button onclick="Day();">8</button></a><q id="lm"></q><br>
 <button onclick="kill();">9</button> Kill_Ox_For_Food
 <body3 popover id="box"><input type="text" id="box"><button onclick="day();">Enter</button></body3><br>
 <script>
@@ -54,6 +54,11 @@ var Pace = localStorage.getItem("Pace");
 var hr = localStorage.getItem("hr");
 var Rations = localStorage.getItem("Rations");
 var FPD = localStorage.getItem("FPD");
+if (milesD = 0) {
+ document.getElementById('lm').innerHTML = "Buy_Supplies";
+} else {
+ document.getElementById('lm').innerHTML = "Hunt_For_Food";
+}
 function day() {
   var Pace = "stoped"
   for(var loop = 0; loop < document.getElementById('box').value; loop++) {
