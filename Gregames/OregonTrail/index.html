@@ -48,11 +48,14 @@ var Rations = localStorage.getItem("Rations");
 var FPD = localStorage.getItem("FPD");
 
 loops.everyInterval(24000, function () {
-  milesD += hr * 2;
-  localStorage.setItem("milesD", milesD);
-  miles2LM += hr * -2;
-  localStorage.setItem("miles2LM", miles2LM);
-    if (Wheather = "cold" && Clothing < 5) {
+  for(var loop = 0; loop < hr * 2; loop++) {
+    milesD += 1;
+    miles2LM -= 1;
+    if (milesD = 102) {
+      if (confirm("You Have Reached"))
+    }
+  }
+  if (Wheather = "cold" && Clothing < 5) {
     HealthNum += Clothing - 5;
   } else if (Wheather = "very-cold" && Clothing < 10) {
     HealthNum += Clothing - 10;
@@ -199,7 +202,6 @@ function Day() {
     HealthNum += -10;
   }
   Day += 1;
-  localStorage.setItem("Day", Day);
   if (Day == "28") {
     if (Month == 2) {
       var Day = 1;
@@ -217,9 +219,7 @@ function Day() {
   } else if (Day == 31) {
     if ((Month == 1||Month == 3)||((Momth == 5||Month == 7)||(Month == 8||Month == 10))) {
       var Day = 1;
-      localStorage.setItem("Day", 1);
       Month += 1;
-      localStorage.setItem("Month", Month);
     } else if (Month = 12) {
       var Day = 1;
       var Month = 1;
