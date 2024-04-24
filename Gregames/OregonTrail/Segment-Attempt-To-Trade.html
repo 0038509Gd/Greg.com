@@ -2,7 +2,7 @@
 <title>Student On Task - Please Be On Task</title>
 <p id="Oxen"></p><p id="Foodlb"></p><p id="Clothing"></p><p id="Ammo"></p><p id="Axels"></p><p id="Toungues"></p><p id="Wheels"></p><p id="money"></p><body2 style="font-size:25px;"><br><br><br><br><br>
 <p id="trade"></p>
-<a href="https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Segment-Action-Menu"><button>N</button></a><button onclick="Y();">Y</button>
+<a href="https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Segment-Action-Menu"><button>Return</button></a>
 <script>
 var Tradable = false;
 var money = sessionStorage.getItem("money");
@@ -50,55 +50,55 @@ if (Math.percentChance(50)) {
   }
   if (Trade = "_Oxen_") {
     if (Oxen < numTrade) {
-      document.getElementById('trade').innerHTML = "An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.";
+      alert("An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.");
     } else {
       Trade();
     }
   } else if (Trade = "lb_Of_Food_") {
     if (Foodlb < numTrade) {
-      document.getElementById('trade').innerHTML = "An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.";
+      alert("An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.");
     } else if {
       Trade();
     }
   } else if (Trade = "_Sets_Of_Clothing_") {
     if (Clothing < numTrade) {
-      document.getElementById('trade').innerHTML = "An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.";
+      alert("An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.");
     } else {
       Trade();
     }
   } else if (Trade = "_Bullets_") {
     if (Ammo < numTrade) {
-      document.getElementById('trade').innerHTML = "An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.";
+      alert("An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.");
     } else {
       Trade();
     }
   } else if (Trade = "_Wagon_Axels_") {
     if (Axels < numTrade) {
-      document.getElementById('trade').innerHTML = "An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.";
+      alert("An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.");
     } else {
       Trade();
     }
   } else if (Trade = "_Wagon_Toungues_") {
     if (Toungues < numTrade) {
-      document.getElementById('trade').innerHTML = "An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.";
+      alert("An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.");
     } else {
       Trade();
     }
   } else if (Trade = "_Wagon_Wheels_") {
     if (Wheels < numTrade) {
-      document.getElementById('trade').innerHTML = "An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.";
+      alert("An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.");
     } else {
       Trade();
     }
   } else if (Trade = "_$_") {
     if (money < numTrade) {
-      document.getElementById('trade').innerHTML = "An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.";
+      alert("An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.");
     } else {
       Trade();
     }
   }
 } else {
-  document.getElementById('trade').innerHTML = "Nobody_Wants_To_Trade_With_You_Today";
+  alert("Nobody_Wants_To_Trade_With_You_Today");
 }
 function Trade() {
   var Tradable = true;
@@ -128,9 +128,7 @@ function Trade() {
     var Traded = "_$_";
     var numTraded = randint(0.01, 10);
   }
-  document.getElementById('trade').innerHTML = "An_Immagrant_Wants_To_Trade_You_" + numTrade + Trade + "For" + numTraded + Traded + "Would_You_Like_To_Make_The_Trade?";
-}
-function Y() {
+  if (conferm(document.getElementById('trade').innerHTML = "An_Immagrant_Wants_To_Trade_You_" + numTrade + Trade + "For" + numTraded + Traded + "Would_You_Like_To_Make_The_Trade?")) {
   if (Trade = "_Oxen_") {
     Oxen -= numTrade;
   } else if (Trade = "lb_Of_Food_") {
@@ -165,17 +163,15 @@ function Y() {
   } else if (Traded = "_$_") {
     money += numTraded;
   }
-  if (Tradable) {
-    sessionStorage.setItem("Oxen", Oxen);
-    sessionStorage.setItem("Foodlb", Foodlb);
-    sessionStorage.setItem("Clothing", Clothing);
-    sessionStorage.setItem("Ammo", Ammo);
-    sessionStorage.setItem("Axels", Axels);
-    sessionStorage.setItem("Toungues", Toungues);
-    sessionStorage.setItem("Wheels", Wheels);
-    sessionStorage.setItem("money", money);
-  }
-  window.location.assing("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Segment-Action-Menu");
+  sessionStorage.setItem("Oxen", Oxen);
+  sessionStorage.setItem("Foodlb", Foodlb);
+  sessionStorage.setItem("Clothing", Clothing);
+  sessionStorage.setItem("Ammo", Ammo);
+  sessionStorage.setItem("Axels", Axels);
+  sessionStorage.setItem("Toungues", Toungues);
+  sessionStorage.setItem("Wheels", Wheels);
+  sessionStorage.setItem("money", money);
+  window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Segment-Action-Menu");
 }
 </script></body2></body1></html><script>
   document.body.style.background = "black";
