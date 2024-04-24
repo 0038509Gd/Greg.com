@@ -43,7 +43,7 @@ var Wheather = sessionStorage.getItem("Wheather");
 var Health = sessionStorage.getItem("Health");
   document.getElementById('Health').innerHTML = Health;
 var HealthNum = sessionStorage.getItem("HealthNum");
-var miles2LM = ([num}miles-next-landmark);
+var miles2LM = sessionStorage.getItem("milesLM");
   document.getElementById('miles2LM').innerHTML = miles2LM;
 var milesD = sessionStorage.getItem("milesD");
   document.getElementById('milesD').innerHTML = milesD;
@@ -57,11 +57,15 @@ loops.everyInterval(24000, function () {
     milesD += 1;
     miles2LM -= 1;
     if (milesD = 102) {
-      if (confirm("You_Have_Reached_Fort_Kerny.-Would_You_Like_To_Take_A_Gandur?")) {
-        window.location.assign("https://fortkerny");
+      if (confirm("You_Have_Reached_Kanses_River_Crossing.-Would_You_Like_To_Take_A_Gandur?")) {
+        window.location.assign("https://kansisriver");
+      } else {
+        window.location.assign("https://kasisrivercrossing");
       }
-      var milesLM = 
-    } else if (milesD = )
+      var milesLM = ;
+    } else if (milesD = ) {
+      
+    }
   }
   if (Wheather = "cold" && Clothing < 5) {
     HealthNum += Clothing - 5;
