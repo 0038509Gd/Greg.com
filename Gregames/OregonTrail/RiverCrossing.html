@@ -5,6 +5,8 @@
 <button onclick="Ford();">1</button> Ford_The_River<br>
 <button onclick="Culk();">2</button> Culk_Your_Wagon_And_Fleat_It_Across<br>
 <button onclick="Fairy();">3</button> Hire_A_Fairy<br>
+<button onclick="IndianGuide();">4</button> Hire_An_Indian_Guide<br>
+<button onclick="Day();">5</button> Whait_To_See_If_Conditions_Improove
 <a href="https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Fording-Explained"><button>4</button></a> Find_Out_What_These_Options_Mean<br>
 <script>
 var I = sessionStorage.getItem("I");
@@ -411,8 +413,15 @@ function Fairy() {
     alert("The_River_Is_Shallow");
   } else {
     if (conferm("The_Fairy_Driver_Has_Agreed_To_Take_Your_Party_Across_The_River_In_5days_For_$5,_Do_You_Accept?")) {
+      money -= 5;
+      Day();
+      Day();
+      Day();
+      Day();
+      Day();
       pause(1000);
       alert("The_Fairy_Got_Your_Party_Across_The_River_Just_Fine");
+      Maintain();
       window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail");
     }
   }
@@ -462,6 +471,12 @@ function Ford() {
     Maintain();
   }
   window.location.assign("https://0038509gd.github.io/Greg.com/Gregame/OregonTrail");
+}
+function IndianGuide() {
+  if (false) {
+  } else {
+    alert("There_Are_No_Indians_Neerby");
+  }
 }
 </script></body2></body1></html><script>
   document.body.style.background = "black";
