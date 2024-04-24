@@ -1,0 +1,468 @@
+<!DOCTYPE html><html><body1 style="color:black;"><body2 style="font-size:50px;">
+<title>Student On Task - Please Be On Task</title>
+<b id="Depth"></b>_Feet_Deep_In_The_Middle<br>
+635_Feet_Across
+<button onclick="Ford();">1</button> Ford_The_River<br>
+<button onclick="Culk();">2</button> Culk_Your_Wagon_And_Fleat_It_Across<br>
+<button onclick="Fairy();">3</button> Hire_A_Fairy<br>
+<a href=""><button>4</button></a> Find_Out_What_These_Options_Mean<br>
+<script>
+var I = sessionStorage.getItem("I");
+var Idied = sessionStorage.getItem("Idied");
+var Isick = sessionStorage.getItem("Isick");
+var W = sessionStorage.getItem("W");
+var Wdied = sessionStorage.getItem("Wdied");
+var Isick = sessionStorage.getItem("Wsick");
+var K1 = sessionStorage.getItem("K1");
+var K1died = sessionStorage.getItem("K1died");
+var K1sick = sessionStorage.getItem("K1sick");
+var K2 = sessionStorage.getItem("K2");
+var K2died = sessionStorage.getItem("K2died");
+var K2sick = sessionStorage.getItem("k2sick");
+var K3 = sessionStorage.getItem("K3");
+var K3died = sessionStorage.getItem("K3died");
+var K3sick = sessionStorage.getItem("K3sick");
+var job = sessionStorage.getItem("job");
+var money = sessionStorage.getItem("money");
+var Oxen = sessionStorage.getItem("Oxen");
+var Foodlb = sessionStorage.getItem("Foodlb");
+  document.getElementById('Foodlb').innerHTML = Foodlb;
+var Clothing = sessionStorage.getItem("Clothing");
+var Ammo = sessionStorage.getItem("Ammo");
+var Axels = sessionStorage.getItem("Axels");
+var Toungues = sessionStorage.getItem("Toungues");
+var Wheels = sessionStorage.getItem("Wheels");
+var Day = sessionStorage.getItem("Day");
+var Month = sessionStorage.getItem("Month");
+var Year = sessionStorage.getItem("Year");
+var Wheather = sessionStorage.getItem("Wheather");
+  document.getElementById('Wheather').innerHTML = Wheather;
+var Health = sessionStorage.getItem("Health");
+  document.getElementById('Health').innerHTML = Health;
+var HealthNum = sessionStorage.getItem("HealthNum");
+var miles2LM = sessionStorage.getItem("milesLM");
+  document.getElementById('miles2LM').innerHTML = miles2LM;
+var milesD = sessionStorage.getItem("milesD");
+  document.getElementById('milesD').innerHTML = milesD;
+var Pace = sessionStorage.getItem("Pace");
+var hr = sessionStorage.getItem("hr");
+var Rations = sessionStorage.getItem("Rations");
+var FPD = sessionStorage.getItem("FPD");
+if (Wheather = "hot") {
+  var Depth = 2;
+} else if (Wheather = "warm") {
+  var Depth = 3;
+} else if (Wheather = "cool") {
+  var Depth = 2.5;
+} else if (Wheather = "cold") {
+  var Depth = 2;
+} else if (Wheather = "very-cold") {
+  var Depth = 1.5;
+} else if (Wheather = "rainy") {
+  var Depth = 3.5;
+} else if (Wheather = "snowy") {
+  var Depth = 1;
+}
+documant.getElementById('Depth').innerHTML = Depth
+function Day() {
+  if (FPD == 3) {
+    HealthNum += 4;
+  } else if (FPD == 2) {
+      HealthNum += 6;
+  } else if (FPD == 1) {
+      HealthNum += 10;
+  }
+  if (FPD == 3) {
+    HealthNum += 1;
+  } else if (FPD == 2) {
+    HealthNum += -5;
+  } else if (FPD == 1) {
+    HealthNum += -10;
+  }
+  Day += 1;
+  if (Day == "28") {
+    if (Month == 2) {
+      var Day = 1;
+      localStorage.setItem("Day", 1);
+      Month += 1;
+      localStorage.setItem("Month", Month);
+    }
+  } else if (Day == 30) {
+    if ((Month == 4||Month == 6)||(Month == 9||Month == 11)) {
+      var Day = 1;
+      localStorage.setItem("Day", 1);
+      Month += 1;
+      localStorage.setItem("Month", Month);
+    } 
+  } else if (Day == 31) {
+    if ((Month == 1||Month == 3)||((Momth == 5||Month == 7)||(Month == 8||Month == 10))) {
+      var Day = 1;
+      Month += 1;
+    } else if (Month = 12) {
+      var Day = 1;
+      var Month = 1;
+      Year += 1;
+    } 
+  }
+    if (Month = 1||Month = 2) {
+    var Randomizer = randint(1, 3);
+    if (Randomizer = 1) {
+      var Wheather = "snowy";
+    } else if (Randomizer = 2) {
+      var Wheather = "very-cold";
+    } else if (Randomizer = 3) {
+      var Wheather = "cold";
+    }
+  } else if (Month = 3||Month = 4) {
+    var Randomizer = randint(1, 4);
+    if (Randomizer = 1) {
+      var Wheather = "cold";
+    } else if (Randomizer = 2) {
+      var Wheather = "cool";
+    } else if (Randomizer = 3) {
+      var Wheather = "rainy";
+    } else if (Randomizer = 4) {
+      var Wheather = "warm";
+    }
+  } else if (Month = 5||Month = 6) {
+    var Randomizer = randint(1, 3);
+    if (Randomizer = 1) {
+      var Wheather = "rainy";
+    } else if (Randomizer = 2) {
+      var Wheather = "warm";
+    } else if (Randomizer = 3) {
+      var Wheather = "hot";
+    }
+  } else if (Month = 7||Month = 8) {
+    var Randomizer = randint(1, 5);
+    if (Randomizer = 1) {
+      var Wheather = "hot";
+    } else if (Randomizer = 2) {
+      var Wheather = "hot";
+    } else if (Randomizer = 3) {
+      var Wheather = "warm";
+    } else if (Randomizer = 4) {
+      var Wheather = "warm";
+    } else if (Randomizer = 5) {
+      var Wheather = "cool";
+    }
+  } else if (Month = 9||Month = 10) {
+    var Randomizer = randint(1, 3);
+    if (Randomizer = 1) {
+      var Wheather = "cold";
+    } else if (Randomizer = 2) {
+      var Wheather = "cool";
+    } else if (Randomizer = 3) {
+      var Wheather = "warm";
+    }
+  } else if (Month = 11||Month = 12) {
+    var Randomizer = randint(1, 3);
+    if (Randomizer = 1) {
+      var Wheather = "cold";
+    } else if (Randomizer = 2) {
+      var Wheather = "very-cold";
+    } else if (Randomizer = 3) {
+      var Wheather = "snowy";
+    }
+    }
+  if (Wheather = "hot") {
+    Depth -= randint(1, 2);
+  } else if (Wheather = "warm") {
+    Depth -= randint(0.5, 1);
+  } else if (Wheather = "cool") {
+    Depth += randint(-1, 1);
+  } else if (Wheather = "cold") {
+    Depth -= randint(0.5, 1);
+  } else if (Wheather = "very-cold") {
+    Depth -= randint(0.1, 1);
+  } else if (Wheather = "rainy") {
+    Depth += randint(2, 5);
+  } else if (wheather = "snowy") {
+    Depth +=randint(-5, 5);
+  }
+  if (HealthNum > 400) {
+    var Health = "good";
+    if (HelathNum < 500) {
+      var Health = "fair";
+      if (HealthNum < 300) {
+        var Health = "poor";
+        if (Math.percentChance(50)) {
+          if (K3sick) {
+            if (K3died) {
+              if (K2sick) {
+                if (K2died) {
+                  if (K1sick) {
+                    if (K1died) {
+                      if (Wsick) {
+                        if (Wdied) {
+                          if (Isick) {
+                            localStorage.setItem("Idied", true);
+                            window.location.assing("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/YourDead");
+                          } else {
+                            var Randomizer = randint(1, );
+                            if (Randomizer = 1) {
+                              alert(I"_Got_A_Snakebite");
+                            } else if (Randomizer = 2) {
+                              alert(I"_Has_Disentary");
+                            } else if (Randomizer = 3) {
+                              alert(I"_Broke_Their_Arm");
+                            } else if (Randomizer = 4) {
+                              alert(I"_Broke_Their_Leg");
+                           }
+                            var Isick = true;
+                          }
+                        } else {
+                          alert(W"_Died");
+                          var Wdied = true;
+                      } else {
+                        var Randomizer = randint(1, );
+                        if (Randomizer = 1) {
+                          alert(W"_Got_A_Snakebite");
+                        } else if (Randomizer = 2) {
+                          alert(W"_Has_Disentary");
+                        } else if (Randomizer = 3) {
+                          alert(W"_Broke_Their_Arm");
+                        } else if (Randomizer = 4) {
+                          alert(W"_Broke_Their_Leg");
+                       }
+                        var Wsick = true;
+                      }
+                    } else {
+                    alert(K1"_Died");
+                    var K1died = true;
+                  } else {
+                    var Randomizer = randint(1, );
+                    if (Randomizer = 1) {
+                      alert(K1"_Got_A_Snakebite");
+                    } else if (Randomizer = 2) {
+                      alert(K1"_Has_Disentary");
+                    } else if (Randomizer = 3) {
+                      alert(K1"_Broke_Their_Arm");
+                    } else if (Randomizer = 4) {
+                      alert(K1"_Broke_Their_Leg");
+                    }
+                    var K1sick = true;
+                  }
+                } else {
+                  alert(K2"_Died");
+                  var K2died = true;
+              } else {
+                var Randomizer = randint(1, );
+                if (Randomizer = 1) {
+                  alert(K2"_Got_A_Snakebite");
+                } else if (Randomizer = 2) {
+                  alert(K2"_Has_Disentary");
+                } else if (Randomizer = 3) {
+                  alert(K2"_Broke_Their_Arm");
+                } else if (Randomizer = 4) {
+                  alert(K2"_Broke_Their_Leg");
+                }
+                var K2sick = true;
+              }
+            } else {
+              alert(K3"_Died");
+              var K3died = true;
+          } else {
+            var Randomizer = randint(1, );
+            if (Randomizer = 1) {
+              alert(K3"_Got_A_Snakebite");
+            } else if (Randomizer = 2) {
+              alert(K3"_Has_Disentary");
+            } else if (Randomizer = 3) {
+              alert(K3"_Broke_Their_Arm");
+            } else if (Randomizer = 4) {
+              alert(K3"_Broke_Their_Leg");
+            }
+            var K3sick = true;
+          }
+        }
+        if (HealthNum < 200) {
+          var Health = "very-poor";
+          if (Math.percentChance(25)) {
+          if (K3sick) {
+            if (K3died) {
+              if (K2sick) {
+                if (K2died) {
+                  if (K1sick) {
+                    if (K1died) {
+                      if (Wsick) {
+                        if (Wdied) {
+                          if (Isick) {
+                            localStorage.setItem("Idied", true);
+                            window.location.assing("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/YourDead");
+                          } else {
+                            var Randomizer = randint(1, );
+                            if (Randomizer = 1) {
+                              alert(I"_Got_A_Snakebite");
+                            } else if (Randomizer = 2) {
+                              alert(I"_Has_Disentary");
+                            } else if (Randomizer = 3) {
+                              alert(I"_Broke_Their_Arm");
+                            } else if (Randomizer = 4) {
+                              alert(I"_Broke_Their_Leg");
+                           }
+                            var Isick = true;
+                          }
+                        } else {
+                          alert(W"_Died");
+                          var Wdied = true;
+                      } else {
+                        var Randomizer = randint(1, );
+                        if (Randomizer = 1) {
+                          alert(W"_Got_A_Snakebite");
+                        } else if (Randomizer = 2) {
+                          alert(W"_Has_Disentary");
+                        } else if (Randomizer = 3) {
+                          alert(W"_Broke_Their_Arm");
+                        } else if (Randomizer = 4) {
+                          alert(W"_Broke_Their_Leg");
+                       }
+                        var Wsick = true;
+                      }
+                    } else {
+                    alert(K1"_Died");
+                    var K1died = true;
+                  } else {
+                    var Randomizer = randint(1, );
+                    if (Randomizer = 1) {
+                      alert(K1"_Got_A_Snakebite");
+                    } else if (Randomizer = 2) {
+                      alert(K1"_Has_Disentary");
+                    } else if (Randomizer = 3) {
+                      alert(K1"_Broke_Their_Arm");
+                    } else if (Randomizer = 4) {
+                      alert(K1"_Broke_Their_Leg");
+                    }
+                    var K1sick = true;
+                  }
+                } else {
+                  alert(K2"_Died");
+                  var K2died = true;
+              } else {
+                var Randomizer = randint(1, );
+                if (Randomizer = 1) {
+                  alert(K2"_Got_A_Snakebite");
+                } else if (Randomizer = 2) {
+                  alert(K2"_Has_Disentary");
+                } else if (Randomizer = 3) {
+                  alert(K2"_Broke_Their_Arm");
+                } else if (Randomizer = 4) {
+                  alert(K2"_Broke_Their_Leg");
+                }
+                var K2sick = true;
+              }
+            } else {
+              alert(K3"_Died");
+              var K3died = true;
+          } else {
+            var Randomizer = randint(1, );
+            if (Randomizer = 1) {
+              alert(K3"_Got_A_Snakebite");
+            } else if (Randomizer = 2) {
+              alert(K3"_Has_Disentary");
+            } else if (Randomizer = 3) {
+              alert(K3"_Broke_Their_Arm");
+            } else if (Randomizer = 4) {
+              alert(K3"_Broke_Their_Leg");
+            }
+            var K3sick = true;
+          }
+        }
+        }
+      }
+    }
+  }
+}
+function Maintain() {
+  localStorage.setItem("Idied", Idied);
+  localStorage.setItem("Isick", Isick);
+  localStorage.setItem("Wdied", Wdied);
+  localStorage.setItem("Wsick", Wsick);
+  localStorage.setItem("K1died", K1died);
+  localStorage.setItem("K1sick", K1sick);
+  localStorage.setItem("K2died", K2died);
+  localStorage.setItem("K2sick", K2sick);
+  localStorage.setItem("K3died", K3died);
+  localStorage.setItem("K3sick", K3sick);
+  localStorage.setItem("Oxen", Oxen);
+  localStorage.setItem("Foodlb", Foodlb);
+  document.getElementById('Foodlb').innerHTML = "Food:" + Foodlb + "pounds";
+  localStorage.setItem("Clothing", Clothing);
+  localStorage.setItem("Ammo", Ammo);
+  localStorage.setItem("Axels", Axels);
+  localStorage.setItem("Toungues", Toungues);
+  localStorage.setItem("Wheels", Wheels);
+  localStorage.setItem("Day", Day);
+  localStorage.setItem("Month", Month);
+  localStorage.setItem("Year", Year);
+  document.getElementById('Date').innerHTML = "Date:" + Day + "th_Of_" + Month + "_in_" + Year;
+  localStorage.setItem("Wheather", Wheather);
+  document.getElementById('Wheather').innerHTML = "Wheather:" + Wheather;
+  localStorage.setItem("Health", Health);
+  document.getElementById('Health').innerHTML = "Health:" + Health;
+  localStorage.setItem("HealthNum", HealthNum);
+  localStorage.setItem("miles2LM", miles2LM);
+  document.getElementById('miles2LM').innerHTML = "Next_Landmark" + miles2LM + "miles";
+  localStorage.setItem("milesD", milesD);
+  document.getElementById('milesD').innerHTML = "Miles_Traveled:" + milesD + "miles";
+}
+function Fairy() {
+  if (Depth <= 3) {
+    alert("The_River_Is_Shallow");
+  } else {
+    if (conferm("The_Fairy_Driver_Has_Agreed_To_Take_Your_Party_Across_The_River_In_5days_For_$5,_Do_You_Accept?")) {
+      pause(1000);
+      alert("The_Fairy_Got_Your_Party_Across_The_River_Just_Fine");
+      window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail");
+    }
+  }
+}
+function Culk() {
+  pause(500);
+  if (Depth <= 3 && Math.percentChance(50)) {
+    alert("Your_Wagon_Tiped_Over");
+    Oxen -= 1;
+    Foodlb /= 2;
+    Axels -= 1;
+    Toungues -= 1;
+    Wheels -= 1;
+    Maintain();
+  } else {
+    pause(500);
+    alert("You_Crosed_The_River_Just_Fine");
+  }
+  window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail");
+}
+function Ford() {
+  if (Depth < 2.4) {
+    pause(1000);
+    if (Math.percentChance(75)) {
+      alert("It_Was_A_Muddy_Crossing_But_You_Did_Not_Get_Stuck");
+    } else {
+      alert("You_Got_Stuck_In_The_Mud_Lose_One_Day");
+      Day();
+    }
+  } else if (Depth < 3) {
+    pause(1000);
+    if (Math.percentChance(25)) {
+      alert("You_Got_Stuck_In_The_Mud_Lose_One_Day");
+      Day();
+    }
+    alert("Your_Supplies_Got_Wet_Lose_One_Day");
+  } else {
+    pause(500);
+    alert("Your_Wagon_Is_Now_A_Submarien_Lose_Half_Your_Supplies");
+    Oxen /= 2;
+    Foodlb /= 2;
+    Clothing /= 2;
+    Ammo /= 2;
+    Axels /= 2;
+    Toungues /= 2;
+    Wheels /= 2;
+    Maintain();
+  }
+  window.location.assign("https://0038509gd.github.io/Greg.com/Gregame/OregonTrail");
+}
+</script></body2></body1></html><script>
+  document.body.style.background = "black";
+</script>
