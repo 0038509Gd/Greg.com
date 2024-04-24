@@ -98,32 +98,23 @@ function Run() {
     HealthNum += -10;
   }
   Day += 1;
-  localStorage.setItem("Day", Day);
   if (Day == "28") {
     if (Month == 2) {
       var Day = 1;
-      localStorage.setItem("Day", 1);
       Month += 1;
-      localStorage.setItem("Month", Month);
     }
   } else if (Day == 30) {
     if ((Month == 4||Month == 6)||(Month == 9||Month == 11)) {
       var Day = 1;
-      localStorage.setItem("Day", 1);
       Month += 1;
-      localStorage.setItem("Month", Month);
     } 
   } else if (Day == 31) {
     if ((Month == 1||Month == 3)||((Momth == 5||Month == 7)||(Month == 8||Month == 10))) {
       var Day = 1;
-      localStorage.setItem("Day", 1);
       Month += 1;
-      localStorage.setItem("Month", Month);
     } else if (Month = 12) {
       var Day = 1;
-      localStorage.setItem("Day", 1);
       var Month = 1;
-      localStorage.setItem("Month", Month);
     } 
   }
     if (Month = 1||Month = 2) {
@@ -381,45 +372,45 @@ function Run() {
   }
 }
 function Maintain() {
-  localStorage.setItem("Idied", Idied);
-  localStorage.setItem("Isick", Isick);
-  localStorage.setItem("Wdied", Wdied);
-  localStorage.setItem("Wsick", Wsick);
-  localStorage.setItem("K1died", K1died);
-  localStorage.setItem("K1sick", K1sick);
-  localStorage.setItem("K2died", K2died);
-  localStorage.setItem("K2sick", K2sick);
-  localStorage.setItem("K3died", K3died);
-  localStorage.setItem("K3sick", K3sick);
-  localStorage.setItem("Oxen", Oxen);
+  sessionStorage.setItem("Idied", Idied);
+  sessionStorage.setItem("Isick", Isick);
+  sessionStorage.setItem("Wdied", Wdied);
+  sessionStorage.setItem("Wsick", Wsick);
+  sessionStorage.setItem("K1died", K1died);
+  sessionStorage.setItem("K1sick", K1sick);
+  sessionStorage.setItem("K2died", K2died);
+  sessionStorage.setItem("K2sick", K2sick);
+  sessionStorage.setItem("K3died", K3died);
+  sessionStorage.setItem("K3sick", K3sick);
+  sessionStorage.setItem("Oxen", Oxen);
   document.getElementById('Oxen').innerHTML = Oxen;
-  localStorage.setItem("Foodlb", Foodlb);
+  sessionStorage.setItem("Foodlb", Foodlb);
   document.getElementById('Foodlb').innerHTML = Foodlb;
-  localStorage.setItem("Clothing", Clothing);
+  sessionStorage.setItem("Clothing", Clothing);
   document.getElementById('Clothing').innerHTML = Clothing;
-  localStorage.setItem("Ammo", Ammo);
+  sessionStorage.setItem("Ammo", Ammo);
   document.getElementById('Ammo').innerHTML = Ammo;
-  localStorage.setItem("Axels", Axels);
+  sessionStorage.setItem("Axels", Axels);
   document.getElementById('Axels').innerHTML = Axels; 
-  localStorage.setItem("Toungues", Toungues);
+  sessionStorage.setItem("Toungues", Toungues);
   document.getElementById('Tongues').innerHTML = Toungues;
-  localStorage.setItem("Wheels", Wheels);
+  sessionStorage.setItem("Wheels", Wheels);
   document.getElementById('Wheels').innerHTML = Wheels;
-  localStorage.setItem("Day", Day);
+  sessionStorage.setItem("Day", Day);
   document.getElementById('Day').innerHTML = Day;
-  localStorage.setItem("Month", Month);
+  sessionStorage.setItem("Month", Month);
   document.getElementById('Month').innerHTML = Month;
-  localStorage.setItem("Year", Year);
+  sessionStorage.setItem("Year", Year);
   document.getElementById('Year').innerHTML = Year;
-  localStorage.setItem("Wheather", Wheather);
+  sessionStorage.setItem("Wheather", Wheather);
   document.getElementById('Wheather').innerHTML = Wheather;
-  localStorage.setItem("Health", Health);
+  sessionStorage.setItem("Health", Health);
   document.getElementById('Health').innerHTML = Health;
-  localStorage.setItem("HealthNum", HealthNum);
+  sessionStorage.setItem("HealthNum", HealthNum);
   document.getElementById('HealthNum').innerHTML = HealthNum;
-  localStorage.setItem("miles2LM", miles2LM);
+  sessionStorage.setItem("miles2LM", miles2LM);
   document.getElementById('miles2LM').innerHTML = miles2LM;
-  localStorage.setItem("milesD", milesD);
+  sessionStorage.setItem("milesD", milesD);
   document.getElementById('milesD').innerHTML = milesD;
 }
 function kill() {
