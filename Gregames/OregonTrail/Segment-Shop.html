@@ -16,7 +16,7 @@ function buyOx() {
   var Oxen = docment.getElementById("box").value;
   localStorage.setItem("Oxen", Oxen + localStorage.getItem("Oxen"));
   var oxPrice = Oxen * 20;
-  money += -oxPrice;
+  money -= oxPrice;
   document.getElementById("$").innerHTML = "money_left" + money;
   localStorage.setItem("money", money);
 }
@@ -24,7 +24,7 @@ function buyFood() {
   var Foodlb = document.getElementById("box").value;
   localStorage.setItem("Foodlb", Foodlb + localStorage.getItem("Foodlb"));
   var foodPrice = Foodlb * 0.2;
-  money += -foodPrice;
+  money -= foodPrice;
   document.getElementById("$").innerHTML = "money_left" + money;
   localStorage.setItem("money", money);
 }
@@ -32,7 +32,7 @@ function buyClothing() {
   var Clothing = document.getElementById("box").value;
   localStorage.setItem("Clothing", Clothing + localStorage.getItem("Clothing"));
   var clothingPrice = Clothing * 10;
-  money += -clothingPrice;
+  money -= clothingPrice;
   document.getElementById("$").innerHTML = "money_left" + money;
   localStorage.setItem("money", money);
 }
@@ -40,7 +40,7 @@ function buyAmo() {
   var Ammo = document.getElementById("box").value * 20;
   localStorage.setItem("Ammo", Ammo + localStorage.getItem("Ammo"));
   var ammoPrice = Ammo * 0.1;
-  money += -ammoPrice;
+  money -= ammoPrice;
   document.getElementById("$").innerHTML = "money_left" + money;
   localStorage.setItem("money", money);
 }
@@ -48,7 +48,7 @@ function buyAxel() {
   var Axels = document.getElementById("box").value;
   localStorage.setItem("Axels", Axels + localStorage.getItem("Axels"));
   var axelPrice = Axels * 10;
-  money += -axelPrice;
+  money -= axelPrice;
   document.getElementById("$").innerHTML = "money_left" + money;
   localStorage.setItem("money", money);
 }
@@ -56,7 +56,7 @@ function buyTongue() {
   var Toungues = document.getElementById("box").value;
   localStorage.setItem("Toungues", Toungues + localStorage.getItem("Toungues"));
   var tounguePrice = Toungs * 10;
-  money += -tounguePrice;
+  money -= tounguePrice;
   document.getElementById("$").innerHTML = "money_left" + money;
   localStorage.setItem("money", money);
 }
@@ -64,7 +64,7 @@ function buyWheel() {
   var Wheels = document.getElementById("box").value;
   localStorage.setItem("Wheels", Wheels + localStorage.getItem("Wheels"))
   var wheelPrice = Wheels * 10
-  money += -wheelPrice
+  money -= wheelPrice
   document.getElementById("$").innerHTML = "money_left" + money;
   localStorage.setItem("money", money)
 }
