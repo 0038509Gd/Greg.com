@@ -11,50 +11,50 @@
 <button onclick="kill();">9</button> Kill_Ox_For_Food
 <body3 popover id="box"><input type="text" id="box"><button onclick="day();">Enter</button></body3><br>
 <script>
-var I = localStorage.getItem("I");
-var Idied = localStorage.getItem("Idied");
-var Isick = localStorage.getItem("Isick");
-var W = localStorage.getItem("W");
-var Wdied = localStorage.getItem("Wdied");
-var Isick = localStorage.getItem("Wsick");
-var K1 = localStorage.getItem("K1");
-var K1died = localStorage.getItem("K1died");
-var K1sick = localStorage.getItem("K1sick");
-var K2 = localStorage.getItem("K2");
-var K2died = localStorage.getItem("K2died");
-var K2sick = localStorage.getItem("k2sick");
-var K3 = localStorage.getItem("K3");
-var K3died = localStorage.getItem("K3died");
-var K3sick = localStorage.getItem("K3sick");
-var job = localStorage.getItem("job");
-var money = localStorage.getItem("money");
-var Oxen = localStorage.getItem("Oxen");
-var Foodlb = localStorage.getItem("Foodlb");
+var I = sessionStorage.getItem("I");
+var Idied = sessionStorage.getItem("Idied");
+var Isick = sessionStorage.getItem("Isick");
+var W = sessionStorage.getItem("W");
+var Wdied = sessionStorage.getItem("Wdied");
+var Isick = sessionStorage.getItem("Wsick");
+var K1 = sessionStorage.getItem("K1");
+var K1died = sessionStorage.getItem("K1died");
+var K1sick = sessionStorage.getItem("K1sick");
+var K2 = sessionStorage.getItem("K2");
+var K2died = sessionStorage.getItem("K2died");
+var K2sick = sessionStorage.getItem("k2sick");
+var K3 = sessionStorage.getItem("K3");
+var K3died = sessionStorage.getItem("K3died");
+var K3sick = sessionStorage.getItem("K3sick");
+var job = sessionStorage.getItem("job");
+var money = sessionStorage.getItem("money");
+var Oxen = sessionStorage.getItem("Oxen");
+var Foodlb = sessionStorage.getItem("Foodlb");
   document.getElementById('Foodlb').innerHTML = Foodlb;
-var Clothing = localStorage.getItem("Clothing");
-var Ammo = localStorage.getItem("Ammo");
-var Axels = localStorage.getItem("Axels");
-var Toungues = localStorage.getItem("Toungues");
-var Wheels = localStorage.getItem("Wheels");
-var Day = localStorage.getItem("Day");
+var Clothing = sessionStorage.getItem("Clothing");
+var Ammo = sessionStorage.getItem("Ammo");
+var Axels = sessionStorage.getItem("Axels");
+var Toungues = sessionStorage.getItem("Toungues");
+var Wheels = sessionStorage.getItem("Wheels");
+var Day = sessionStorage.getItem("Day");
   document.getElementById('Day').innerHTML = Day;
-var Month = localStorage.getItem("Month");
+var Month = sessionStorage.getItem("Month");
   document.getElementById('Month').innerHTML = Month;
-var Year = localStorage.getItem("Year");
+var Year = sessionStorage.getItem("Year");
   document.getElementById('Year').innerHTML = Year;
-var Wheather = localStorage.getItem("Wheather");
+var Wheather = sessionStorage.getItem("Wheather");
   document.getElementById('Wheather').innerHTML = Wheather;
-var Health = localStorage.getItem("Health");
+var Health = sessionStorage.getItem("Health");
   document.getElementById('Health').innerHTML = Health;
-var HealthNum = localStorage.getItem("HealthNum");
+var HealthNum = sessionStorage.getItem("HealthNum");
 var miles2LM = ([num}miles-next-landmark);
   document.getElementById('miles2LM').innerHTML = miles2LM;
-var milesD = localStorage.getItem("milesD");
+var milesD = sessionStorage.getItem("milesD");
   document.getElementById('milesD').innerHTML = milesD;
-var Pace = localStorage.getItem("Pace");
-var hr = localStorage.getItem("hr");
-var Rations = localStorage.getItem("Rations");
-var FPD = localStorage.getItem("FPD");
+var Pace = sessionStorage.getItem("Pace");
+var hr = sessionStorage.getItem("hr");
+var Rations = sessionStorage.getItem("Rations");
+var FPD = sessionStorage.getItem("FPD");
 if (milesD = 0) {
  document.getElementById('lm').innerHTML = "Buy_Supplies";
 } else {
@@ -64,8 +64,9 @@ function day() {
   var Pace = "stoped"
   for(var loop = 0; loop < document.getElementById('box').value; loop++) {
     Day();
+    Maintain();
   }
-var Pace = localStorage.getItem("Pace");
+var Pace = sessionStorage.getItem("Pace");
 }
 function Day() {
   if (Pace == "stoped") {
