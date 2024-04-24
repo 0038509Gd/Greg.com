@@ -5,21 +5,21 @@
 <a href="https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Segment-Action-Menu"><button>N</button></a><button onclick="Y();">Y</button>
 <script>
 var Tradable = false;
-var money = localStorage.getItem("money");
+var money = sessionStorage.getItem("money");
   document.getElementById('money').innerHTML = "money: " + money;
-var Oxen = localStorage.getItem("Oxen");
+var Oxen = sessionStorage.getItem("Oxen");
   document.getElementById('Oxen').innerHTML = "Oxen: " + Oxen;
-var Foodlb = localStorage.getItem("Foodlb");
+var Foodlb = sessionStorage.getItem("Foodlb");
   document.getElementById('Foodlb').innerHTML = "Pounds_Of_Food:" + Foodlb;
-var Clothing = localStorage.getItem("Clothing");
+var Clothing = sessionStorage.getItem("Clothing");
   document.getElementById('Clothing').innerHTML = "Sets_Of_Clothing:" + Clothing;
-var Ammo = localStorage.getItem("Ammo");
+var Ammo = sessionStorage.getItem("Ammo");
   document.getElementById('Ammo').innerHTML = "Bullets:" + Ammo;
-var Axels = localStorage.getItem("Axels");
+var Axels = sessionStorage.getItem("Axels");
   document.getElementById('Axels').innerHTML = "Wagon_Axels:" + Axels;
-var Toungues = localStorage.getItem("Toungues");
+var Toungues = sessionStorage.getItem("Toungues");
   document.getElementById('Toungues').innerHTML = "Wagon_Toungues:" + Toungues;
-var Wheels = localStorage.getItem("Wheels");
+var Wheels = sessionStorage.getItem("Wheels");
   document.getElementById('Wheels').innerHTML = "Wagon_Wheels:" + Wheels;
 if (Math.percentChance(50)) {
   var Randomizer = randint(1, 8);
@@ -166,14 +166,14 @@ function Y() {
     money += numTraded;
   }
   if (Tradable) {
-    localStorage.setItem("Oxen", Oxen);
-    localStorage.setItem("Foodlb", Foodlb);
-    localStorage.setItem("Clothing", Clothing);
-    localStorage.setItem("Ammo", Ammo);
-    localStorage.setItem("Axels", Axels);
-    localStorage.setItem("Toungues", Toungues);
-    localStorage.setItem("Wheels", Wheels);
-    localStorage.setItem("money", money);
+    sessionStorage.setItem("Oxen", Oxen);
+    sessionStorage.setItem("Foodlb", Foodlb);
+    sessionStorage.setItem("Clothing", Clothing);
+    sessionStorage.setItem("Ammo", Ammo);
+    sessionStorage.setItem("Axels", Axels);
+    sessionStorage.setItem("Toungues", Toungues);
+    sessionStorage.setItem("Wheels", Wheels);
+    sessionStorage.setItem("money", money);
   }
   window.location.assing("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Segment-Action-Menu");
 }
