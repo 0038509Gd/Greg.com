@@ -56,6 +56,8 @@ if (sessionStorage.getItem("River") = "Kanses") {
   var Depth = 2.2;
 } else if (sessionStorage.getItem("River") = "Green") {
   var Depth = 5;
+} else if (sessionStorage.getItem("River") = "Snake") {
+  var Depth = 5;
 }
 if (Wheather = "hot") {
   Depth = 2;
@@ -417,9 +419,9 @@ function Maintain() {
 }
 function Fairy() {
   if (Depth <= 3) {
-    alert("The_River_Is_Shallow");
+    alert("The_River_Is_Shallow.-The_Fairy_Is_Inoperable_Today");
   } else {
-    if (conferm("The_Fairy_Driver_Has_Agreed_To_Take_Your_Party_Across_The_River_In_5days_For_$5,_Do_You_Accept?")) {
+    if (conferm("The_Fairy_Driver_Has_Agreed_To_Take_Your_Party_Across_The_River_In_5days_For_$5.-Do_You_Accept?")) {
       money -= 5;
       Day();
       Day();
@@ -436,7 +438,7 @@ function Fairy() {
 function Culk() {
   pause(500);
   if (Depth <= 3 && Math.percentChance(50)) {
-    alert("Your_Wagon_Tiped_Over");
+    alert("Your_Wagon_Tiped_Over.-You_Lose_1_Ox,_2lb_Of_Food,_1_Wagon_Axel,_1_Wagon_Toungue,_1_Wagon_Wheel");
     Oxen -= 1;
     Foodlb /= 2;
     Axels -= 1;
@@ -455,19 +457,19 @@ function Ford() {
     if (Math.percentChance(75)) {
       alert("It_Was_A_Muddy_Crossing_But_You_Did_Not_Get_Stuck");
     } else {
-      alert("You_Got_Stuck_In_The_Mud_Lose_One_Day");
+      alert("You_Got_Stuck_In_The_Mud.-Lose_One_Day");
       Day();
     }
   } else if (Depth < 3) {
     pause(1000);
     if (Math.percentChance(25)) {
-      alert("You_Got_Stuck_In_The_Mud_Lose_One_Day");
+      alert("You_Got_Stuck_In_The_Mud.-Lose_One_Day");
       Day();
     }
-    alert("Your_Supplies_Got_Wet_Lose_One_Day");
+    alert("Your_Supplies_Got_Wet.-Lose_One_Day");
   } else {
     pause(500);
-    alert("Your_Wagon_Is_Now_A_Submarien_Lose_Half_Your_Supplies");
+    alert("Your_Wagon_Is_Now_A_Submarien.-Lose_Half_Your_Supplies");
     Oxen /= 2;
     Foodlb /= 2;
     Clothing /= 2;
@@ -480,7 +482,11 @@ function Ford() {
   window.location.assign("https://0038509gd.github.io/Greg.com/Gregame/OregonTrail");
 }
 function IndianGuide() {
-  if (false) {
+  if (sessionStorage.getItem("milesD") = ) {
+    if (confirm("An_Indian_Has_Agreed_To_Guide_Your_Wagon_Across_The_River_For_3_Sets_Of_Clothing.-Do_You_Accept?")) {
+      Clothing -= 1;
+      Maintain();
+    }
   } else {
     alert("There_Are_No_Indians_Neerby");
   }
