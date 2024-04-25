@@ -80,19 +80,30 @@ if (confirm("Congaradulations!-You_Made_It_To_The_Columbia_River!-Now_Lets_See_I
   startGame();
 }
 
-</script></body2></body1><script>
+</script></body2></body1></html><html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style>
+canvas {
+    border:1px solid #d3d3d3;
+    background-color: #f1f1f1;
+}
+</style>
+</head>
+<body onload="startGame()">
+<script>
 
 var myGamePiece;
 
 function startGame() {
-    myGamePiece = new component(30, 30, "https://0038509.github.io/Greg.com/Gregames/OregonTrail/Images/wagon.png", 10, 120, "image");
+    myGamePiece = new component(131, 96, "https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/wagon.png", 10, 120, "image");
     myGameArea.start();
 }
 
 var myGameArea = {
     canvas : document.createElement("canvas"),
     start : function() {
-        this.canvas.width = 480;
+        this.canvas.width = 650;
         this.canvas.height = 270;
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
@@ -142,11 +153,6 @@ function updateGameArea() {
     myGamePiece.newPos();
     myGamePiece.update();
 }
-
-function moveup() {
-    myGamePiece.speedY = -1; 
-}
-
 function movedown() {
     myGamePiece.speedY = 1; 
 }
@@ -164,16 +170,12 @@ function clearmove() {
     myGamePiece.speedY = 0; 
 }
 </script>
-<div style="text-align:center;width:480px;">
-  <button onmousedown="moveup()" onmouseup="clearmove()" ontouchstart="moveup()">UP</button><br><br>
-  <button onmousedown="moveleft()" onmouseup="clearmove()" ontouchstart="moveleft()">LEFT</button>
-  <button onmousedown="moveright()" onmouseup="clearmove()" ontouchstart="moveright()">RIGHT</button><br><br>
-  <button onmousedown="movedown()" onmouseup="clearmove()" ontouchstart="movedown()">DOWN</button>
-</div>
-
-<p>The component constructor uses the built-in image object to draw images onto the canvas.</p>
-
+MMMMMMMMMMMMMMMMMMM<button onmousedown="moveleft()" onmouseup="clearmove()" ontouchstart="moveleft()"><-</button>
+  <button onmousedown="moveright()" onmouseup="clearmove()" ontouchstart="moveright()">-></button>
 </body>
-</html></html><script>
+</html><script>
+  document.body.style.background = "black";
+</script>
+<script>
   document.body.style.background = "black";
 </script>
