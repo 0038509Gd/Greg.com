@@ -128,40 +128,41 @@ function Trade() {
     var Traded = "_$_";
     var numTraded = randint(0.01, 10);
   }
-  if (conferm(document.getElementById('trade').innerHTML = "An_Immagrant_Wants_To_Trade_You_" + numTrade + Trade + "For" + numTraded + Traded + "Would_You_Like_To_Make_The_Trade?")) {
-  if (Trade = "_Oxen_") {
-    Oxen -= numTrade;
-  } else if (Trade = "lb_Of_Food_") {
-    Foodlb -= numTrade;
-  } else if (Trade = "_Sets_Of_Clothing_") {
-    Clothing -= numTrade;
-  } else if (Trade = "_Bullets_") {
-    Ammo -= numTrade;
-  } else if (Trade = "_Wagon_Axels_") {
-    Axels -= numTrade;
-  } else if (Trade = "_Wagon_Toungues_") {
-    Toungues -= numTrade;
-  } else if (Trade = "_Wagon_Wheels_") {
-    Wheels -= numTrade;
-  } else if (Trade = "_$_") {
-    money -= numTrade;
-  }
-  if (Traded = "_Oxen_") {
-    Oxen += numTraded;
-  } else if (Traded = "lb_Of_Food_") {
-    Foodlb += numTraded;
-  } else if (Traded = "_Sets_Of_Clothing_") {
-    Clothing += numTraded;
-  } else if (Traded = "_Bullets_") {
-    Ammo += numTraded;
-  } else if (Traded = "_Wagon_Axel_") {
-    Axel += numTraded;
-  } else if (Traded = "_Wagon_Toungues_") {
-    Toungues += numTraded;
-  } else if (Traded = "_Wagon_Wheels_") {
-    Wheels += numTraded;
-  } else if (Traded = "_$_") {
-    money += numTraded;
+  if (conferm("An_Immagrant_Wants_To_Trade_You_" + numTrade + Trade + "For" + numTraded + Traded + "Would_You_Like_To_Make_The_Trade?")) {
+    if (Trade = "_Oxen_") {
+      Oxen -= numTrade;
+    } else if (Trade = "lb_Of_Food_") {
+      Foodlb -= numTrade;
+    } else if (Trade = "_Sets_Of_Clothing_") {
+      Clothing -= numTrade;
+    } else if (Trade = "_Bullets_") {
+      Ammo -= numTrade;
+    } else if (Trade = "_Wagon_Axels_") {
+      Axels -= numTrade;
+    } else if (Trade = "_Wagon_Toungues_") {
+      Toungues -= numTrade;
+    } else if (Trade = "_Wagon_Wheels_") {
+      Wheels -= numTrade;
+    } else if (Trade = "_$_") {
+      money -= numTrade;
+    }
+    if (Traded = "_Oxen_") {
+      Oxen += numTraded;
+    } else if (Traded = "lb_Of_Food_") {
+      Foodlb += numTraded;
+    } else if (Traded = "_Sets_Of_Clothing_") {
+      Clothing += numTraded;
+    } else if (Traded = "_Bullets_") {
+      Ammo += numTraded;
+    } else if (Traded = "_Wagon_Axel_") {
+      Axel += numTraded;
+    } else if (Traded = "_Wagon_Toungues_") {
+      Toungues += numTraded;
+    } else if (Traded = "_Wagon_Wheels_") {
+      Wheels += numTraded;
+    } else if (Traded = "_$_") {
+      money += numTraded;
+    }
   }
   sessionStorage.setItem("Oxen", Oxen);
   sessionStorage.setItem("Foodlb", Foodlb);
