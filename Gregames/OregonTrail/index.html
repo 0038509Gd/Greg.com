@@ -171,12 +171,12 @@ loops.everyInterval(24000, function () {
   } else if (Wheather = "snowy" && Math.percentChance(25)) {
     var Pace = "stoped";
     Day();
-    var Pace = localStorage.getItem("Pace");
+    var Pace = sessionStorage.getItem("Pace");
     alert("Bliserd_Lose-1-Day");
   } else if (Wheather = "rainy" && Math.percentChance(25)) {
     var Pace = "stoped";
     Day();
-    var Pace = localStorage.getItem("Pace");
+    var Pace = sessionStorage.getItem("Pace");
     alert("Thunderstorm_Lose-1-Day");
   }
   if (Math.percentChance(25)) {
@@ -195,7 +195,7 @@ loops.everyInterval(24000, function () {
     for(var loop = 0; loop < Randomizer; loop++) {
       Day();
     }
-    var Pace = localStorage.getItem("Pace");
+    var Pace = sessionStorage.getItem("Pace");
   }
   if (Math.percentChance(2)) {
     var Randomizer = randint(1, 3)
@@ -267,7 +267,7 @@ loops.everyInterval(24000, function () {
         }
       }
     Day();
-    var Pace = localStorage.getItem("Pace");
+    var Pace = sessionStorage.getItem("Pace");
     }
   if (Math.percentChance(25) && Wheather = "hot"||Math.percentChance(10) && Wheather = "warm") {
     Foodlb *= randint(0, 5) / 100;
@@ -316,16 +316,12 @@ function Day() {
   if (Day == "28") {
     if (Month == 2) {
       var Day = 1;
-      localStorage.setItem("Day", 1);
       Month += 1;
-      localStorage.setItem("Month", Month);
     }
   } else if (Day == 30) {
     if ((Month == 4||Month == 6)||(Month == 9||Month == 11)) {
       var Day = 1;
-      localStorage.setItem("Day", 1);
       Month += 1;
-      localStorage.setItem("Month", Month);
     } 
   } else if (Day == 31) {
     if ((Month == 1||Month == 3)||((Momth == 5||Month == 7)||(Month == 8||Month == 10))) {
@@ -414,7 +410,6 @@ function Day() {
                       if (Wsick) {
                         if (Wdied) {
                           if (Isick) {
-                            localStorage.setItem("Idied", true);
                             window.location.assing("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/YourDead");
                           } else {
                             var Randomizer = randint(1, );
@@ -506,7 +501,6 @@ function Day() {
                       if (Wsick) {
                         if (Wdied) {
                           if (Isick) {
-                            localStorage.setItem("Idied", true);
                             window.location.assing("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/YourDead");
                           } else {
                             var Randomizer = randint(1, );
@@ -592,36 +586,36 @@ function Day() {
   }
 }
 function Maintain() {
-  localStorage.setItem("Idied", Idied);
-  localStorage.setItem("Isick", Isick);
-  localStorage.setItem("Wdied", Wdied);
-  localStorage.setItem("Wsick", Wsick);
-  localStorage.setItem("K1died", K1died);
-  localStorage.setItem("K1sick", K1sick);
-  localStorage.setItem("K2died", K2died);
-  localStorage.setItem("K2sick", K2sick);
-  localStorage.setItem("K3died", K3died);
-  localStorage.setItem("K3sick", K3sick);
-  localStorage.setItem("Oxen", Oxen);
-  localStorage.setItem("Foodlb", Foodlb);
+  sessionStorage.setItem("Idied", Idied);
+  sessionStorage.setItem("Isick", Isick);
+  sessionStorage.setItem("Wdied", Wdied);
+  sessionStorage.setItem("Wsick", Wsick);
+  sessionStorage.setItem("K1died", K1died);
+  sessionStorage.setItem("K1sick", K1sick);
+  sessionStorage.setItem("K2died", K2died);
+  sessionStorage.setItem("K2sick", K2sick);
+  sessionStorage.setItem("K3died", K3died);
+  sessionStorage.setItem("K3sick", K3sick);
+  sessionStorage.setItem("Oxen", Oxen);
+  sessionStorage.setItem("Foodlb", Foodlb);
   document.getElementById('Foodlb').innerHTML = "Food:" + Foodlb + "pounds";
-  localStorage.setItem("Clothing", Clothing);
-  localStorage.setItem("Ammo", Ammo);
-  localStorage.setItem("Axels", Axels);
-  localStorage.setItem("Toungues", Toungues);
-  localStorage.setItem("Wheels", Wheels);
-  localStorage.setItem("Day", Day);
-  localStorage.setItem("Month", Month);
-  localStorage.setItem("Year", Year);
+  sessionStorage.setItem("Clothing", Clothing);
+  sessionStorage.setItem("Ammo", Ammo);
+  sessionStorage.setItem("Axels", Axels);
+  sessionStorage.setItem("Toungues", Toungues);
+  sessionStorage.setItem("Wheels", Wheels);
+  sessionStorage.setItem("Day", Day);
+  sessionStorage.setItem("Month", Month);
+  sessionStorage.setItem("Year", Year);
   document.getElementById('Date').innerHTML = "Date:" + Day + "th_Of_" + Month + "_in_" + Year;
-  localStorage.setItem("Wheather", Wheather);
+  sessionStorage.setItem("Wheather", Wheather);
   document.getElementById('Wheather').innerHTML = "Wheather:" + Wheather;
-  localStorage.setItem("Health", Health);
+  sessionStorage.setItem("Health", Health);
   document.getElementById('Health').innerHTML = "Health:" + Health;
-  localStorage.setItem("HealthNum", HealthNum);
-  localStorage.setItem("miles2LM", miles2LM);
+  sessionStorage.setItem("HealthNum", HealthNum);
+  sessionStorage.setItem("miles2LM", miles2LM);
   document.getElementById('miles2LM').innerHTML = "Next_Landmark" + miles2LM + "miles";
-  localStorage.setItem("milesD", milesD);
+  sessionStorage.setItem("milesD", milesD);
   document.getElementById('milesD').innerHTML = "Miles_Traveled:" + milesD + "miles";
 }
 </script></body2></body1></html><script>
