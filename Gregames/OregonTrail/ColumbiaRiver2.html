@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style>
+canvas {
+    background-color: #48afffff;
+}
+</style>
+</head>
+<body onload="startGame()">
+<script>
+var I = sessionStorage.getItem("I");
+var Idied = sessionStorage.getItem("Idied");
+var Isick = sessionStorage.getItem("Isick");
+var W = sessionStorage.getItem("W");
+var Wdied = sessionStorage.getItem("Wdied");
+var Isick = sessionStorage.getItem("Wsick");
+var K1 = sessionStorage.getItem("K1");
+var K1died = sessionStorage.getItem("K1died");
+var K1sick = sessionStorage.getItem("K1sick");
+var K2 = sessionStorage.getItem("K2");
+var K2died = sessionStorage.getItem("K2died");
+var K2sick = sessionStorage.getItem("k2sick");
+var K3 = sessionStorage.getItem("K3");
+var K3died = sessionStorage.getItem("K3died");
+var K3sick = sessionStorage.getItem("K3sick");
+var job = sessionStorage.getItem("job");
+var money = sessionStorage.getItem("money");
+var Oxen = sessionStorage.getItem("Oxen");
+var Foodlb = sessionStorage.getItem("Foodlb");
+var Clothing = sessionStorage.getItem("Clothing");
+var Ammo = sessionStorage.getItem("Ammo");
+var Axels = sessionStorage.getItem("Axels");
+var Toungues = sessionStorage.getItem("Toungues");
+var Wheels = sessionStorage.getItem("Wheels");
+var Day = sessionStorage.getItem("Day");
+var Month = sessionStorage.getItem("Month");
+var Year = sessionStorage.getItem("Year");
+var Wheather = sessionStorage.getItem("Wheather");
+var Health = sessionStorage.getItem("Health");
+var HealthNum = sessionStorage.getItem("HealthNum");
+var miles2LM = sessionStorage.getItem("milesLM");
+var milesD = sessionStorage.getItem("milesD");
+var Pace = sessionStorage.getItem("Pace");
+var hr = sessionStorage.getItem("hr");
+var Rations = sessionStorage.getItem("Rations");
+var FPD = sessionStorage.getItem("FPD");
+var myGamePiece;
+var myObstcal;
+
+function startGame() {
+    myGamePiece = new component(131, 96, "https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/wagon.png", 10, 120, "image");
+    myObstical = new component(65, 48, "https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/rock.png", 10, 120, "image")
+    myGameArea.start();
+}
+
+var myGameArea = {
+    canvas : document.createElement("canvas"),
+    start : function() {
+        this.canvas.width = 650;
+        this.canvas.height = 270;
+        this.context = this.canvas.getContext("2d");
+        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        this.frameNo = 0;
+        this.interval = setInterval(updateGameArea, 20);
+        },
+    clear : function() {
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    },
+    stop : function() {
+        clearInterval(this.interval);
+    }
+}
+
+function component(width, height, color, x, y, type) {
+    this.type = type;
+    if (type == "image") {
+        this.image = new Image();
+        this.image.src = color;
+    } else {
+    	ctx.fillStyle = color;
+        ctx.fillRect(this.x, this.y, this.width, this.height);
+    }
+    this.width = width;
+    this.height = height;
+    this.speedX = 0;
+    this.speedY = 0;    
+    this.x = x;
+    this.y = y;    
+    this.update = function() {
+        ctx = myGameArea.context;
+        if (type == "image") {
+            ctx.drawImage(this.image, 
+                this.x, 
+                this.y,
+                this.width, this.height);
+        } else {
+         	ctx.fillStyle = color;
+        	ctx.fillRect(this.x, this.y, this.width, this.height);
+        }
+    }
+    this.newPos = function() {
+        this.x += this.speedX;
+        this.y += this.speedY;        
+    }
+}
+function updateGameArea() {
+    myGameArea.clear();
+    myGamePiece.newPos();
+    myGamePiece.update();
+}
+
+otherGamePiece.speedY = 1; 
+
+function moveleft() {
+    myGamePiece.speedX = -1; 
+}
+
+function moveright() {
+    myGamePiece.speedX = 1; 
+}
+
+function clearmove() {
+    myGamePiece.speedX = 0; 
+    myGamePiece.speedY = 0; 
+}
+</script>
+<button onmousedown="moveleft()" onmouseup="clearmove()" ontouchstart="moveleft()"><-</button>
+  <button onmousedown="moveright()" onmouseup="clearmove()" ontouchstart="moveright()">-></button>
+</body>
+</html><script>
+  document.body.style.background = "#ffe599ff";
+</script>
