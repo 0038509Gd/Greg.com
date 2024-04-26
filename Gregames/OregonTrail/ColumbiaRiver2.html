@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<style>
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <style>
 canvas {
     background-color: #48afffff;
 }
-</style>
-</head>
-<body onload="startGame()">
+</style></head><body onload="startGame()">
 <button onmousedown="moveleft()" onmouseup="clearmove()" ontouchstart="moveleft()"><-</button>
 <button onmousedown="moveright()" onmouseup="clearmove()" ontouchstart="moveright()">-></button>
 <script>
@@ -397,8 +393,6 @@ function clearmove() {
     myGamePiece.speedX = 0; 
     myGamePiece.speedY = 0; 
 }
-</script>
-</body>
-</html><script>
+</script></body></html><script>
   document.body.style.background = "#fff2ccff";
 </script>
