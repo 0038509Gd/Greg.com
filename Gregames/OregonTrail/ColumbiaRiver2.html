@@ -511,17 +511,12 @@ function updateGameArea() {
     myGamePiece.newPos();
     myGamePiece.update();
 }
-
-otherGamePiece.speedY = 1; 
-
 function moveleft() {
     myGamePiece.speedX = -1; 
 }
-
 function moveright() {
     myGamePiece.speedX = 1; 
 }
-
 function clearmove() {
     myGamePiece.speedX = 0; 
     myGamePiece.speedY = 0; 
