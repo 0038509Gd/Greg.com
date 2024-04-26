@@ -183,9 +183,9 @@ var myObstacle133;
 var myObstacle134;
 var myObstacle135;
 function startGame() {
-    myGamePiece = new component(131, 96, "https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/wagon.png", 10, randint(0, 1350), "image");
-    myObstacle1 = new component(65, 48, "https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/rock.png", 20, randint(0, 1350), "image");
-    myObstacle2 = new component(65, 48, "https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/rock.png", 30, randint(0, 1350), "image");
+    myGamePiece = new component(131, 96, "https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/wagon.png", randint(0, 1350), 10, "image");
+    myObstacle1 = new component(65, 48, "https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/rock.png", randint(0, 1350), 20, "image");
+    myObstacle2 = new component(65, 48, "https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/rock.png", randint(0, 1350), 30, "image");
     myObstacle3 = new component(65, 48, "https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/rock.png", 40, randint(0, 1350), "image");
     myObstacle4 = new component(65, 48, "https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/rock.png", 50, randint(0, 1350), "image");
     myObstacle5 = new component(65, 48, "https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/rock.png", 60, randint(0, 1350), "image");
@@ -339,7 +339,7 @@ var myGameArea = {
     }
 }
 
-function component(width, height, color, y, x, type) {
+function component(width, height, color, x, y, type) {
     this.type = type;
     if (type == "image") {
         this.image = new Image();
