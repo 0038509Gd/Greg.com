@@ -8,7 +8,9 @@ canvas {
 }
 </style>
 </head>
-<body onload="startGame()">
+<body onload="startGame()"><b style="color:#ffe599ff;">MMMMMMMMMMMMMMMM</b>
+<button onmousedown="moveleft()" onmouseup="clearmove()" ontouchstart="moveleft()"><-</button>
+<button onmousedown="moveright()" onmouseup="clearmove()" ontouchstart="moveright()">-></button>
 <script>
 var I = sessionStorage.getItem("I");
 var Idied = sessionStorage.getItem("Idied");
@@ -47,11 +49,11 @@ var hr = sessionStorage.getItem("hr");
 var Rations = sessionStorage.getItem("Rations");
 var FPD = sessionStorage.getItem("FPD");
 var myGamePiece;
-var myObstcal;
+var myObstcle;
 
 function startGame() {
     myGamePiece = new component(131, 96, "https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/wagon.png", 10, 120, "image");
-    myObstical = new component(65, 48, "https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/rock.png", 10, 120, "image")
+    myObsticle = new component(65, 48, "https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/rock.png", 10, 120, "image")
     myGameArea.start();
 }
 
@@ -107,6 +109,7 @@ function component(width, height, color, x, y, type) {
 }
 function updateGameArea() {
     myGameArea.clear();
+    myObsticle
     myGamePiece.newPos();
     myGamePiece.update();
 }
@@ -126,8 +129,6 @@ function clearmove() {
     myGamePiece.speedY = 0; 
 }
 </script>
-<button onmousedown="moveleft()" onmouseup="clearmove()" ontouchstart="moveleft()"><-</button>
-  <button onmousedown="moveright()" onmouseup="clearmove()" ontouchstart="moveright()">-></button>
 </body>
 </html><script>
   document.body.style.background = "#ffe599ff";
