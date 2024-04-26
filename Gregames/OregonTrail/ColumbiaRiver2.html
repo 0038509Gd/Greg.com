@@ -46,9 +46,10 @@ var Rations = sessionStorage.getItem("Rations");
 var FPD = sessionStorage.getItem("FPD");
 var myGamePiece;
 var myObstacle;
+var Randomizer;
 function startGame() {
     myGamePiece = new component(131, 96, "https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/wagon.png", 10, 120, "image");
-    myObstacle = new component(65, 48, "https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/rock.png", 20, 120, "image");
+    myObstacle = new component(65, 48, "https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/rock.png", 10, 120, "image");
     myGameArea.start();
 }
 var myGameArea = {
@@ -104,7 +105,6 @@ function component(width, height, color, x, y, type) {
 function updateGameArea() {
     myGameArea.clear();
     myObstacle.update();
-    myObstical.speedY = 1;
     myGamePiece.newPos();
     myGamePiece.update();
 }
