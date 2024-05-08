@@ -8,12 +8,12 @@
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 Press""To_Continue<a href="https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Segment-Action-Menu"><button>Space</button></a>
 <script>
-var Rations = sessionStorage.getItem("Rations");
-var FPD = sessionStorage.getItem("FPD");
+var Rations = localStorage.getItem("Rations");
+var FPD = localStorage.getItem("FPD");
 document.getElementById('Rations').innerHTML = "Your_Current_Rations_Are_" + Rations;
 function Maintain() {
-  sessionStorage.setItem("Rations", Rations);
-  sessionStorage.setItem("FPD", FPD);
+  localStorage.setItem("Rations", Rations);
+  localStorage.setItem("FPD", FPD);
   document.getElementById('Rations').innerHTML = "Your_Current_Rations_Are_" + Rations;
 }
 function Filling() {
