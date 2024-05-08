@@ -1,11 +1,20 @@
 <!DOCTYPE html><html><body style="color:Green;font-size:15px;">
 <h style="font-size:50px;">Welcom_To_"This-Chat"!</h><br>
 <input type="text" id="message"><button onclick="send();">Enter</button>
-<p id=history></p>
+<p id="history"></p>
 <script>
-var name = "<br>";
-name += sessionStorage.getItem("name");
+var Banned = sessionStorage.getItem("banned");
+sessionStorage.removeItem("banned");
+var name = sessionStorage.getItem("name"); + " said";
 sessionStorage.removeItem("name");
-name += " said";
-document.getElementById("history").innerHTML = name;
+function send() {
+  if (!Banned) {
+    h += name + document.getElementById('message').value; + "<br>";
+    localStorage.setItem("history", h);
+  }
+}
+basic.forever(function () {
+  var h = localStorage.getItem("history");
+  document.getElementById('history').innerHTML = h;
+})
 </script></body></html>
