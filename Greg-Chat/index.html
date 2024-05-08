@@ -4,6 +4,7 @@
 <input type="text" id="message"><button onclick="send();">Enter</button><br>
 <p id="history"></p>
 <script>
+
 function setup() {
   var Banned = localStorage.getItem("banned");;
   localStorage.removeItem("banned");
@@ -11,6 +12,10 @@ function setup() {
   localStorage.removeItem("name");
   document.getElementById('name').innerHTML = name;
   name += "_said-";
+  while (true) {
+    a();
+    pause(500)
+  }
 }
 function send() {
   if (Banned) {
@@ -18,9 +23,10 @@ function send() {
   } else {
     h += name + document.getElementById('message').value; + "<br>";
     localStorage.setItem("history", h);
+    document.getElementById('history').innerHTML = h;
   } 
 }
-forever(function a() {
+function a() {
   const a = new Date();
   var b = a.getHour();
   if (b = 0) {
@@ -28,7 +34,7 @@ forever(function a() {
   }
   var h = localStorage.getItem("history");
   document.getElementById('history').innerHTML = h;
-})
+}
 </script><script>
 document.body.style.background = "black";
 </script></body></html>
