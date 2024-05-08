@@ -6,12 +6,13 @@
 <script>
 var name = sessionStorage.getItem("name");;
 sessionStorage.removeItem("name");
+document.getElementById('history').innerHTML = name;
 if (name == "Greg") {
   var Banned = false;
 } else {
   var Banned = true;
 }
-name += " said";
+name += "_said-";
 function send() {
   if (Banned) {
     alert("You_Have_Ben_Banned!-You_May_Not_Post_Messages!");
