@@ -4,7 +4,6 @@
 <input type="text" id="message" placeholder="Message_Goes_Here!"><button onclick="send();">Enter</button><br>
 <p id="history"></p>
 <script>
-var h;
 function setup() {
   var Banned = localStorage.getItem("banned");;
   localStorage.removeItem("banned");
@@ -12,15 +11,21 @@ function setup() {
   localStorage.removeItem("name");
   document.getElementById('name').innerHTML = name;
   name += "_said-";
- 
+  var H = localStorage.getItem("history");
+  while (true) {
+    if (localStorage.getItem("update");) {
+    var H = localStorage.getItem("history");
+    document.getElementById("history").innerHTML = H;
+    }
+  }
 }
 function send() {
   if (Banned) {
     alert("You_Have_Ben_Banned!-You_May_Not_Post_Messages!");
   } else {
-    h += name + document.getElementById('message').value; + "<br>";
-    localStorage.setItem("history", h);
-    document.getElementById('history').innerHTML = h;
+    H += name + document.getElementById('message').value; + "<br>";
+    localStorage.setItem("history", H);
+    document.getElementById('history').innerHTML = H;
     localStorage.setItem("update", true);
     pause(500)
     localStorage.setItem("update", false);
