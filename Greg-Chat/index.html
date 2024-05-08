@@ -1,0 +1,11 @@
+<!DOCTYPE html><html><body style="color:Green;font-size:15px;">
+<h style="font-size:50px;">Welcom_To_"This-Chat"!</h><br>
+<input type="text" id="message"><button onclick="send();">Enter</button>
+<p id=history></p>
+<script>
+var name = "<br>";
+name += sessionStorage.getItem("name");
+sessionStorage.removeItem("name");
+name += " said";
+document.getElementById("history").innerHTML = name;
+</script></body></html>
