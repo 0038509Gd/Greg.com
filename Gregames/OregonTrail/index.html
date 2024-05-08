@@ -52,7 +52,7 @@ var hr = sessionStorage.getItem("hr");
 var Rations = sessionStorage.getItem("Rations");
 var FPD = sessionStorage.getItem("FPD");
 
-loops.everyInterval(24000, function () {
+forever(function () {
   for(var loop = 0; loop < hr * 2; loop++) {
     milesD += 1;
     miles2LM -= 1;
@@ -193,10 +193,11 @@ loops.everyInterval(24000, function () {
     } else if (Randomizer = 4) {
       var Randomizer = randint(1, 6);
       alert("Wrong Way Lose "Randomizer"_Days");
-    for(var loop = 0; loop < Randomizer; loop++) {
-      Day();
-    }
+      for(var loop = 0; loop < Randomizer; loop++) {
+        Day();
+      }
     var Pace = sessionStorage.getItem("Pace");
+    }
   }
   if (Math.percentChance(2)) {
     var Randomizer = randint(1, 3)
@@ -267,9 +268,10 @@ loops.everyInterval(24000, function () {
           }
         }
       }
+    }
     Day();
     var Pace = sessionStorage.getItem("Pace");
-    }
+  }
   if (Math.percentChance(25) && Wheather = "hot"||Math.percentChance(10) && Wheather = "warm") {
     Foodlb *= randint(0, 5) / 100;
     Clothing *= randint(0, 80) / 100;
@@ -288,6 +290,7 @@ loops.everyInterval(24000, function () {
   }
   Day();
   Maintain();
+}
 function Day() {
   if (Pace == "stoped") {
     if (FPD == 3) {
