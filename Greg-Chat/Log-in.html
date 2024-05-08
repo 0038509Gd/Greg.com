@@ -9,6 +9,7 @@ function login() {
     var P = document.getElementById('password').value;
     if (U == "{[HOST/ADMIN]}" && P == "Npc@I9B3") {
         localStorage.setItem("name", "Greg");
+        localStorage.setItem("banned", false);
         window.location.assign('https://0038509gd.github.io/Greg.com/Greg-Chat');
     } else {
         alert("Invalid_Username/Password");
