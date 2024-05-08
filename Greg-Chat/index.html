@@ -1,7 +1,7 @@
 <!DOCTYPE html><html><body style="color:Green;font-size:15px;" onload="setup();">
 <title>Student On Task - Please Be On Task</title>
 <h style="font-size:50px;">Welcom_To-"This-Chat"<b id="name"></b>!</h><br>
-<input type="text" id="message"><button onclick="send();">Enter</button><br>
+<input type="text" id="message" placeholder="Message_Goes_Here!"><button onclick="send();">Enter</button><br>
 <p id="history"></p>
 <script>
 
@@ -12,17 +12,7 @@ function setup() {
   localStorage.removeItem("name");
   document.getElementById('name').innerHTML = name;
   name += "_said-";
-  while (true) {
-    while (!localStorage.getItem("update");) {
-      const a = new Date();
-      var b = a.getHour();
-      if (b = 0) {
-        localStorage.clear();
-      }
-    }
-    var h = localStorage.getItem("history");
-    document.getElementById('history').innerHTML = h;
-  }
+ 
 }
 function send() {
   if (Banned) {
