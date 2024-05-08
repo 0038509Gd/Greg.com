@@ -16,8 +16,8 @@ function send() {
     document.getElementById('history').innerHTML = h;
   }
 }
-basic.forever(function () {
+while (true) {
   var h = localStorage.getItem("history");
   document.getElementById('history').innerHTML = h;
-})
+}
 </script></body></html>
