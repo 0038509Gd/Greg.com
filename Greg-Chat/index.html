@@ -9,7 +9,7 @@ sessionStorage.removeItem("banned");
 var name = sessionStorage.getItem("name"); + " said";
 sessionStorage.removeItem("name");
 function send() {
-  if (Banned) {
+  if (Banned == "true") {
     alert("You_Are_Banned!-You_May_Not_Post_Messages!");
   } else {
     h += name + document.getElementById('message').value; + "<br>";
@@ -19,7 +19,6 @@ function send() {
 forever(function a() {
   var h = localStorage.getItem("history");
   document.getElementById('history').innerHTML = h;
-
 })
 </script><script>
 document.body.style.background = "black";
