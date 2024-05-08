@@ -13,8 +13,15 @@ function setup() {
   document.getElementById('name').innerHTML = name;
   name += "_said-";
   while (true) {
-    a();
-    pause(500)
+    while (!localStorage.getItem("update");) {
+      const a = new Date();
+      var b = a.getHour();
+      if (b = 0) {
+        localStorage.clear();
+      }
+    }
+    var h = localStorage.getItem("history");
+    document.getElementById('history').innerHTML = h;
   }
 }
 function send() {
@@ -25,20 +32,9 @@ function send() {
     localStorage.setItem("history", h);
     document.getElementById('history').innerHTML = h;
     localStorage.setItem("update", true);
-    pause(1000)
+    pause(500)
     localStorage.setItem("update", false);
   } 
-}
-function a() {
-  const a = new Date();
-  var b = a.getHour();
-  if (b = 0) {
-    localStorage.clear();
-  }
-  if (localStorage.getItem("update");) {
-    var h = localStorage.getItem("history");
-    document.getElementById('history').innerHTML = h;
-  }
 }
 </script><script>
 document.body.style.background = "black";
