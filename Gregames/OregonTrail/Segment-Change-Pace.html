@@ -8,12 +8,12 @@
 <a href="https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Paces-Explained"><button>5</button></a> Find_Out_The_Difference_Between_These_Options<br><br>
 Press"Space"To_Coninue <a href="https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Segment-Action-Menu"><button>Space</button></a>
 <script>
-var Pace = sessionStorage.getItem("Pace");
-var hr = sessionStorage.getItem("hr");
+var Pace = localStorage.getItem("Pace");
+var hr = localStorage.getItem("hr");
 document.getElementById('pace').innerHTML = "Your_Current_Pace_Is_" + Pace;
 function Maintain() {
-  sessionStorage.setItem("hr", hr);
-  sessionStorage.setItem("Pace", Pace);
+  localStorage.setItem("hr", hr);
+  localStorage.setItem("Pace", Pace);
   document.getElementById('pace').innerHTML = "Your_Current_Pace_Is_" + Pace;
 }
 function Steady() {
