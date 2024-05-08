@@ -1,0 +1,15 @@
+<!DOCTYPE html><html><body style="color:Green;font-size:25px;">
+Username --> <input type="text" id="username">
+Password --> <input type="text" id="password">
+<button onclick="login();">Log_In</button>
+<script>
+function login() {
+  sessionStorage.setItem("Name", document.getElementById('username').value;);
+  if (document.getElementById('password').value; === "") {
+    window.location.assign('https://0038509gd.github.io/Greg.com/Greg-Chat/');
+  } else if (document.getElementById('username').value; === "Anonymous") {
+    window.location.assign('https://0038509gd.github.io/Greg.com/Greg-Chat/Anonymous');
+  }
+}
+document.body.style.background = "black";
+</script></body></html>
