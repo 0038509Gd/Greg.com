@@ -4,14 +4,11 @@
 <input type="text" id="message"><button onclick="send();">Enter</button><br>
 <p id="history"></p>
 <script>
+var Banned = localStorage.getItem("banned");;
+localStorage.removeItem("banned");
 var name = localStorage.getItem("name");;
 localStorage.removeItem("name");
 document.getElementById('history').innerHTML = name;
-if (name == "Greg") {
-  var Banned = false;
-} else {
-  var Banned = true;
-}
 name += "_said-";
 function send() {
   if (Banned) {
@@ -22,6 +19,11 @@ function send() {
   } 
 }
 forever(function a() {
+  const a = new Date();
+  var b = a.getHour();
+  if (b = 0) {
+    localStorage.clear();
+  }
   var h = localStorage.getItem("history");
   document.getElementById('history').innerHTML = h;
 })
