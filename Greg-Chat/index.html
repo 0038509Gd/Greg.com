@@ -4,21 +4,19 @@
 <input type="text" id="message"><button onclick="send();">Enter</button><br>
 <p id="history"></p>
 <script>
-var Banned = sessionStorage.getItem("banned");
-sessionStorage.removeItem("banned");
-var name = sessionStorage.getItem("name"); + " said";
+var name = sessionStorage.getItem("name");;
 sessionStorage.removeItem("name");
+if (name == "Greg") {
+  var Banned = false;
+}
+name += " said";
 function send() {
-  if (Banned == "N") {
-    h += name + document.getElementById('message').value; + "<br>";
-    localStorage.setItem("history", h);
-  } else if (Banned == "Y"){
+  if (Banned) {
     alert("You_Have_Ben_Banned!-You_May_Not_Post_Messages!");
   } else {
-    if (confirm("You_Are_Not_Logged_In.-Please_Return_To_Login_Page")){
-      window.location.assign("https://0039509gd.github.io/Greg.com/Greg-Chat/Log-in");
-    }
-  }
+    h += name + document.getElementById('message').value; + "<br>";
+    localStorage.setItem("history", h);
+  } 
 }
 forever(function a() {
   var h = localStorage.getItem("history");
