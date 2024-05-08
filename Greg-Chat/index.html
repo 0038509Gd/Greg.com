@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><body style="color:Green;font-size:15px;" onload="a();">
+<!DOCTYPE html><html><body style="color:Green;font-size:15px;">
 <title>Student On Task - Please Be On Task</title>
 <h style="font-size:50px;">Welcom_To-"This-Chat"!</h><br>
 <input type="text" id="message"><button onclick="send();">Enter</button><br>
@@ -16,11 +16,10 @@ function send() {
     localStorage.setItem("history", h);
   }
 }
-function a() {
-  while (true) {
-    var h = localStorage.getItem("history");
-    document.getElementById('history').innerHTML = h;
-  }
-}
+forever(function a() {
+  var h = localStorage.getItem("history");
+  document.getElementById('history').innerHTML = h;
+
+})
 document.body.style.background = "black";
 </script></body></html>
