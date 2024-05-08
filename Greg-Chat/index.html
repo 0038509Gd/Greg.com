@@ -8,7 +8,9 @@ sessionStorage.removeItem("banned");
 var name = sessionStorage.getItem("name"); + " said";
 sessionStorage.removeItem("name");
 function send() {
-  if (!Banned) {
+  if (Banned) {
+    alert("You_Are_Banned!-You_May_Not_Post_Messages!");
+  } else {
     h += name + document.getElementById('message').value; + "<br>";
     localStorage.setItem("history", h);
   }
