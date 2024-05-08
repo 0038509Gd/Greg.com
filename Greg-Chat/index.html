@@ -9,11 +9,11 @@ sessionStorage.removeItem("banned");
 var name = sessionStorage.getItem("name"); + " said";
 sessionStorage.removeItem("name");
 function send() {
-  if (Banned == "true") {
-    alert("You_Are_Banned!-You_May_Not_Post_Messages!");
-  } else {
+  if (Banned == false) {
     h += name + document.getElementById('message').value; + "<br>";
     localStorage.setItem("history", h);
+  } else {
+    alert("You_Have_Ben_Banned!-You_May_Not_Post_Messages!");
   }
 }
 forever(function a() {
