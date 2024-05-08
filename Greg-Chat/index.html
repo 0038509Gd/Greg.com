@@ -4,8 +4,8 @@
 <input type="text" id="message"><button onclick="send();">Enter</button><br>
 <p id="history"></p>
 <script>
-var name = sessionStorage.getItem("name");;
-sessionStorage.removeItem("name");
+var name = localStorage.getItem("name");;
+localStorage.removeItem("name");
 document.getElementById('history').innerHTML = name;
 if (name == "Greg") {
   var Banned = false;
