@@ -1,15 +1,17 @@
-<!DOCTYPE html><html><body style="color:Green;font-size:15px;">
+<!DOCTYPE html><html><body style="color:Green;font-size:15px;" onload="setup();">
 <title>Student On Task - Please Be On Task</title>
-<h style="font-size:50px;">Welcom_To-"This-Chat"!</h><br>
+<h style="font-size:50px;">Welcom_To-"This-Chat"<b id="name"></b>!</h><br>
 <input type="text" id="message"><button onclick="send();">Enter</button><br>
 <p id="history"></p>
 <script>
-var Banned = localStorage.getItem("banned");;
-localStorage.removeItem("banned");
-var name = localStorage.getItem("name");;
-localStorage.removeItem("name");
-document.getElementById('history').innerHTML = name;
-name += "_said-";
+function setup() {
+  var Banned = localStorage.getItem("banned");;
+  localStorage.removeItem("banned");
+  var name = localStorage.getItem("name");;
+  localStorage.removeItem("name");
+  document.getElementById('name').innerHTML = name;
+  name += "_said-";
+}
 function send() {
   if (Banned) {
     alert("You_Have_Ben_Banned!-You_May_Not_Post_Messages!");
