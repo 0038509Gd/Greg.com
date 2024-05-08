@@ -9,7 +9,7 @@ sessionStorage.removeItem("banned");
 var name = sessionStorage.getItem("name"); + " said";
 sessionStorage.removeItem("name");
 function send() {
-  if (Banned == false) {
+  if (Banned == "N") {
     h += name + document.getElementById('message').value; + "<br>";
     localStorage.setItem("history", h);
   } else {
