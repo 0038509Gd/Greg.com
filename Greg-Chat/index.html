@@ -24,6 +24,9 @@ function send() {
     h += name + document.getElementById('message').value; + "<br>";
     localStorage.setItem("history", h);
     document.getElementById('history').innerHTML = h;
+    localStorage.setItem("update", true);
+    pause(1000)
+    localStorage.setItem("update", false);
   } 
 }
 function a() {
@@ -32,8 +35,10 @@ function a() {
   if (b = 0) {
     localStorage.clear();
   }
-  var h = localStorage.getItem("history");
-  document.getElementById('history').innerHTML = h;
+  if (localStorage.getItem("update");) {
+    var h = localStorage.getItem("history");
+    document.getElementById('history').innerHTML = h;
+  }
 }
 </script><script>
 document.body.style.background = "black";
