@@ -4,7 +4,7 @@
 <input type="text" id="message" placeholder="Message_Goes_Here!"><button onclick="send();">Enter</button><br>
 <p id="history"></p>
 <script>
-
+var h;
 function setup() {
   var Banned = localStorage.getItem("banned");;
   localStorage.removeItem("banned");
