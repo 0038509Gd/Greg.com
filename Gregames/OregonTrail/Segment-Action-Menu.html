@@ -11,50 +11,50 @@
 <button onclick="kill();">9</button> Kill_Ox_For_Food
 <body3 popover id="box"><input type="text" id="box"><button onclick="Stop();">Enter</button></body3><br>
 <script>
-var I = sessionStorage.getItem("I");
-var Idied = sessionStorage.getItem("Idied");
-var Isick = sessionStorage.getItem("Isick");
-var W = sessionStorage.getItem("W");
-var Wdied = sessionStorage.getItem("Wdied");
-var Isick = sessionStorage.getItem("Wsick");
-var K1 = sessionStorage.getItem("K1");
-var K1died = sessionStorage.getItem("K1died");
-var K1sick = sessionStorage.getItem("K1sick");
-var K2 = sessionStorage.getItem("K2");
-var K2died = sessionStorage.getItem("K2died");
-var K2sick = sessionStorage.getItem("k2sick");
-var K3 = sessionStorage.getItem("K3");
-var K3died = sessionStorage.getItem("K3died");
-var K3sick = sessionStorage.getItem("K3sick");
-var job = sessionStorage.getItem("job");
-var money = sessionStorage.getItem("money");
-var Oxen = sessionStorage.getItem("Oxen");
-var Foodlb = sessionStorage.getItem("Foodlb");
+var I = localStorage.getItem("I");
+var Idied = localStorage.getItem("Idied");
+var Isick = localStorage.getItem("Isick");
+var W = localStorage.getItem("W");
+var Wdied = localStorage.getItem("Wdied");
+var Isick = localStorage.getItem("Wsick");
+var K1 = localStorage.getItem("K1");
+var K1died = localStorage.getItem("K1died");
+var K1sick = localStorage.getItem("K1sick");
+var K2 = localStorage.getItem("K2");
+var K2died = localStorage.getItem("K2died");
+var K2sick = localStorage.getItem("k2sick");
+var K3 = localStorage.getItem("K3");
+var K3died = localStorage.getItem("K3died");
+var K3sick = localStorage.getItem("K3sick");
+var job = localStorage.getItem("job");
+var money = localStorage.getItem("money");
+var Oxen = localStorage.getItem("Oxen");
+var Foodlb = localStorage.getItem("Foodlb");
   document.getElementById('Foodlb').innerHTML = Foodlb;
-var Clothing = sessionStorage.getItem("Clothing");
-var Ammo = sessionStorage.getItem("Ammo");
-var Axels = sessionStorage.getItem("Axels");
-var Toungues = sessionStorage.getItem("Toungues");
-var Wheels = sessionStorage.getItem("Wheels");
-var Day = sessionStorage.getItem("Day");
+var Clothing = localStorage.getItem("Clothing");
+var Ammo = localStorage.getItem("Ammo");
+var Axels = localStorage.getItem("Axels");
+var Toungues = localStorage.getItem("Toungues");
+var Wheels = localStorage.getItem("Wheels");
+var Day = localStorage.getItem("Day");
   document.getElementById('Day').innerHTML = Day;
-var Month = sessionStorage.getItem("Month");
+var Month = localStorage.getItem("Month");
   document.getElementById('Month').innerHTML = Month;
-var Year = sessionStorage.getItem("Year");
+var Year = localStorage.getItem("Year");
   document.getElementById('Year').innerHTML = Year;
-var Wheather = sessionStorage.getItem("Wheather");
+var Wheather = localStorage.getItem("Wheather");
   document.getElementById('Wheather').innerHTML = Wheather;
-var Health = sessionStorage.getItem("Health");
+var Health = localStorage.getItem("Health");
   document.getElementById('Health').innerHTML = Health;
-var HealthNum = sessionStorage.getItem("HealthNum");
+var HealthNum = localStorage.getItem("HealthNum");
 var miles2LM = ([num}miles-next-landmark);
   document.getElementById('miles2LM').innerHTML = miles2LM;
-var milesD = sessionStorage.getItem("milesD");
+var milesD = localStorage.getItem("milesD");
   document.getElementById('milesD').innerHTML = milesD;
-var Pace = sessionStorage.getItem("Pace");
-var hr = sessionStorage.getItem("hr");
-var Rations = sessionStorage.getItem("Rations");
-var FPD = sessionStorage.getItem("FPD");
+var Pace = localStorage.getItem("Pace");
+var hr = localStorage.getItem("hr");
+var Rations = localStorage.getItem("Rations");
+var FPD = localStorage.getItem("FPD");
 if (((milesD = 0||(milesD = 305||milesD = 641))||((milesD = 1190||milesD = 1487)||milesD = 1702))) {
  document.getElementById('lm').innerHTML = "Buy_Supplies";
 } else {
@@ -65,7 +65,7 @@ function Stop() {
   for(var loop = 0; loop < document.getElementById('box').value; loop++) {
     Run();
   }
-var Pace = sessionStorage.getItem("Pace");
+var Pace = localStorage.getItem("Pace");
 Maintain();
 }
 function Day() {
@@ -370,45 +370,45 @@ function Run() {
   }
 }
 function Maintain() {
-  sessionStorage.setItem("Idied", Idied);
-  sessionStorage.setItem("Isick", Isick);
-  sessionStorage.setItem("Wdied", Wdied);
-  sessionStorage.setItem("Wsick", Wsick);
-  sessionStorage.setItem("K1died", K1died);
-  sessionStorage.setItem("K1sick", K1sick);
-  sessionStorage.setItem("K2died", K2died);
-  sessionStorage.setItem("K2sick", K2sick);
-  sessionStorage.setItem("K3died", K3died);
-  sessionStorage.setItem("K3sick", K3sick);
-  sessionStorage.setItem("Oxen", Oxen);
+  localStorage.setItem("Idied", Idied);
+  localStorage.setItem("Isick", Isick);
+  localStorage.setItem("Wdied", Wdied);
+  localStorage.setItem("Wsick", Wsick);
+  localStorage.setItem("K1died", K1died);
+  localStorage.setItem("K1sick", K1sick);
+  localStorage.setItem("K2died", K2died);
+  localStorage.setItem("K2sick", K2sick);
+  localStorage.setItem("K3died", K3died);
+  localStorage.setItem("K3sick", K3sick);
+  localStorage.setItem("Oxen", Oxen);
   document.getElementById('Oxen').innerHTML = Oxen;
-  sessionStorage.setItem("Foodlb", Foodlb);
+  localStorage.setItem("Foodlb", Foodlb);
   document.getElementById('Foodlb').innerHTML = Foodlb;
-  sessionStorage.setItem("Clothing", Clothing);
+  localStorage.setItem("Clothing", Clothing);
   document.getElementById('Clothing').innerHTML = Clothing;
-  sessionStorage.setItem("Ammo", Ammo);
+  localStorage.setItem("Ammo", Ammo);
   document.getElementById('Ammo').innerHTML = Ammo;
-  sessionStorage.setItem("Axels", Axels);
+  localStorage.setItem("Axels", Axels);
   document.getElementById('Axels').innerHTML = Axels; 
-  sessionStorage.setItem("Toungues", Toungues);
+  localStorage.setItem("Toungues", Toungues);
   document.getElementById('Tongues').innerHTML = Toungues;
-  sessionStorage.setItem("Wheels", Wheels);
+  localStorage.setItem("Wheels", Wheels);
   document.getElementById('Wheels').innerHTML = Wheels;
-  sessionStorage.setItem("Day", Day);
+  localStorage.setItem("Day", Day);
   document.getElementById('Day').innerHTML = Day;
-  sessionStorage.setItem("Month", Month);
+  localStorage.setItem("Month", Month);
   document.getElementById('Month').innerHTML = Month;
-  sessionStorage.setItem("Year", Year);
+  localStorage.setItem("Year", Year);
   document.getElementById('Year').innerHTML = Year;
-  sessionStorage.setItem("Wheather", Wheather);
+  localStorage.setItem("Wheather", Wheather);
   document.getElementById('Wheather').innerHTML = Wheather;
-  sessionStorage.setItem("Health", Health);
+  localStorage.setItem("Health", Health);
   document.getElementById('Health').innerHTML = Health;
-  sessionStorage.setItem("HealthNum", HealthNum);
+  localStorage.setItem("HealthNum", HealthNum);
   document.getElementById('HealthNum').innerHTML = HealthNum;
-  sessionStorage.setItem("miles2LM", miles2LM);
+  localStorage.setItem("miles2LM", miles2LM);
   document.getElementById('miles2LM').innerHTML = miles2LM;
-  sessionStorage.setItem("milesD", milesD);
+  localStorage.setItem("milesD", milesD);
   document.getElementById('milesD').innerHTML = milesD;
 }
 function kill() {
