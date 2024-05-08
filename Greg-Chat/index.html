@@ -8,6 +8,8 @@ var name = sessionStorage.getItem("name");;
 sessionStorage.removeItem("name");
 if (name == "Greg") {
   var Banned = false;
+} else {
+  var Banned = true;
 }
 name += " said";
 function send() {
