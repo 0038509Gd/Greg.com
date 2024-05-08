@@ -10,150 +10,150 @@
 <b style="color:white;">M M </b>Mile_To_Next_Landmark: <b id="milesLM"></b><br>
 <b style="color:white;">M M MMM----</b>Miles_Traveled: <b id="milesD"></b></p>
 <script>
-var I = sessionStorage.getItem("I");
-var Idied = sessionStorage.getItem("Idied");
-var Isick = sessionStorage.getItem("Isick");
-var W = sessionStorage.getItem("W");
-var Wdied = sessionStorage.getItem("Wdied");
-var Isick = sessionStorage.getItem("Wsick");
-var K1 = sessionStorage.getItem("K1");
-var K1died = sessionStorage.getItem("K1died");
-var K1sick = sessionStorage.getItem("K1sick");
-var K2 = sessionStorage.getItem("K2");
-var K2died = sessionStorage.getItem("K2died");
-var K2sick = sessionStorage.getItem("k2sick");
-var K3 = sessionStorage.getItem("K3");
-var K3died = sessionStorage.getItem("K3died");
-var K3sick = sessionStorage.getItem("K3sick");
-var job = sessionStorage.getItem("job");
-var money = sessionStorage.getItem("money");
-var Oxen = sessionStorage.getItem("Oxen");
-var Foodlb = sessionStorage.getItem("Foodlb");
+var I = localStorage.getItem("I");
+var Idied = localStorage.getItem("Idied");
+var Isick = localStorage.getItem("Isick");
+var W = localStorage.getItem("W");
+var Wdied = localStorage.getItem("Wdied");
+var Isick = localStorage.getItem("Wsick");
+var K1 = localStorage.getItem("K1");
+var K1died = localStorage.getItem("K1died");
+var K1sick = localStorage.getItem("K1sick");
+var K2 = localStorage.getItem("K2");
+var K2died = localStorage.getItem("K2died");
+var K2sick = localStorage.getItem("k2sick");
+var K3 = localStorage.getItem("K3");
+var K3died = localStorage.getItem("K3died");
+var K3sick = localStorage.getItem("K3sick");
+var job = localStorage.getItem("job");
+var money = localStorage.getItem("money");
+var Oxen = localStorage.getItem("Oxen");
+var Foodlb = localStorage.getItem("Foodlb");
   document.getElementById('Foodlb').innerHTML = Foodlb;
-var Clothing = sessionStorage.getItem("Clothing");
-var Ammo = sessionStorage.getItem("Ammo");
-var Axels = sessionStorage.getItem("Axels");
-var Toungues = sessionStorage.getItem("Toungues");
-var Wheels = sessionStorage.getItem("Wheels");
-var Day = sessionStorage.getItem("Day");
-var Month = sessionStorage.getItem("Month");
-var Year = sessionStorage.getItem("Year");
-var Wheather = sessionStorage.getItem("Wheather");
+var Clothing = localStorage.getItem("Clothing");
+var Ammo = localStorage.getItem("Ammo");
+var Axels = localStorage.getItem("Axels");
+var Toungues = localStorage.getItem("Toungues");
+var Wheels = localStorage.getItem("Wheels");
+var Day = localStorage.getItem("Day");
+var Month = localStorage.getItem("Month");
+var Year = localStorage.getItem("Year");
+var Wheather = localStorage.getItem("Wheather");
   document.getElementById('Wheather').innerHTML = Wheather;
-var Health = sessionStorage.getItem("Health");
+var Health = localStorage.getItem("Health");
   document.getElementById('Health').innerHTML = Health;
-var HealthNum = sessionStorage.getItem("HealthNum");
-var miles2LM = sessionStorage.getItem("milesLM");
+var HealthNum = localStorage.getItem("HealthNum");
+var miles2LM = localStorage.getItem("milesLM");
   document.getElementById('miles2LM').innerHTML = miles2LM;
-var milesD = sessionStorage.getItem("milesD");
+var milesD = localStorage.getItem("milesD");
   document.getElementById('milesD').innerHTML = milesD;
-var Pace = sessionStorage.getItem("Pace");
-var hr = sessionStorage.getItem("hr");
-var Rations = sessionStorage.getItem("Rations");
-var FPD = sessionStorage.getItem("FPD");
+var Pace = localStorage.getItem("Pace");
+var hr = localStorage.getItem("hr");
+var Rations = localStorage.getItem("Rations");
+var FPD = localStorage.getItem("FPD");
 
 forever(function () {
   for(var loop = 0; loop < hr * 2; loop++) {
     milesD += 1;
     miles2LM -= 1;
     if (milesD = 102) {
-      sessionStorage.setItem("milesLM", 82);
-      sessionStorage.setItem("milesD", milesD + 1);
-      sessionStorage.setItem("River", "Kanses");
+      localStorage.setItem("milesLM", 82);
+      localStorage.setItem("milesD", milesD + 1);
+      localStorage.setItem("River", "Kanses");
       if (confirm("You_Have_Reached_The_Kanses_River_Crossing.-Would_You_Like_To_Take_A_Gander?")) {
         window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/KansesRiverCrossing");
       }
       window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/RiverCrossing");
     } else if (milesD = 185) {
-      sessionStorage.setItem("milesLM", 118);
-      sessionStorage.setItem("milesD", milesD + 1);
-      sessionStorage.setItem("River", "BigBlue");
+      localStorage.setItem("milesLM", 118);
+      localStorage.setItem("milesD", milesD + 1);
+      localStorage.setItem("River", "BigBlue");
       if (confirm("You_Have_Reached_The_Big_Blue_River_Crossing.-Would_You_Like_To_Take_A_Gander?")) {
       window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/BigBlueRiverCrossing");
       }
       window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/RiverCrossing");
     } else if (milesD = 304) {
-      sessionStorage.setItem("milesLM", 249);
+      localStorage.setItem("milesLM", 249);
       var milesLM = 250;
-      sessionStorage.setItem("milesD", milesD + 1);
+      localStorage.setItem("milesD", milesD + 1);
       if (confirm("You_Have_Reached_Fort_Kerny.-Would_You_Like_To_Take_A_Gander?")) {
         window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/FortKerny");
       }
     } else if (milesD = 554) {
       var milesLM = 86;
-      sessionStorage.setItem("milesLM", 85);
-      sessionStorage.setItem("milesD", milesD + 1);
+      localStorage.setItem("milesLM", 85);
+      localStorage.setItem("milesD", milesD + 1);
       if (confirm("You_Have_Reached_Chimeny_Rock.-Would_You_Like_To_Take_A_Gander?")) {
         window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/ChimenyRock");
       }
     } else if (milesD = 640) {
       var milesLM = 190;
-      sessionStorage.setItem("milesLM", 189);
-      sessionStorage.setItem("milesD", milesD + 1);
+      localStorage.setItem("milesLM", 189);
+      localStorage.setItem("milesD", milesD + 1);
       if (confirm("You_Have_Reached_Fort_Laramie.-Would_You_Like_To_Take_A_Gander?")) {
         window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/FortLaramie");
       }
     } else if (milesD = 630) {
       var milesLM = 120;
-      sessionStorage.setItem("milesLM", 119);
-      sessionStorage.setItem("milesD", milesD + 1);
+      localStorage.setItem("milesLM", 119);
+      localStorage.setItem("milesD", milesD + 1);
       if (confirm("You_Have_Reached_Independance_Rock.-Would_You_Like_To_Take_A_Gander?")) {
         window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/IndependanceRock");
       }
     } else if (milesD = 932) {
       var milesLM = 57;
-      sessionStorage.setItem("milesLM", 56);
-      sessionStorage.setItem("milesD" milesD + 1);
+      localStorage.setItem("milesLM", 56);
+      localStorage.setItem("milesD" milesD + 1);
       if (confirm("You_Have_Reached_The_South_Pass.-Would_You_Like_To_Take_A_Gander?")) {
         window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/SouthPass");
       }
     } else if (milesD = 989) {
-      sessionStorage.setItem("milesD", milesD + 1);
-      sessionStorage.setItem("milesLM", 143);
-      sessionStorage.setItem("River", "Green");
+      localStorage.setItem("milesD", milesD + 1);
+      localStorage.setItem("milesLM", 143);
+      localStorage.setItem("River", "Green");
       if (confirm("You_Have_Reached_The_Green_River_Crossing.-Would_You_Like_To_Take_A_Gander?")) {
         window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/GreenRiverCrossing");
       }
       window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/RiverCrossing");
     } else if (milesD = 1133) {
       var milesLM = 57;
-      sessionStorage.setItem("milesLM", 56);
-      sessionStorage.setItem("milesD", milesD + 1);
+      localStorage.setItem("milesLM", 56);
+      localStorage.setItem("milesD", milesD + 1);
       if (confirm("You_Have_Reached_Soda_Springs.-Would_You_Like_To_Take_A_Gander?")) {
         window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/SodaSprings");
       }
     } else if (milesD = 1190) {
       var milesLM = 182;
-      sessionStorage.setItem("milesLM", 181);
-      sessionStorage.setItem("milesD", milesD + 1);
+      localStorage.setItem("milesLM", 181);
+      localStorage.setItem("milesD", milesD + 1);
       if (confirm("You_Have_Reached_Fort_Hall.-Would_You_Like_To_Take_A_Gander?")) {
         window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/FortHall");
       }
     } else if (milesD = 1372) {
-      sessionStorage.setItem("milesLM", 113);
-      sessionStorage.setItem("milesD", milesD + 1);
-      sessionStorage.setItem("River", "Snake");
+      localStorage.setItem("milesLM", 113);
+      localStorage.setItem("milesD", milesD + 1);
+      localStorage.setItem("River", "Snake");
       if (confirm("You_Have_Reached_The_Snake_River_Crossing.-Would_You_Like_To_Take_A_Gander?")) {
         window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/SnakeRiverCrossing");
       }
     } else if (milesD = 1486) {
-      sessionStorage.setItem("milesLM", 159);
+      localStorage.setItem("milesLM", 159);
       var milesLM = 160;
-      sessionStorage.setItem("milesD", milesD + 1);
+      localStorage.setItem("milesD", milesD + 1);
       if (confirm("You_Have_Reached_Fort_Boise.-Would_You_Like_To_Take_A_Gander?")) {
         window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/FortBoise");
       }
     } else if (milesD = 1646) {
-      sessionStorage.setItem("milesLM", 54);
+      localStorage.setItem("milesLM", 54);
       var milesLM = 55;
-      sessionStorage.setItem("milesD", milesD + 1);
+      localStorage.setItem("milesD", milesD + 1);
       if (confirm("You_Have_Reached_The_Blue_Mountians.-Would_You_Like_To_Take_A_Gander?")) {
         window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Image/BlueMauntians");
       }
     } else if (milesD = 1701) {
-      sessionStorage.setItem("milesLM", 119);
+      localStorage.setItem("milesLM", 119);
       var milesLM = 120;
-      sessionStorage.setItem("milesD", milesD + 1);
+      localStorage.setItem("milesD", milesD + 1);
       if (confirm("You_Have_Reached_Fort_Walla_Walla.-Would_You_Like_To_Take_A_Gander?")) {
         window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/FortWallaWalla");
       }
@@ -172,12 +172,12 @@ forever(function () {
   } else if (Wheather = "snowy" && Math.percentChance(25)) {
     var Pace = "stoped";
     Day();
-    var Pace = sessionStorage.getItem("Pace");
+    var Pace = localStorage.getItem("Pace");
     alert("Bliserd_Lose-1-Day");
   } else if (Wheather = "rainy" && Math.percentChance(25)) {
     var Pace = "stoped";
     Day();
-    var Pace = sessionStorage.getItem("Pace");
+    var Pace = localStorage.getItem("Pace");
     alert("Thunderstorm_Lose-1-Day");
   }
   if (Math.percentChance(25)) {
@@ -196,7 +196,7 @@ forever(function () {
       for(var loop = 0; loop < Randomizer; loop++) {
         Day();
       }
-    var Pace = sessionStorage.getItem("Pace");
+    var Pace = localStorage.getItem("Pace");
     }
   }
   if (Math.percentChance(2)) {
@@ -270,7 +270,7 @@ forever(function () {
       }
     }
     Day();
-    var Pace = sessionStorage.getItem("Pace");
+    var Pace = localStorage.getItem("Pace");
   }
   if (Math.percentChance(25) && Wheather = "hot"||Math.percentChance(10) && Wheather = "warm") {
     Foodlb *= randint(0, 5) / 100;
@@ -590,36 +590,36 @@ function Day() {
   }
 }
 function Maintain() {
-  sessionStorage.setItem("Idied", Idied);
-  sessionStorage.setItem("Isick", Isick);
-  sessionStorage.setItem("Wdied", Wdied);
-  sessionStorage.setItem("Wsick", Wsick);
-  sessionStorage.setItem("K1died", K1died);
-  sessionStorage.setItem("K1sick", K1sick);
-  sessionStorage.setItem("K2died", K2died);
-  sessionStorage.setItem("K2sick", K2sick);
-  sessionStorage.setItem("K3died", K3died);
-  sessionStorage.setItem("K3sick", K3sick);
-  sessionStorage.setItem("Oxen", Oxen);
-  sessionStorage.setItem("Foodlb", Foodlb);
+  localStorage.setItem("Idied", Idied);
+  localStorage.setItem("Isick", Isick);
+  localStorage.setItem("Wdied", Wdied);
+  localStorage.setItem("Wsick", Wsick);
+  localStorage.setItem("K1died", K1died);
+  localStorage.setItem("K1sick", K1sick);
+  localStorage.setItem("K2died", K2died);
+  localStorage.setItem("K2sick", K2sick);
+  localStorage.setItem("K3died", K3died);
+  localStorage.setItem("K3sick", K3sick);
+  localStorage.setItem("Oxen", Oxen);
+  localStorage.setItem("Foodlb", Foodlb);
   document.getElementById('Foodlb').innerHTML = "Food:" + Foodlb + "pounds";
-  sessionStorage.setItem("Clothing", Clothing);
-  sessionStorage.setItem("Ammo", Ammo);
-  sessionStorage.setItem("Axels", Axels);
-  sessionStorage.setItem("Toungues", Toungues);
-  sessionStorage.setItem("Wheels", Wheels);
-  sessionStorage.setItem("Day", Day);
-  sessionStorage.setItem("Month", Month);
-  sessionStorage.setItem("Year", Year);
+  localStorage.setItem("Clothing", Clothing);
+  localStorage.setItem("Ammo", Ammo);
+  localStorage.setItem("Axels", Axels);
+  localStorage.setItem("Toungues", Toungues);
+  localStorage.setItem("Wheels", Wheels);
+  localStorage.setItem("Day", Day);
+  localStorage.setItem("Month", Month);
+  localStorage.setItem("Year", Year);
   document.getElementById('Date').innerHTML = "Date:" + Day + "th_Of_" + Month + "_in_" + Year;
-  sessionStorage.setItem("Wheather", Wheather);
+  localStorage.setItem("Wheather", Wheather);
   document.getElementById('Wheather').innerHTML = "Wheather:" + Wheather;
-  sessionStorage.setItem("Health", Health);
+  localStorage.setItem("Health", Health);
   document.getElementById('Health').innerHTML = "Health:" + Health;
-  sessionStorage.setItem("HealthNum", HealthNum);
-  sessionStorage.setItem("miles2LM", miles2LM);
+  localStorage.setItem("HealthNum", HealthNum);
+  localStorage.setItem("miles2LM", miles2LM);
   document.getElementById('miles2LM').innerHTML = "Next_Landmark" + miles2LM + "miles";
-  sessionStorage.setItem("milesD", milesD);
+  localStorage.setItem("milesD", milesD);
   document.getElementById('milesD').innerHTML = "Miles_Traveled:" + milesD + "miles";
 }
 </script></body2></body1></html><script>
