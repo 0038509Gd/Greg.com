@@ -1,7 +1,7 @@
 <!DOCTYPE html><html><body style="color:Green;font-size:15px;">
 <title>Student On Task - Please Be On Task</title>
 <h style="font-size:50px;">Welcom_To-"This-Chat"!</h><br>
-<input type="text" id="message"><button onclick="send();">Enter</button>
+<input type="text" id="message"><button onclick="send();">Enter</button><br>
 <p id="history"></p>
 <script>
 var Banned = sessionStorage.getItem("banned");
@@ -14,7 +14,6 @@ function send() {
   } else {
     h += name + document.getElementById('message').value; + "<br>";
     localStorage.setItem("history", h);
-    document.getElementById('history').innerHTML = h;
   }
 }
 while (true) {
