@@ -10,12 +10,10 @@ function setup() {
   var name = localStorage.getItem("name");
   localStorage.removeItem("name");
   document.getElementById('name').innerHTML = name;
-  name += "_said-";
-  while (true) {
-    var U = localStorage.getItem("update");
-    if (U) {
-      var H = localStorage.getItem("history");
-      document.getElementById('history').innerHTML = H;
+  var m = name + "_said-";
+  var M = m;
+  var H = localStorage.getItem("history");
+  document.getElementById('history').innerNTML = H;
     }
   }
 }
@@ -23,13 +21,12 @@ function send() {
   if (Banned) {
     alert("You_Have_Ben_Banned!-You_May_Not_Post_Messages!");
   } else {
-    var M = document.getElementById('message').value;
-    H += name + M + "<br>";
+    M += document.getElementById('message').value;
+    H += M;
+    H += "<br>";
+    M = m;
     localStorage.setItem("history", H);
-    document.getElementById('history').innerHTML = name + M + "<br>"
-    localStorage.setItem("update", true);
-    pause(500)
-    localStorage.setItem("update", false);
+    document.getElementById('history').innerHTML = H + "<br>";
   } 
 }
 </script><script>
