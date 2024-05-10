@@ -51,8 +51,15 @@ var Pace = localStorage.getItem("Pace");
 var hr = localStorage.getItem("hr");
 var Rations = localStorage.getItem("Rations");
 var FPD = localStorage.getItem("FPD");
-
-forever(function () {
+function pause(ms: number): void {
+  if (isNaN(ms)) ms = 20
+  basic.pause(ms);
+}
+function forever(a: () => void): void {
+    basic.forever(a);
+}
+basic.forever(function () {
+  basic.pause(24000)
   for(var loop = 0; loop < hr * 2; loop++) {
     milesD += 1;
     miles2LM -= 1;
