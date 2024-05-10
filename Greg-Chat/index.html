@@ -17,6 +17,13 @@ function setup() {
     }
   }
 }
+function forever(a: () => void): void {
+    basic.forever(a);
+}
+forever(function () {
+  H = localStorage.getItem("history");
+  document.getElementById('history').innerHTML = H;
+})
 function send() {
   if (Banned) {
     alert("You_Have_Ben_Banned!-You_May_Not_Post_Messages!");
