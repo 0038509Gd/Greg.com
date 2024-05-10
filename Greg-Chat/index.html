@@ -5,17 +5,17 @@
 <p id="history"></p>
 <script>
 function setup() {
-  var Banned = localStorage.getItem("banned");
-  localStorage.removeItem("banned");
-  var name = localStorage.getItem("name");
-  localStorage.removeItem("name");
-  document.getElementById('name').innerHTML = name;
-  var m = name + "_said-";
-  var M = m;
-  var H = localStorage.getItem("history");
-  document.getElementById('history').innerNTML = H;
-    }
-  }
+  let file = "fetch_info.txt"
+  fetch ('https://api.ipify.org?format=json')
+  .then(x => x.text())
+  .then(y => document.getElementById("demo").innerHTML = y);
+  if (y = '{"ip"/:"198.133.125.155"}') {
+    var name = Greg;
+    document.getElementById('name').innerHTML = name;
+    var m = name + "_said-";
+    var M = m;
+    var H = localStorage.getItem('history');
+    document.getElementById('history').innerHTML = H;
 }
 function forever(a: () => void): void {
     basic.forever(a);
@@ -33,7 +33,7 @@ function send() {
     H += "<br>";
     M = m;
     localStorage.setItem("history", H);
-    document.getElementById('history').innerHTML = H + "<br>";
+    document.getElementById('history').innerHTML = H;
   } 
 }
 </script><script>
