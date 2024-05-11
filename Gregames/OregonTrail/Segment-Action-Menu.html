@@ -11,31 +11,8 @@
 <button onclick="kill();">9</button> Kill_Ox_For_Food
 <body3 popover id="box"><input type="text" id="box"><button onclick="Stop();">Enter</button></body3><br>
 <script>
-var I = localStorage.getItem("I");
-var Idied = localStorage.getItem("Idied");
-var Isick = localStorage.getItem("Isick");
-var W = localStorage.getItem("W");
-var Wdied = localStorage.getItem("Wdied");
-var Isick = localStorage.getItem("Wsick");
-var K1 = localStorage.getItem("K1");
-var K1died = localStorage.getItem("K1died");
-var K1sick = localStorage.getItem("K1sick");
-var K2 = localStorage.getItem("K2");
-var K2died = localStorage.getItem("K2died");
-var K2sick = localStorage.getItem("k2sick");
-var K3 = localStorage.getItem("K3");
-var K3died = localStorage.getItem("K3died");
-var K3sick = localStorage.getItem("K3sick");
-var job = localStorage.getItem("job");
-var money = localStorage.getItem("money");
-var Oxen = localStorage.getItem("Oxen");
-var Foodlb = localStorage.getItem("Foodlb");
-  document.getElementById('Foodlb').innerHTML = Foodlb;
+document.getElementById('Foodlb').innerHTML = localStorage.getItem("Foodlb");
 var Clothing = localStorage.getItem("Clothing");
-var Ammo = localStorage.getItem("Ammo");
-var Axels = localStorage.getItem("Axels");
-var Toungues = localStorage.getItem("Toungues");
-var Wheels = localStorage.getItem("Wheels");
 var Day = localStorage.getItem("Day");
   document.getElementById('Day').innerHTML = Day;
 var Month = localStorage.getItem("Month");
@@ -61,11 +38,9 @@ if (((milesD = 0||(milesD = 305||milesD = 641))||((milesD = 1190||milesD = 1487)
  document.getElementById('lm').innerHTML = "Hunt_For_Food(Comming_Soon!)";
 }
 function Stop() {
-  var Pace = "stoped"
   for(var loop = 0; loop < document.getElementById('box').value; loop++) {
     Run();
   }
-var Pace = localStorage.getItem("Pace");
 Maintain();
 }
 function Day() {
@@ -73,23 +48,6 @@ function Day() {
   Maintain();
 }
 function Run() {
-  if (Pace == "stoped") {
-    if (FPD == 3) {
-      HealthNum += 4;
-      } else if (FPD == 2) {
-        HealthNum += 6;
-      } else if (FPD == 1) {
-        HealthNum += 10;
-      }
-  } else if (Pace == "steady") {
-    HealthNum += -2;
-  } else if (Pace == "tiring") {
-    HealthNum += -5;
-  } else if (Pace == "strenguous") {
-    HealthNum += -15;
-  } else if (Pace == "grueling") {
-    HealthNum += -25;
-  }
   if (FPD == 3) {
     HealthNum += 1;
   } else if (FPD == 2) {
@@ -187,90 +145,90 @@ function Run() {
         if (Math.percentChance(50)) {
           if (K3sick) {
             if (K3died) {
-              if (K2sick) {
-                if (K2died) {
-                  if (K1sick) {
-                    if (K1died) {
-                      if (Wsick) {
-                        if (Wdied) {
-                          if (Isick) {
+              if (localStorage.getItem("k2sick")) {
+                if (localStorage.getItem("K2died")) {
+                  if (localStorage.getItem("K1sick")) {
+                    if (localStorage.getItem("K1died")) {
+                      if (localStorage.getItem("Wsick")) {
+                        if (localStorage.getItem("Wdied")) {
+                          if (localStorage.getItem("Isick")) {
                             alert("All_Of_The_People_In_Your_Party_Have_Died");
                             localStorage.clear();
                             window.location.assign("https://0038509gd.github.io/Greg.com/Gregames");
                           } else {
                             var Randomizer = randint(1, );
                             if (Randomizer = 1) {
-                              alert(I"_Got_A_Snakebite");
+                              alert(localStorage.getItem("I") + "_Got_A_Snakebite");
                             } else if (Randomizer = 2) {
-                              alert(I"_Has_Disentary");
+                              alert(localStorage.getItem("I") + "_Has_Disentary");
                             } else if (Randomizer = 3) {
-                              alert(I"_Broke_Their_Arm");
+                              alert(localStorage.getItem("I") + "_Broke_Their_Arm");
                             } else if (Randomizer = 4) {
-                              alert(I"_Broke_Their_Leg");
+                              alert(localStorage.getItem("I") + "_Broke_Their_Leg");
                            }
-                            var Isick = true;
+                            localStorage.setItem("Isick", true);
                           }
                         } else {
-                          alert(W"_Died");
-                          var Wdied = true;
+                          alert(localStorage.getItem("W") + "_Died");
+                          localStorage.setItem("Wdied", true);
                       } else {
                         var Randomizer = randint(1, );
                         if (Randomizer = 1) {
-                          alert(W"_Got_A_Snakebite");
+                          alert(localStorage.getItem("W") + "_Got_A_Snakebite");
                         } else if (Randomizer = 2) {
-                          alert(W"_Has_Disentary");
+                          alert(localStorage.getItem("W") + "_Has_Disentary");
                         } else if (Randomizer = 3) {
-                          alert(W"_Broke_Their_Arm");
+                          alert(localStorage.getItem("W") + "_Broke_Their_Arm");
                         } else if (Randomizer = 4) {
-                          alert(W"_Broke_Their_Leg");
+                          alert(localStorage.getItem("W") + "_Broke_Their_Leg");
                        }
-                        var Wsick = true;
+                        localStorage.setItem("Wsick", true);
                       }
                     } else {
-                    alert(K1"_Died");
-                    var K1died = true;
+                    alert(localStorage.getItem("K1") + "_Died");
+                    localStorage.setItem("K1died", true);
                   } else {
                     var Randomizer = randint(1, );
                     if (Randomizer = 1) {
-                      alert(K1"_Got_A_Snakebite");
+                      alert(localStorage.getItem("K1") + "_Got_A_Snakebite");
                     } else if (Randomizer = 2) {
-                      alert(K1"_Has_Disentary");
+                      alert(localStorage.getItem("K1") + "_Has_Disentary");
                     } else if (Randomizer = 3) {
-                      alert(K1"_Broke_Their_Arm");
+                      alert(localStorage.getItem("K1") + "_Broke_Their_Arm");
                     } else if (Randomizer = 4) {
-                      alert(K1"_Broke_Their_Leg");
+                      alert(localStorage.getItem("K1") + "_Broke_Their_Leg");
                     }
-                    var K1sick = true;
+                    localStorage.setItem("K1sick", true);
                   }
                 } else {
-                  alert(K2"_Died");
-                  var K2died = true;
+                  alert(localStorage.getItem("K2") + "_Died");
+                  localStorage.setItem("K2died", true);
               } else {
                 var Randomizer = randint(1, );
                 if (Randomizer = 1) {
-                  alert(K2"_Got_A_Snakebite");
+                  alert(localStorage.getItem("K2") + "_Got_A_Snakebite");
                 } else if (Randomizer = 2) {
-                  alert(K2"_Has_Disentary");
+                  alert(localStorage.getItem("K2") + "_Has_Disentary");
                 } else if (Randomizer = 3) {
-                  alert(K2"_Broke_Their_Arm");
+                  alert(localStorage.getItem("K2") + "_Broke_Their_Arm");
                 } else if (Randomizer = 4) {
-                  alert(K2"_Broke_Their_Leg");
+                  alert(localStorage.getItem("K2") + "_Broke_Their_Leg");
                 }
-                var K2sick = true;
+                localStorage.setItem("k2sick", true);
               }
             } else {
-              alert(K3"_Died");
+              alert(localStorage.getItem("K3") + "_Died");
               var K3died = true;
           } else {
             var Randomizer = randint(1, );
             if (Randomizer = 1) {
-              alert(K3"_Got_A_Snakebite");
+              alert(localStorage.getItem("K3") + "_Got_A_Snakebite");
             } else if (Randomizer = 2) {
-              alert(K3"_Has_Disentary");
+              alert(localStorage.getItem("K3") + "_Has_Disentary");
             } else if (Randomizer = 3) {
-              alert(K3"_Broke_Their_Arm");
+              alert(localStorage.getItem("K3") + "_Broke_Their_Arm");
             } else if (Randomizer = 4) {
-              alert(K3"_Broke_Their_Leg");
+              alert(localStorage.getItem("K3") + "_Broke_Their_Leg");
             }
             var K3sick = true;
           }
@@ -280,90 +238,90 @@ function Run() {
           if (Math.percentChance(25)) {
           if (K3sick) {
             if (K3died) {
-              if (K2sick) {
-                if (K2died) {
-                  if (K1sick) {
-                    if (K1died) {
-                      if (Wsick) {
-                        if (Wdied) {
-                          if (Isick) {
+              if (localStorage.getItem("k2sick")) {
+                if (localStorage.getItem("K2died")) {
+                  if (localStorage.getItem("K1sick")) {
+                    if (localStorage.getItem("K1died")) {
+                      if (localStorage.getItem("Wsick")) {
+                        if (localStorage.getItem("Wdied")) {
+                          if (localStorage.getItem("Isick");) {
                             alert("All_Of_The_People_In_Your_Party_Have_Died");
                             localStorage.clear();
                             window.location.assign("https://0038509gd.github.io/Greg.com/Gregames");
                           } else {
                             var Randomizer = randint(1, );
                             if (Randomizer = 1) {
-                              alert(I"_Got_A_Snakebite");
+                              alert(localStorage.getItem("I"); + "_Got_A_Snakebite");
                             } else if (Randomizer = 2) {
-                              alert(I"_Has_Disentary");
+                              alert(localStorage.getItem("I"); + "_Has_Disentary");
                             } else if (Randomizer = 3) {
-                              alert(I"_Broke_Their_Arm");
+                              alert(localStorage.getItem("I"); + "_Broke_Their_Arm");
                             } else if (Randomizer = 4) {
-                              alert(I"_Broke_Their_Leg");
+                              alert(localStorage.getItem("I"); + "_Broke_Their_Leg");
                            }
-                            var Isick = true;
+                            localStorage.setItem("Isick", true);
                           }
                         } else {
-                          alert(W"_Died");
-                          var Wdied = true;
+                          alert(localStorage.getItem("W") + "_Died");
+                          localStorage.setItem("Wdied", true);
                       } else {
                         var Randomizer = randint(1, );
                         if (Randomizer = 1) {
-                          alert(W"_Got_A_Snakebite");
+                          alert(localStorage.getItem("W") + "_Got_A_Snakebite");
                         } else if (Randomizer = 2) {
-                          alert(W"_Has_Disentary");
+                          alert(localStorage.getItem("W") + "_Has_Disentary");
                         } else if (Randomizer = 3) {
-                          alert(W"_Broke_Their_Arm");
+                          alert(localStorage.getItem("W") + "_Broke_Their_Arm");
                         } else if (Randomizer = 4) {
-                          alert(W"_Broke_Their_Leg");
+                          alert(localStorage.getItem("W") + "_Broke_Their_Leg");
                        }
-                        var Wsick = true;
+                        localStorage.setItem("Wsick", true);
                       }
                     } else {
-                    alert(K1"_Died");
-                    var K1died = true;
+                    alert(localStorage.getItem("K1") + "_Died");
+                    localStorage.setItem("K1died", true);
                   } else {
                     var Randomizer = randint(1, );
                     if (Randomizer = 1) {
-                      alert(K1"_Got_A_Snakebite");
+                      alert(localStorage.getItem("K1") + "_Got_A_Snakebite");
                     } else if (Randomizer = 2) {
-                      alert(K1"_Has_Disentary");
+                      alert(localStorage.getItem("K1") + "_Has_Disentary");
                     } else if (Randomizer = 3) {
-                      alert(K1"_Broke_Their_Arm");
+                      alert(localStorage.getItem("K1") + "_Broke_Their_Arm");
                     } else if (Randomizer = 4) {
-                      alert(K1"_Broke_Their_Leg");
+                      alert(localStorage.getItem("K1") + "_Broke_Their_Leg");
                     }
-                    var K1sick = true;
+                    localStorage.setItem("K1sick", true);
                   }
                 } else {
-                  alert(K2"_Died");
-                  var K2died = true;
+                  alert(localStorage.getItem("K2") + "_Died");
+                  localStorage.setItem("K2died", true);
               } else {
                 var Randomizer = randint(1, );
                 if (Randomizer = 1) {
-                  alert(K2"_Got_A_Snakebite");
+                  alert(localStorage.getItem("K2") + "_Got_A_Snakebite");
                 } else if (Randomizer = 2) {
-                  alert(K2"_Has_Disentary");
+                  alert(localStorage.getItem("K2") + "_Has_Disentary");
                 } else if (Randomizer = 3) {
-                  alert(K2"_Broke_Their_Arm");
+                  alert(localStorage.getItem("K2") + "_Broke_Their_Arm");
                 } else if (Randomizer = 4) {
-                  alert(K2"_Broke_Their_Leg");
+                  alert(localStorage.getItem("K2") + "_Broke_Their_Leg");
                 }
-                var K2sick = true;
+                localStorage.setItem("k2sick", true);
               }
             } else {
-              alert(K3"_Died");
+              alert(localStorage.getItem("K3") + "_Died");
               var K3died = true;
           } else {
             var Randomizer = randint(1, );
             if (Randomizer = 1) {
-              alert(K3"_Got_A_Snakebite");
+              alert(localStorage.getItem("K3") + "_Got_A_Snakebite");
             } else if (Randomizer = 2) {
-              alert(K3"_Has_Disentary");
+              alert(localStorage.getItem("K3") + "_Has_Disentary");
             } else if (Randomizer = 3) {
-              alert(K3"_Broke_Their_Arm");
+              alert(localStorage.getItem("K3") + "_Broke_Their_Arm");
             } else if (Randomizer = 4) {
-              alert(K3"_Broke_Their_Leg");
+              alert(localStorage.getItem("K3") + "_Broke_Their_Leg");
             }
             var K3sick = true;
           }
@@ -374,50 +332,18 @@ function Run() {
   }
 }
 function Maintain() {
-  localStorage.setItem("Idied", Idied);
-  localStorage.setItem("Isick", Isick);
-  localStorage.setItem("Wdied", Wdied);
-  localStorage.setItem("Wsick", Wsick);
-  localStorage.setItem("K1died", K1died);
-  localStorage.setItem("K1sick", K1sick);
-  localStorage.setItem("K2died", K2died);
-  localStorage.setItem("K2sick", K2sick);
-  localStorage.setItem("K3died", K3died);
-  localStorage.setItem("K3sick", K3sick);
-  localStorage.setItem("Oxen", Oxen);
-  document.getElementById('Oxen').innerHTML = Oxen;
-  localStorage.setItem("Foodlb", Foodlb);
   document.getElementById('Foodlb').innerHTML = Foodlb;
-  localStorage.setItem("Clothing", Clothing);
-  document.getElementById('Clothing').innerHTML = Clothing;
-  localStorage.setItem("Ammo", Ammo);
-  document.getElementById('Ammo').innerHTML = Ammo;
-  localStorage.setItem("Axels", Axels);
-  document.getElementById('Axels').innerHTML = Axels; 
-  localStorage.setItem("Toungues", Toungues);
-  document.getElementById('Tongues').innerHTML = Toungues;
-  localStorage.setItem("Wheels", Wheels);
-  document.getElementById('Wheels').innerHTML = Wheels;
-  localStorage.setItem("Day", Day);
   document.getElementById('Day').innerHTML = Day;
-  localStorage.setItem("Month", Month);
   document.getElementById('Month').innerHTML = Month;
-  localStorage.setItem("Year", Year);
   document.getElementById('Year').innerHTML = Year;
-  localStorage.setItem("Wheather", Wheather);
   document.getElementById('Wheather').innerHTML = Wheather;
-  localStorage.setItem("Health", Health);
   document.getElementById('Health').innerHTML = Health;
-  localStorage.setItem("HealthNum", HealthNum);
-  document.getElementById('HealthNum').innerHTML = HealthNum;
-  localStorage.setItem("miles2LM", miles2LM);
   document.getElementById('miles2LM').innerHTML = miles2LM;
-  localStorage.setItem("milesD", milesD);
   document.getElementById('milesD').innerHTML = milesD;
 }
 function kill() {
-  Oxen -= 1;
-  Foodlb += 150;
+  localStorage.setItem("Oxen", localStorage.getItem("Oxen") - 1);
+  localStorage.setItem("Foodlb", localStorage.getItem("Foodlb") + 150);
   Maintain();
 }
 function difine() {
