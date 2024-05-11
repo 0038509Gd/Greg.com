@@ -12,7 +12,6 @@
 <body3 popover id="box"><input type="text" id="box"><button onclick="Stop();">Enter</button></body3><br>
 <script>
 document.getElementById('Foodlb').innerHTML = localStorage.getItem("Foodlb");
-var Clothing = localStorage.getItem("Clothing");
 var Day = localStorage.getItem("Day");
   document.getElementById('Day').innerHTML = Day;
 var Month = localStorage.getItem("Month");
@@ -47,29 +46,32 @@ function Day() {
   Run();
   Maintain();
 }
+function Change(name, number) {
+  localStorage.setItem(name, localStorage.getItem(name) + number);
+}
 function Run() {
   if (FPD == 3) {
-    HealthNum += 1;
+    Change("HealthNum", 1);
   } else if (FPD == 2) {
-    HealthNum += -5;
+    Change("HealthNum", -5);
   } else if (FPD == 1) {
-    HealthNum += -10;
+    Change("HealthNum", -10);
   }
-  Day += 1;
+  Change("Day", 1);
   if (Day == "28") {
     if (Month == 2) {
       var Day = 1;
-      Month += 1;
+      Change("Month", 1);
     }
   } else if (Day == 30) {
     if ((Month == 4||Month == 6)||(Month == 9||Month == 11)) {
       var Day = 1;
-      Month += 1;
+      Change("Month", 1);
     } 
   } else if (Day == 31) {
     if ((Month == 1||Month == 3)||((Momth == 5||Month == 7)||(Month == 8||Month == 10))) {
       var Day = 1;
-      Month += 1;
+      Change("Month", 1);
     } else if (Month = 12) {
       var Day = 1;
       var Month = 1;
@@ -137,15 +139,15 @@ function Run() {
     }
   }
   if (localStorage.getItem("Wheather") = "hot") {
-    localStorage.setItem("HealthNum", localStorage.getItem("HealthNum") - randint(1, 2));
-  } else if (localStorage.getItem("Wheather") = "cold") {
-    localStorage.setItem("HealthNum", localStorage.getItem("HealthNum") - (randint(10, 15) - localStorage.getItem("Clothing")));
+    Change("HealthNum", randint(-2, -1));
+  } else if (localStorage.getItem("Wheather") = "cold") {\
+    Change("HealthNum", -(randint(10, 15) - localStorage.getItem("Clothing")));
   } else if (localStorage.getItem("Wheather") = "very-cold") {
-    localStorage.setItem("HealthNum", localStorage.getItem("HealthNum") - (randint(15, 20) - localStorage.getItem("Clothing")));
+    Change("HealthNum", -(randint(15, 20) - localStorage.getItem("Clothing")));
   } else if (localStorage.getItem("Wheather") = "rainy") {
-    localStorage.setItem("HealthNum", localStorage.getItem("HealthNum") - (randint(5, 10) - localStorage.getItem("Clothing")));
+    Change("HealthNum", -(randint(5, 10) - localStorage.getItem("Clothing")));
   } else if (localStorage.getItem("Wheather") = "snowy") {
-    localStorage.setItem("HealthNum", localStorage.getItem("HealthNum") - (20 - localStorage.getItem("Clothing")));
+    Change("HealthNum", -(20 - localStorage.getItme("Clothing")));
   }
   if (HealthNum > 400) {
     var Health = "good";
@@ -231,7 +233,7 @@ function Run() {
               alert(localStorage.getItem("K3") + "_Died");
               var K3died = true;
           } else {
-            var Randomizer = randint(1, );
+            var Randomizer = randint(1, 4);
             if (Randomizer = 1) {
               alert(localStorage.getItem("K3") + "_Got_A_Snakebite");
             } else if (Randomizer = 2) {
@@ -324,7 +326,7 @@ function Run() {
               alert(localStorage.getItem("K3") + "_Died");
               var K3died = true;
           } else {
-            var Randomizer = randint(1, );
+            var Randomizer = randint(1, 4);
             if (Randomizer = 1) {
               alert(localStorage.getItem("K3") + "_Got_A_Snakebite");
             } else if (Randomizer = 2) {
@@ -353,8 +355,8 @@ function Maintain() {
   document.getElementById('milesD').innerHTML = milesD;
 }
 function kill() {
-  localStorage.setItem("Oxen", localStorage.getItem("Oxen") - 1);
-  localStorage.setItem("Foodlb", localStorage.getItem("Foodlb") + 150);
+  Change("Oxen", -1);
+  Change("Foodlb", 150);
   Maintain();
 }
 function difine() {
