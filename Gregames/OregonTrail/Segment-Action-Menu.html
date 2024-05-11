@@ -157,7 +157,7 @@ function Run() {
         var Health = "poor";
         if (Math.percentChance(50)) {
           if (K3sick) {
-            if (K3died) {
+            if (localStorage.getItem("K3died")) {
               if (localStorage.getItem("k2sick")) {
                 if (localStorage.getItem("K2died")) {
                   if (localStorage.getItem("K1sick")) {
@@ -231,7 +231,7 @@ function Run() {
               }
             } else {
               alert(localStorage.getItem("K3") + "_Died");
-              var K3died = true;
+              localStorage.setItem("K3died", true);
           } else {
             var Randomizer = randint(1, 4);
             if (Randomizer = 1) {
@@ -250,7 +250,7 @@ function Run() {
           var Health = "very-poor";
           if (Math.percentChance(25)) {
           if (K3sick) {
-            if (K3died) {
+            if (localStorage.getItem("K3died")) {
               if (localStorage.getItem("k2sick")) {
                 if (localStorage.getItem("K2died")) {
                   if (localStorage.getItem("K1sick")) {
@@ -324,7 +324,7 @@ function Run() {
               }
             } else {
               alert(localStorage.getItem("K3") + "_Died");
-              var K3died = true;
+              localStorage.setItem("K3died", true);
           } else {
             var Randomizer = randint(1, 4);
             if (Randomizer = 1) {
