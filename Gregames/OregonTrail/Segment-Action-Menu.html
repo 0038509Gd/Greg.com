@@ -136,6 +136,17 @@ function Run() {
       var Wheather = "snowy";
     }
   }
+  if (localStorage.getItem("Wheather") = "hot") {
+    localStorage.setItem("HealthNum", localStorage.getItem("HealthNum") - randint(1, 2));
+  } else if (localStorage.getItem("Wheather") = "cold") {
+    localStorage.setItem("HealthNum", localStorage.getItem("HealthNum") - (randint(10, 15) - localStorage.getItem("Clothing")));
+  } else if (localStorage.getItem("Wheather") = "very-cold") {
+    localStorage.setItem("HealthNum", localStorage.getItem("HealthNum") - (randint(15, 20) - localStorage.getItem("Clothing")));
+  } else if (localStorage.getItem("Wheather") = "rainy") {
+    localStorage.setItem("HealthNum", localStorage.getItem("HealthNum") - (randint(5, 10) - localStorage.getItem("Clothing")));
+  } else if (localStorage.getItem("Wheather") = "snowy") {
+    localStorage.setItem("HealthNum", localStorage.getItem("HealthNum") - (20 - localStorage.getItem("Clothing")));
+  }
   if (HealthNum > 400) {
     var Health = "good";
     if (HelathNum < 500) {
