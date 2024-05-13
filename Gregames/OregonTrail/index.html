@@ -10,47 +10,36 @@
 <b style="color:white;">M M </b>Mile_To_Next_Landmark: <b id="milesLM"></b><br>
 <b style="color:white;">M M MMM----</b>Miles_Traveled: <b id="milesD"></b></p>
 <script>
-var I = localStorage.getItem("I");
-var Idied = localStorage.getItem("Idied");
-var Isick = localStorage.getItem("Isick");
-var W = localStorage.getItem("W");
-var Wdied = localStorage.getItem("Wdied");
-var Isick = localStorage.getItem("Wsick");
-var K1 = localStorage.getItem("K1");
-var K1died = localStorage.getItem("K1died");
-var K1sick = localStorage.getItem("K1sick");
-var K2 = localStorage.getItem("K2");
-var K2died = localStorage.getItem("K2died");
-var K2sick = localStorage.getItem("k2sick");
-var K3 = localStorage.getItem("K3");
-var K3died = localStorage.getItem("K3died");
-var K3sick = localStorage.getItem("K3sick");
-var job = localStorage.getItem("job");
-var money = localStorage.getItem("money");
-var Oxen = localStorage.getItem("Oxen");
-var Foodlb = localStorage.getItem("Foodlb");
-  document.getElementById('Foodlb').innerHTML = Foodlb;
-var Clothing = localStorage.getItem("Clothing");
-var Ammo = localStorage.getItem("Ammo");
-var Axels = localStorage.getItem("Axels");
-var Toungues = localStorage.getItem("Toungues");
-var Wheels = localStorage.getItem("Wheels");
-var Day = localStorage.getItem("Day");
-var Month = localStorage.getItem("Month");
-var Year = localStorage.getItem("Year");
-var Wheather = localStorage.getItem("Wheather");
-  document.getElementById('Wheather').innerHTML = Wheather;
-var Health = localStorage.getItem("Health");
-  document.getElementById('Health').innerHTML = Health;
-var HealthNum = localStorage.getItem("HealthNum");
-var miles2LM = localStorage.getItem("milesLM");
-  document.getElementById('miles2LM').innerHTML = miles2LM;
-var milesD = localStorage.getItem("milesD");
-  document.getElementById('milesD').innerHTML = milesD;
-var Pace = localStorage.getItem("Pace");
-var hr = localStorage.getItem("hr");
-var Rations = localStorage.getItem("Rations");
-var FPD = localStorage.getItem("FPD");
+Maintain();
+function Change(name, action, num, type) {
+  if (action = "+/-") {
+    localStorage.setItem(name, localStorage.getItem(name) + num);
+  } else if (action = "x") {
+    localStorage.setItem(name, localStorage.getItem(name) * num);
+  } else if (action = "round") {
+    if (type = "up") {
+      localStorage.setItem(name, Math.ceil(localStorage.getItem(name)));
+    } else if (type = "down") {
+      localStorage.setItem(name, Math.floor(localStorage.getItem(name)));
+    } else {
+      localStorage.setItem(name, Math.round(localStorage.getItem(name)));
+    }
+  } else if (action = "Exp") {
+    localStorage.setItem(name, Math.pow(localStorage.getItem(name), num));
+  } else if (action = "root") {
+    localStorage.setItem(name, Math.pow(localStorge.getItem(name), 1/num));
+  }
+}
+function randint(a, b) {
+  return Math.random() * b + a;
+}
+function getInfo(name, action) {
+  if (action = "abselute") {
+    return Math.abs(localStorage.getItem(name));
+  } else if (action = "signe") {
+    return Math.signe(localStorage.getItem(name));
+  }
+}
 function pause(ms: number): void {
   if (isNaN(ms)) ms = 20
   basic.pause(ms);
@@ -60,134 +49,139 @@ function forever(a: () => void): void {
 }
 basic.forever(function () {
   basic.pause(24000)
-  for(var loop = 0; loop < hr * 2; loop++) {
-    milesD += 1;
-    miles2LM -= 1;
-    if (milesD = 102) {
+  for(var loop = 0; loop < localStorage.getItem("hr") * 2; loop++) {
+    Change("milesD", "+/-", 1);
+    Change("miles2LM", "+/-", -1);
+    if (localStorage.getItm("milesD") = 102) {
       localStorage.setItem("milesLM", 82);
-      localStorage.setItem("milesD", milesD + 1);
+      Change("milesD", "+/-", 1);
       localStorage.setItem("River", "Kanses");
       if (confirm("You_Have_Reached_The_Kanses_River_Crossing.-Would_You_Like_To_Take_A_Gander?")) {
         window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/KansesRiverCrossing");
       }
       window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/RiverCrossing");
-    } else if (milesD = 185) {
+    } else if (localStorage.getItem("milesD") = 185) {
       localStorage.setItem("milesLM", 118);
-      localStorage.setItem("milesD", milesD + 1);
+      Change("milesD", "+/-", 1);
       localStorage.setItem("River", "BigBlue");
       if (confirm("You_Have_Reached_The_Big_Blue_River_Crossing.-Would_You_Like_To_Take_A_Gander?")) {
       window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/BigBlueRiverCrossing");
       }
       window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/RiverCrossing");
-    } else if (milesD = 304) {
-      localStorage.setItem("milesLM", 249);
-      var milesLM = 250;
-      localStorage.setItem("milesD", milesD + 1);
+    } else if (localStorage.getItem("milesD") = 304) {
+      localStorage.setItem("milesLM", 250);
       if (confirm("You_Have_Reached_Fort_Kerny.-Would_You_Like_To_Take_A_Gander?")) {
+        localStorage.setItem("milesLM", 249);
+        Change("milesD", "+/-", 1);
         window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/FortKerny");
       }
-    } else if (milesD = 554) {
-      var milesLM = 86;
-      localStorage.setItem("milesLM", 85);
-      localStorage.setItem("milesD", milesD + 1);
+    } else if (localStorage.getItem("milesD") = 554) {
+      localStorage.setItem("milesLM", 86);
       if (confirm("You_Have_Reached_Chimeny_Rock.-Would_You_Like_To_Take_A_Gander?")) {
+        Change("milesD", "+/-", 1);
+        localStorage.setItem("milesLM", 85);
         window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/ChimenyRock");
       }
-    } else if (milesD = 640) {
-      var milesLM = 190;
-      localStorage.setItem("milesLM", 189);
-      localStorage.setItem("milesD", milesD + 1);
+    } else if (localStorage.getItem("milesD") = 640) {
+      localStorage.setItem("milesLM", 190);
       if (confirm("You_Have_Reached_Fort_Laramie.-Would_You_Like_To_Take_A_Gander?")) {
+        localStorage.setItem("milesLM", 189);
+        Change("milesD", "+/-", 1);
         window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/FortLaramie");
       }
-    } else if (milesD = 630) {
-      var milesLM = 120;
-      localStorage.setItem("milesLM", 119);
-      localStorage.setItem("milesD", milesD + 1);
+    } else if (localStorage.getItem("milesD") = 630) {
+      localStorage.setItem("milesLM", 120);
       if (confirm("You_Have_Reached_Independance_Rock.-Would_You_Like_To_Take_A_Gander?")) {
+        localStorage.setItem("milesLM", 119);
+        Change("milesD", "+/-", 1);
         window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/IndependanceRock");
       }
-    } else if (milesD = 932) {
-      var milesLM = 57;
-      localStorage.setItem("milesLM", 56);
-      localStorage.setItem("milesD" milesD + 1);
+    } else if (localStorage.getItem("milesD") = 932) {
+      localStorage.setItem("milesLM", 57);
       if (confirm("You_Have_Reached_The_South_Pass.-Would_You_Like_To_Take_A_Gander?")) {
+        localStorage.setItem("milesLM", 56);
+        Change("milesD", "+/-", 1);
         window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/SouthPass");
       }
-    } else if (milesD = 989) {
-      localStorage.setItem("milesD", milesD + 1);
+    } else if (localStorage.getItem("milesD") = 989) {
+      Change("milesD", "+/-", 1);
       localStorage.setItem("milesLM", 143);
       localStorage.setItem("River", "Green");
       if (confirm("You_Have_Reached_The_Green_River_Crossing.-Would_You_Like_To_Take_A_Gander?")) {
         window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/GreenRiverCrossing");
       }
       window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/RiverCrossing");
-    } else if (milesD = 1133) {
-      var milesLM = 57;
-      localStorage.setItem("milesLM", 56);
-      localStorage.setItem("milesD", milesD + 1);
+    } else if (localStorage.getItem("milesD") = 1133) {
+      localStorage.setItem("milesLM", 57);
       if (confirm("You_Have_Reached_Soda_Springs.-Would_You_Like_To_Take_A_Gander?")) {
+        Change("milesD", "+/-", 1);
+        localStorage.setItem("milesLM", 56);
         window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/SodaSprings");
       }
-    } else if (milesD = 1190) {
-      var milesLM = 182;
-      localStorage.setItem("milesLM", 181);
-      localStorage.setItem("milesD", milesD + 1);
+    } else if (localStorage.getItem("milesD") = 1190) {
+      localStorage.setItem("milesLM", 182);
       if (confirm("You_Have_Reached_Fort_Hall.-Would_You_Like_To_Take_A_Gander?")) {
+        Change("milesD", "+/-", 1);
+        localStorage.setItem("milesLM", 181);
         window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/FortHall");
       }
-    } else if (milesD = 1372) {
+    } else if (localStorage.getItem("milesD") = 1372) {
       localStorage.setItem("milesLM", 113);
-      localStorage.setItem("milesD", milesD + 1);
+      Change("milesD", "+/-", 1);
       localStorage.setItem("River", "Snake");
       if (confirm("You_Have_Reached_The_Snake_River_Crossing.-Would_You_Like_To_Take_A_Gander?")) {
         window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/SnakeRiverCrossing");
       }
-    } else if (milesD = 1486) {
-      localStorage.setItem("milesLM", 159);
-      var milesLM = 160;
-      localStorage.setItem("milesD", milesD + 1);
+    } else if (localStorage.getItem("milesD") = 1486) {
+      localStorage.setItem("milesLM", 160);
       if (confirm("You_Have_Reached_Fort_Boise.-Would_You_Like_To_Take_A_Gander?")) {
+        Change("milesD", "+/-", 1);
+        localStorage.setItem("milesLM", 159);
         window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/FortBoise");
       }
-    } else if (milesD = 1646) {
-      localStorage.setItem("milesLM", 54);
-      var milesLM = 55;
-      localStorage.setItem("milesD", milesD + 1);
+    } else if (localStorage.getItem("milesD") = 1646) {
+      localStorage.setItem("milesLM", 55);
       if (confirm("You_Have_Reached_The_Blue_Mountians.-Would_You_Like_To_Take_A_Gander?")) {
+        Change("milesD", "+/-", 1);
+        localStorage.setItem("milesLM", 54);
         window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Image/BlueMauntians");
       }
-    } else if (milesD = 1701) {
-      localStorage.setItem("milesLM", 119);
-      var milesLM = 120;
-      localStorage.setItem("milesD", milesD + 1);
+    } else if (localStorage.getItem("milesD") = 1701) {
+      localStorage.setItem("milesLM", 120);
       if (confirm("You_Have_Reached_Fort_Walla_Walla.-Would_You_Like_To_Take_A_Gander?")) {
+        Change("milesD", "+/-", 1);
+        localStorage.setItem("milesLM", 119);
         window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/FortWallaWalla");
       }
-    } else if (milesD = 1821) {
+    } else if (localStorage.getItem("milesD") = 1821) {
       if (confirm("You_Have_Reached_The_Dalles.-Would_You_Like_To_Take_A_Gander?")) {
         window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Images/Dalles");
       }
       window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/ColumbiaRiver1");
     }
   }
-  if (Wheather = "cold" && Clothing < 5) {
-    HealthNum += Clothing - 5;
-  } else if (Wheather = "very-cold" && Clothing < 10) {
-    HealthNum += Clothing - 10;
-  } else if (Wheather = "snowy" && Math.percentChance(25)) {
-    var Pace = "stoped";
+  if (localStorage.getItem("Wheather") = "cold" && localStorage.getItem("Clothing") < 5) {
+    Change("HealthNum", "+/-", (localStorage.getItem("Clothing") - 5));
+  } else if (localStorage.getItem("Wheather") = "very-cold" && localStorage.getItem("Clothing") < 10) {
+    Change("HealthNum", "+/-", (localStorage.getItem("Clothing") - 10));
+  } else if (localStorage.getItem("Wheather") = "snowy" && Math.percentChance(25)) {
+    localStorage.setItem("placeholderA", localStorage.getItem("Pace"));
+    localStorage.setItem("Pace", "stopped");
     Day();
-    var Pace = localStorage.getItem("Pace");
+    localStorage.setItem("Pace", localStorage.getItem("placeholderA"));
+    localStorage.removeItem("placeholderA");
     alert("Bliserd_Lose-1-Day");
-  } else if (Wheather = "rainy" && Math.percentChance(25)) {
-    var Pace = "stoped";
+  } else if (localStorage.getItem("Wheather") = "rainy" && Math.percentChance(25)) {
+    localStorage.setItem("placeholderA", localStorage.getItem("Pace"));
+    localStorage.setItem("Pace", "stopped");
     Day();
-    var Pace = localStorage.getItem("Pace");
+    localStorage.setItem("Pace", localStorage.getItem("placeholderA"));
+    localStorage.removeItem("placeholderA");
     alert("Thunderstorm_Lose-1-Day");
   }
   if (Math.percentChance(25)) {
-    var Pace = "stoped";
+    localStorage.setItem("placeholderA", localStorage.getItem("Pace"));
+    localStorage.setItem("Pace", "stopped");
     var Randomizer = randint(1, 4);
     if (Randomizer = 2) {
       aler("Ox Wondered Of Lose 2 Days");
@@ -202,12 +196,14 @@ basic.forever(function () {
       for(var loop = 0; loop < Randomizer; loop++) {
         Day();
       }
-    var Pace = localStorage.getItem("Pace");
+    localStorage.setItem("Pace", localStorage.getItem("placeholderA"));
+    localStorage.removeItem("placeholderA");
     }
   }
   if (Math.percentChance(2)) {
     var Randomizer = randint(1, 3)
-    var Pace = "stoped";
+    localStorage.setItem("placeholderA", localStorage.getItem("Pace"));
+    localStorage.setItem("Pace", "stopped");
     if (Randomizer = 1) {
       for(var loop = 0; loop < 1; loop++) {
         if (confirm("Your_Wagon_Wheel_Broke. Would_You_Like_To_Fix_It?")) {
@@ -216,17 +212,17 @@ basic.forever(function () {
           } else {
             alert("You_Were_Unable_To_Fix_The_Broken_Wagon_Wheel.");
             alert("You_Must_Replace_It_With_A_Spare_Part");
-            if (Wheels = 0) {
-              loop += -1
+            if (localStorage.getItem("Wheels") = 0) {
+              loop -= 1
             } else {
-              Wheels += -1;
+              Change("Wheels", "+/-", -1);
             }
           }
         } else {
-          if (Wheels = 0) {
-            loop += -1
+          if (localStorage.getItem("Wheels") = 0) {
+            loop -= 1
           } else {
-            Wheels += -1;
+            Change("Wheels", "+/-", -1);
           }
         }
       }
@@ -238,17 +234,17 @@ basic.forever(function () {
           } else {
             alert("You_Were_Unable_To_Fix_The_Broken_Wagon_Toungue.");
             alert("You_Must_Replace_It_With_A_Spare_Part");
-            if (Toungues = 0) {
-              loop += -1
+            if (localStorage.getItem("Toungues") = 0) {
+              loop -= 1
             } else {
-              Toungues += -1;
+              Change("Toungues", "+/-", -1);
             }
           }
         } else {
-          if (Toungue = 0) {
-            loop += -1
+          if (localStorage.getItem("Toungue") = 0) {
+            loop -= 1
           } else {
-            Toungues += -1;
+            Change("Toungues", "+/-", -1);
           }
         }
       }
@@ -260,37 +256,41 @@ basic.forever(function () {
           } else {
             alert("You_Were_Unable_To_Fix_The_Broken_Wagon_Axel.");
             alert("You_Must_Replace_It_With_A_Spare_Part");
-            if (Axels = 0) {
-              loop += -1
+            if (localStorage.getItem"(Axels") = 0) {
+              loop -= 1
             } else {
-              Axels += -1;
+              Change("Axels", "+/-", -1);
             }
           }
         } else {
-          if (Axels = 0) {
-            loop += -1
+          if (localStorage.getItem("Axels") = 0) {
+            loop -= 1
           } else {
-            Axels += -1;
+            Change("Axels", "+/-", -1);
           }
         }
       }
     }
     Day();
-    var Pace = localStorage.getItem("Pace");
+    localStorage.setItem("Pace", localStorage.getItem("placeholderA"));
+    localStorage.removeItem("placeholderA");
   }
   if (Math.percentChance(25) && Wheather = "hot"||Math.percentChance(10) && Wheather = "warm") {
-    Foodlb *= randint(0, 5) / 100;
-    Clothing *= randint(0, 80) / 100;
-    Ammo *= randint(0, 50) / 100;
+    Change("Foodlb", "x", randint(0, 5));
+    Change("Foodlb", "x", 0.01);
+    Change("Clothing", "x", randint(0, 80));
+    Change("Clothing", "x", 0.01);
+    Change("Ammo", "x", randint(0,50));
+    Change("Ammo", "x", 0.01);
     alert("Wagon_Fire_You_Lost_"localStorage.getItem("Foodlb") - Foodlb"lb_Of_Food,_"localStorage.getItem("Clothing") - Clothing"_Sets_Of_Clothing_And_"localStorage.getItem("Ammo") - Ammo"_Bullets");
   } else if (((Math.percentChance(75) && Wheather = "very-cold"||Math.percentChance(50) && Wheather = "cold")||Math.percentChance(25))){
-    Clothing += randint(1, 10);
-    Ammo += randint(1, 275);
-    Axels += randint(1, 5);
-    Toungues += randint(1, 5);
-    Wheels += randint(1, 5);
+    Change("Clothing", "+/-", randint(1, 10));
+    Change("Ammo", "+/-", randint(1, 275));
+    Change("Axels", "+/-", randint(1, 5));
+    Change("Toungues", "+/-", randint(1, 5));
+    Change("Wheels", "+/-", randint(1, 5));
     if (Math.percentChance(5)) {
-      Oxen += randint(1,4);
+      Change("Oxen", "+/-", randint(1,4));
     }
     alert("You_Found_An_Abandened_Wagon");
   }
@@ -298,61 +298,62 @@ basic.forever(function () {
   Maintain();
 }
 function Day() {
-  if (Pace == "stoped") {
-    if (FPD == 3) {
-      HealthNum += 4;
-      } else if (FPD == 2) {
-        HealthNum += 6;
-      } else if (FPD == 1) {
-        HealthNum += 10;
+  if (localStorage.getItem("Pace") == "stoped") {
+    if (localStorage.getItem("FPD") == 3) {
+      Change("HealthNum", "+/-", 4);
+      } else if (localStorage.getItem("FPD") == 2) {
+        Change("HealthNum", "+/-", 6);
+      } else if (localStorage.getItem("FPD") == 1) {
+        Change("HealthNum", "+/-", 10);
       }
-  } else if (Pace == "steady") {
-    HealthNum += -2;
-  } else if (Pace == "tiring") {
-    HealthNum += -5;
-  } else if (Pace == "strenguous") {
-    HealthNum += -15;
-  } else if (Pace == "grueling") {
-    HealthNum += -25;
+  } else if (localStorage.getItem("Pace") == "steady") {
+    Change("HealthNum", "+/-", -2);
+  } else if (localStorage.getItem("Pace") == "tiring") {
+    Change("HealthNum", "+/-", -5);
+  } else if (localStorage.getItem("Pace") == "strenguous") {
+    Change("HealthNum", "+/-", -15);
+  } else if (localStorage.getItem("Pace") == "grueling") {
+    Change("HealthNum", "+/-", -25);
   }
-  if (FPD == 3) {
-    HealthNum += 1;
-  } else if (FPD == 2) {
-    HealthNum += -5;
-  } else if (FPD == 1) {
-    HealthNum += -10;
+  if (localStorage.getItem("FPD") == 3) {
+    Change("HealthNum", "+/-", 1);
+  } else if (localStorage.getItem("FPD") == 2) {
+    Change("HealthNum", "+/-" -5);
+  } else if (localStorage.getItem("FPD") == 1) {
+    Change("HealthNum", "+/-", -10);
   }
-  Day += 1;
-  if (Day == "28") {
-    if (Month == 2) {
-      var Day = 1;
-      Month += 1;
+  Change("Day", "+/-", 1);
+  if (localStorage.getItem("Day") == "28") {
+    if (localStorage.getItem("Month") == 2) {
+      localStorage.setItem("Day", 1);
+      Change("Month", "+/-", 1);
     }
-  } else if (Day == 30) {
-    if ((Month == 4||Month == 6)||(Month == 9||Month == 11)) {
-      var Day = 1;
-      Month += 1;
+  } else if (localStorage.getItem("Day") == 30) {
+    if ((localStorage.getItem("Month") == 4||localStorage.getItem("Month") == 6)||(localStorage.getItem("Month") == 9||localStorage.getItem("Month") == 11)) {
+      localStorage.setItem("Day", 1);
+      Change("Month", "+/-", 1);
     } 
-  } else if (Day == 31) {
-    if ((Month == 1||Month == 3)||((Momth == 5||Month == 7)||(Month == 8||Month == 10))) {
-      var Day = 1;
-      Month += 1;
-    } else if (Month = 12) {
-      var Day = 1;
+  } else if (localStorage.getItem("Day") == 31) {
+    if ((localStorage.getItem("Month") == 1||localStorage.getItem("Month") == 3)||((localStorage.getItem("Momth") == 5||localStorage.getItem("Month") == 7)||(localStorage.getItem("Month") == 8||localStorage.getItem("Month") == 10))) {
+      localStorage.setItem("Day", 1);
+      Change("Month", "+/-", 1);
+    } else if (localStorage.getItem("Month") = 12) {
+      localStorage.setItem("Day", 1)
       var Month = 1;
-      Year += 1;
+      localStorage.setItem("Month", 1)
+      Change("Year", "+/-", 1);
     } 
   }
-    if (Month = 1||Month = 2) {
+    if (localStorage.getItem("Month") = 1||localStorage.getItem("Month") = 2) {
     var Randomizer = randint(1, 3);
     if (Randomizer = 1) {
-      var Wheather = "snowy";
+      localStorage.setItem("Wheather", "snowy");
     } else if (Randomizer = 2) {
-      var Wheather = "very-cold";
+      localStorage.setItem("Wheather", "very-cold");
     } else if (Randomizer = 3) {
-      var Wheather = "cold";
+      localStorage.setItem("Wheather", "cold");
     }
-  } else if (Month = 3||Month = 4) {
+  } else if (localStorage.getItem("Month") = 3||localStorage.getItem("Month") = 4) {
     var Randomizer = randint(1, 4);
     if (Randomizer = 1) {
       var Wheather = "cold";
@@ -363,7 +364,7 @@ function Day() {
     } else if (Randomizer = 4) {
       var Wheather = "warm";
     }
-  } else if (Month = 5||Month = 6) {
+  } else if (localStorage.getItem("Month") = 5||localStorage.getItem("Month") = 6) {
     var Randomizer = randint(1, 3);
     if (Randomizer = 1) {
       var Wheather = "rainy";
@@ -372,7 +373,7 @@ function Day() {
     } else if (Randomizer = 3) {
       var Wheather = "hot";
     }
-  } else if (Month = 7||Month = 8) {
+  } else if (localStorage.getItem("Month") = 7||localStorage.getItem("Month") = 8) {
     var Randomizer = randint(1, 5);
     if (Randomizer = 1) {
       var Wheather = "hot";
@@ -385,7 +386,7 @@ function Day() {
     } else if (Randomizer = 5) {
       var Wheather = "cool";
     }
-  } else if (Month = 9||Month = 10) {
+  } else if (localStorage.getItem("Month") = 9||localStorage.getItem("Month") = 10) {
     var Randomizer = randint(1, 3);
     if (Randomizer = 1) {
       var Wheather = "cold";
@@ -394,7 +395,7 @@ function Day() {
     } else if (Randomizer = 3) {
       var Wheather = "warm";
     }
-  } else if (Month = 11||Month = 12) {
+  } else if (localStorage.getItem("Month") = 11||localStorage.getItem("Month") = 12) {
     var Randomizer = randint(1, 3);
     if (Randomizer = 1) {
       var Wheather = "cold";
@@ -404,22 +405,22 @@ function Day() {
       var Wheather = "snowy";
     }
   }
-  if (HealthNum > 400) {
+  if (localStorage.getItem("HealthNum") > 400) {
     var Health = "good";
-    if (HelathNum < 500) {
+    if (localStorage.getItem("HelathNum") < 500) {
       var Health = "fair";
-      if (HealthNum < 300) {
+      if (localStorage.getItem("HealthNum") < 300) {
         var Health = "poor";
         if (Math.percentChance(50)) {
-          if (K3sick) {
-            if (K3died) {
-              if (K2sick) {
-                if (K2died) {
-                  if (K1sick) {
-                    if (K1died) {
-                      if (Wsick) {
-                        if (Wdied) {
-                          if (Isick) {
+          if (localStorage.getItem("K3sick")) {
+            if (localStorage.getItem("K3died")) {
+              if (localStorage.getItem("K2sick")) {
+                if (localStorage.getItem("K2died")) {
+                  if (localStorage.getItem("K1sick")) {
+                    if (localStorage.getItem("K1died")) {
+                      if (localStorage.getItem("Wsick")) {
+                        if (localStorage.getItem("Wdied")) {
+                          if (localStorage.getItem("Isick")) {
                             alert("All_Of_The_People_In_Your_Party_Have_Died");
                             localStorage.clear();
                             window.location.assign("https://0038509gd.github.io/Greg.com/Gregames");
@@ -501,18 +502,18 @@ function Day() {
             var K3sick = true;
           }
         }
-        if (HealthNum < 200) {
+        if (localStorage.getItem("HealthNum") < 200) {
           var Health = "very-poor";
           if (Math.percentChance(25)) {
-          if (K3sick) {
-            if (K3died) {
-              if (K2sick) {
-                if (K2died) {
-                  if (K1sick) {
-                    if (K1died) {
-                      if (Wsick) {
-                        if (Wdied) {
-                          if (Isick) {
+          if (localStorage.getItem("K3sick")) {
+            if (localStorage.getItem("K3died")) {
+              if (localStorage.getItem("K2sick")) {
+                if (localStorage.getItem("K2died")) {
+                  if (localStorage.getItem("K1sick")) {
+                    if (localStorage.getItem("K1died")) {
+                      if (localStorage.getItem("Wsick")) {
+                        if (localStorage.getItem("Wdied")) {
+                          if (localStorage.getItem("Isick")) {
                             alert("All_Of_The_People_In_Your_Party_Have_Died");
                             localStorage.clear();
                             window.location.assign("https://0038509gd.github.io/Greg.com/Gregames");
@@ -600,37 +601,12 @@ function Day() {
   }
 }
 function Maintain() {
-  localStorage.setItem("Idied", Idied);
-  localStorage.setItem("Isick", Isick);
-  localStorage.setItem("Wdied", Wdied);
-  localStorage.setItem("Wsick", Wsick);
-  localStorage.setItem("K1died", K1died);
-  localStorage.setItem("K1sick", K1sick);
-  localStorage.setItem("K2died", K2died);
-  localStorage.setItem("K2sick", K2sick);
-  localStorage.setItem("K3died", K3died);
-  localStorage.setItem("K3sick", K3sick);
-  localStorage.setItem("Oxen", Oxen);
-  localStorage.setItem("Foodlb", Foodlb);
-  document.getElementById('Foodlb').innerHTML = "Food:" + Foodlb + "pounds";
-  localStorage.setItem("Clothing", Clothing);
-  localStorage.setItem("Ammo", Ammo);
-  localStorage.setItem("Axels", Axels);
-  localStorage.setItem("Toungues", Toungues);
-  localStorage.setItem("Wheels", Wheels);
-  localStorage.setItem("Day", Day);
-  localStorage.setItem("Month", Month);
-  localStorage.setItem("Year", Year);
-  document.getElementById('Date').innerHTML = "Date:" + Day + "th_Of_" + Month + "_in_" + Year;
-  localStorage.setItem("Wheather", Wheather);
-  document.getElementById('Wheather').innerHTML = "Wheather:" + Wheather;
-  localStorage.setItem("Health", Health);
-  document.getElementById('Health').innerHTML = "Health:" + Health;
-  localStorage.setItem("HealthNum", HealthNum);
-  localStorage.setItem("miles2LM", miles2LM);
-  document.getElementById('miles2LM').innerHTML = "Next_Landmark" + miles2LM + "miles";
-  localStorage.setItem("milesD", milesD);
-  document.getElementById('milesD').innerHTML = "Miles_Traveled:" + milesD + "miles";
+  document.getElementById('Foodlb').innerHTML = "Food:" + localStorage.getItem("Foodlb") + "pounds";
+  document.getElementById('Date').innerHTML = "Date:" + localStorage.getItem("Day") + "th_Of_" + localStorage.getItem("Month") + "_in_" + localStorage.getItem("Year");
+  document.getElementById('Wheather').innerHTML = "Wheather:" + localStorage.getItem("Wheather");
+  document.getElementById('Health').innerHTML = "Health:" + localStorage.getItem("Health");
+  document.getElementById('miles2LM').innerHTML = "Next_Landmark" + localStorage.getItem("miles2LM") + "miles";
+  document.getElementById('milesD').innerHTML = "Miles_Traveled:" + localStorage.getItem("milesD") + "miles";
 }
 </script></body2></body1></html><script>
   document.body.style.background = "black";
