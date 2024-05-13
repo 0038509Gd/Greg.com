@@ -4,23 +4,42 @@
 <p id="trade"></p>
 <a href="https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Segment-Action-Menu"><button>Return</button></a>
 <script>
+function Change(name, action, num, type) {
+  if (action = "+/-") {
+    localStorage.setItem(name, localStorage.getItem(name) + num);
+  } else if (action = "round") {
+    if (type = "up") {
+      localStorage.setItem(name, Math.ceil(localStorage.getItem(name)));
+    } else if (type = "down") {
+      localStorage.setItem(name, Math.floor(localStorage.getItem(name)));
+    } else {
+      localStorage.setItem(name, Math.round(localStorage.getItem(name)));
+    }
+  } else if (action = "Exp") {
+    localStorage.setItem(name, Math.pow(localStorage.getItem(name), num));
+  } else if (action = "root") {
+    localStorage.setItem(name, Math.pow(localStorge.getItem(name), 1/num));
+  }
+}
+function randint(a, b) {
+  return Math.random() * b + a;
+}
+function getInfo(name, action) {
+  if (action = "abselute") {
+    return Math.abs(localStorage.getItem(name));
+  } else if (action = "signe") {
+    return Math.signe(localStorage.getItem(name));
+  }
+}
 var Tradable = false;
-var money = localStorage.getItem("money");
-  document.getElementById('money').innerHTML = "money: " + money;
-var Oxen = localStorage.getItem("Oxen");
-  document.getElementById('Oxen').innerHTML = "Oxen: " + Oxen;
-var Foodlb = localStorage.getItem("Foodlb");
-  document.getElementById('Foodlb').innerHTML = "Pounds_Of_Food:" + Foodlb;
-var Clothing = localStorage.getItem("Clothing");
-  document.getElementById('Clothing').innerHTML = "Sets_Of_Clothing:" + Clothing;
-var Ammo = localStorage.getItem("Ammo");
-  document.getElementById('Ammo').innerHTML = "Bullets:" + Ammo;
-var Axels = localStorage.getItem("Axels");
-  document.getElementById('Axels').innerHTML = "Wagon_Axels:" + Axels;
-var Toungues = localStorage.getItem("Toungues");
-  document.getElementById('Toungues').innerHTML = "Wagon_Toungues:" + Toungues;
-var Wheels = localStorage.getItem("Wheels");
-  document.getElementById('Wheels').innerHTML = "Wagon_Wheels:" + Wheels;
+  document.getElementById('money').innerHTML = "money: " + localStorage.getItem("money");
+  document.getElementById('Oxen').innerHTML = "Oxen: " + localStorage.getItem("Oxen");
+  document.getElementById('Foodlb').innerHTML = "Pounds_Of_Food:" + localStorage.getItem("Foodlb");
+  document.getElementById('Clothing').innerHTML = "Sets_Of_Clothing:" + localStorage.getItem("Clothing");
+  document.getElementById('Ammo').innerHTML = "Bullets:" + localStorage.getItem("Ammo");
+  document.getElementById('Axels').innerHTML = "Wagon_Axels:" + localStorage.getItem("Axels");
+  document.getElementById('Toungues').innerHTML = "Wagon_Toungues:" + localStorage.getItem("Toungues");
+  document.getElementById('Wheels').innerHTML = "Wagon_Wheels:" + localStorage.getItem("Wheels");
 if (Math.percentChance(50)) {
   var Randomizer = randint(1, 8);
   if (Randomizer = 1) {
@@ -49,49 +68,49 @@ if (Math.percentChance(50)) {
     var numTrade = randint(0.01, 10);
   }
   if (Trade = "_Oxen_") {
-    if (Oxen < numTrade) {
+    if (localStorage.getItem("Oxen") < numTrade) {
       alert("An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.");
     } else {
       Trade();
     }
   } else if (Trade = "lb_Of_Food_") {
-    if (Foodlb < numTrade) {
+    if (localStorage.getItem("Foodlb") < numTrade) {
       alert("An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.");
     } else if {
       Trade();
     }
   } else if (Trade = "_Sets_Of_Clothing_") {
-    if (Clothing < numTrade) {
+    if (localStorage.getItem("Clothing") < numTrade) {
       alert("An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.");
     } else {
       Trade();
     }
   } else if (Trade = "_Bullets_") {
-    if (Ammo < numTrade) {
+    if (localStorage.getItem("Ammo") < numTrade) {
       alert("An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.");
     } else {
       Trade();
     }
   } else if (Trade = "_Wagon_Axels_") {
-    if (Axels < numTrade) {
+    if (localStorage.getItem("Axels") < numTrade) {
       alert("An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.");
     } else {
       Trade();
     }
   } else if (Trade = "_Wagon_Toungues_") {
-    if (Toungues < numTrade) {
+    if (localStorage.getItem("Toungues") < numTrade) {
       alert("An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.");
     } else {
       Trade();
     }
   } else if (Trade = "_Wagon_Wheels_") {
-    if (Wheels < numTrade) {
+    if (localStorage.getItem("Wheels") < numTrade) {
       alert("An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.");
     } else {
       Trade();
     }
   } else if (Trade = "_$_") {
-    if (money < numTrade) {
+    if (localStorage.getItem("money") < numTrade) {
       alert("An_Immagrent_Wants_To_Trade_For_" + numTrade + Trade + "But_You_Don't_Have_That.");
     } else {
       Trade();
@@ -130,48 +149,40 @@ function Trade() {
   }
   if (conferm("An_Immagrant_Wants_To_Trade_You_" + numTrade + Trade + "For" + numTraded + Traded + "Would_You_Like_To_Make_The_Trade?")) {
     if (Trade = "_Oxen_") {
-      Oxen -= numTrade;
+      Change("Oxen", "+/-", -numTrade);
     } else if (Trade = "lb_Of_Food_") {
-      Foodlb -= numTrade;
+      Change("Foodlb", "+/-", numTrade);
     } else if (Trade = "_Sets_Of_Clothing_") {
-      Clothing -= numTrade;
+      Change("Clothing", "+/-", numTrade)
     } else if (Trade = "_Bullets_") {
-      Ammo -= numTrade;
+      Change("Ammo", "+/-", numTrade);
     } else if (Trade = "_Wagon_Axels_") {
-      Axels -= numTrade;
+      Change("Axels", "+/-", numTrade);
     } else if (Trade = "_Wagon_Toungues_") {
-      Toungues -= numTrade;
+      Change("Toungues", "+/-", numTrade);
     } else if (Trade = "_Wagon_Wheels_") {
-      Wheels -= numTrade;
+      Change("Wheels", "+/-", numTrade);
     } else if (Trade = "_$_") {
-      money -= numTrade;
+      Change("money", "+/-", numTrade);
     }
     if (Traded = "_Oxen_") {
-      Oxen += numTraded;
+      Change("Oxen", "+/-", numTraded);
     } else if (Traded = "lb_Of_Food_") {
-      Foodlb += numTraded;
+      Change("Foodlb", "+/-", numTraded);
     } else if (Traded = "_Sets_Of_Clothing_") {
-      Clothing += numTraded;
+      Change("Clothing", "+/-", numTraded);
     } else if (Traded = "_Bullets_") {
-      Ammo += numTraded;
+      Change("Ammo", "+/-", numTraded);
     } else if (Traded = "_Wagon_Axel_") {
-      Axel += numTraded;
+      Change("Axels", "+/-", numTraded);
     } else if (Traded = "_Wagon_Toungues_") {
-      Toungues += numTraded;
+      Change("Toungues", "+/-", numTraded)
     } else if (Traded = "_Wagon_Wheels_") {
-      Wheels += numTraded;
+      Change("Wheels", "+/-", numTraded);
     } else if (Traded = "_$_") {
-      money += numTraded;
+      Change("money", "+/-", numTraded);
     }
   }
-  localStorage.setItem("Oxen", Oxen);
-  localStorage.setItem("Foodlb", Foodlb);
-  localStorage.setItem("Clothing", Clothing);
-  localStorage.setItem("Ammo", Ammo);
-  localStorage.setItem("Axels", Axels);
-  localStorage.setItem("Toungues", Toungues);
-  localStorage.setItem("Wheels", Wheels);
-  localStorage.setItem("money", money);
   window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Segment-Action-Menu");
 }
 </script></body2></body1></html><script>
