@@ -9,9 +9,6 @@
 <button onclick="Day();">5</button> Whait_To_See_If_Conditions_Improove
 <a href="https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Fording-Explained"><button>4</button></a> Find_Out_What_These_Options_Mean<br>
 <script>
-function Change(name, num) {
-  localStorage.setItem(name, localStorage.getItem(name) + num);
-}
 function Change2(name, action, num, type) {
   if (action = "+/-") {
     localStorage.setItem(name, localStorage.getItem(name) + num);
@@ -29,24 +26,6 @@ function Change2(name, action, num, type) {
     localStorage.setItem(name, Math.pow(localStorge.getItem(name), 1/num));
   }
 }
-function ChangeX(name, num) {
-  localStorage.setItem(name, localStorage.getItem(name) * num);
-}
-function changeExponent(name, num) {
-  let startNum = localStorage.getItem(name);
-  for (let loop = 0; loop < num; loop++) {
-    localStorage.setItem(name, localStorage.getItem(name) * startNum);
-  }
-}
-function changePercent(name, num) {
-  localStorage.setItem(name, localStorage.getItem(name) % num);
-}
-function changeSqroot(name, num) {
-}
-function changeLog(name, num, base) {
-}
-function changeSin(name, num) {
-}
 function randint(a, b) {
   return Math.random() * b + a;
 }
@@ -63,6 +42,13 @@ function Maintain() {
   documant.getElementById("Rations").innerHTML = localStorage.getItem("Rations");
   documant.getElementById("milesD").innerHTML = localStorage.getItem("milesD");
   documant.getElementById("miles2LM").innerHTML = localStorage.getItem("miles2LM");
+}
+function getInfo(name, action) {
+  if (action = "abselute") {
+    return Math.abs(localStorage.getItem(name));
+  } else if (action = "signe") {
+    return Math.signe(localStorage.getItem(name));
+  }
 }
 if (localStorage.getItem("River") = "Kanses") {
   localStorage.setItem("Depth", 3.5);
