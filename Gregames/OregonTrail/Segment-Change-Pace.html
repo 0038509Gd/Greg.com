@@ -8,32 +8,28 @@
 <a href="https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Paces-Explained"><button>5</button></a> Find_Out_The_Difference_Between_These_Options<br><br>
 Press"Space"To_Coninue <a href="https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Segment-Action-Menu"><button>Space</button></a>
 <script>
-var Pace = localStorage.getItem("Pace");
-var hr = localStorage.getItem("hr");
-document.getElementById('pace').innerHTML = "Your_Current_Pace_Is_" + Pace;
+Maintain();
 function Maintain() {
-  localStorage.setItem("hr", hr);
-  localStorage.setItem("Pace", Pace);
-  document.getElementById('pace').innerHTML = "Your_Current_Pace_Is_" + Pace;
+  document.getElementById('pace').innerHTML = "Your_Current_Pace_Is_" + localStorage.getItem("Pace");
 }
 function Steady() {
-  var Pace = "steady";
-  var hr = "8";
+  localStorage.setItem("Pace", "steady");
+  localStorage.setItem("hr", 8);
   Maintain();
 }
 function Tireing() {
-  var Pace = "tireing";
-  var hr = 12;
+  localStorage.setItem("Pace", "tireing");
+  localStorage.setItem("hr", 12);
   Maintain();
 }
 function Strenguous {
-  var Pace = "strenguous";
-  var hr = 16;
+  localStorage.setItem("Pace", "strenguous");
+  localStorage.setItem("hr", 16);
   Maintain();
 }
 function Grueling {
-  var Pace = "grueling";
-  var hr = 20;
+  localStorage.setItem("Pace", "grueling");
+  localStorage.setItem("hr", 20);
   Maintain();
 }
 </script></body2></body1></html><script>
