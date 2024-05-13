@@ -12,9 +12,21 @@
 function Change(name, num) {
   localStorage.setItem(name, localStorage.getItem(name) + num);
 }
-function Change2(name, num, type) {
-  if (type = "") {
-    
+function Change2(name, action, num, type) {
+  if (action = "+/-") {
+    localStorage.setItem(name, localStorage.getItem(name) + num);
+  } else if (action = "round") {
+    if (type = "up") {
+      localStorage.setItem(name, Math.ceil(localStorage.getItem(name)));
+    } else if (type = "down") {
+      localStorage.setItem(name, Math.floor(localStorage.getItem(name)));
+    } else {
+      localStorage.setItem(name, Math.round(localStorage.getItem(name)));
+    }
+  } else if (action = "Exp") {
+    localStorage.setItem(name, Math.pow(localStorage.getItem(name), num));
+  } else if (action = "root") {
+    localStorage.setItem(name, Math.pow(localStorge.getItem(name), 1/num));
   }
 }
 function ChangeX(name, num) {
