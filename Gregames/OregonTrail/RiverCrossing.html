@@ -9,8 +9,48 @@
 <button onclick="Day();">5</button> Whait_To_See_If_Conditions_Improove
 <a href="https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Fording-Explained"><button>4</button></a> Find_Out_What_These_Options_Mean<br>
 <script>
-function Change(name, number) {
-  localStorage.setItem(name, localStorage.getItem(name) + number);
+function Change(name, num) {
+  localStorage.setItem(name, localStorage.getItem(name) + num);
+}
+function Change2(name, num, type) {
+  if (type = "") {
+    
+  }
+}
+function ChangeX(name, num) {
+  localStorage.setItem(name, localStorage.getItem(name) * num);
+}
+function changeExponent(name, num) {
+  let startNum = localStorage.getItem(name);
+  for (let loop = 0; loop < num; loop++) {
+    localStorage.setItem(name, localStorage.getItem(name) * startNum);
+  }
+}
+function changePercent(name, num) {
+  localStorage.setItem(name, localStorage.getItem(name) % num);
+}
+function changeSqroot(name, num) {
+}
+function changeLog(name, num, base) {
+}
+function changeSin(name, num) {
+}
+function randint(a, b) {
+  return Math.random() * b + a;
+}
+function Maintain() {
+  document.getElementById("Oxen").innerHTML = loaclStorage.getItem("Oxen");
+  document.getElementById("Foodlb").innerHTML = localStorage.getItem("Foodlb");
+  document.getElementById("Clothing").innerHTML = localStorage.getItem("Clothing");
+  document.getElementById("Ammo").innerHTML = localStorage.getItem("Ammo");
+  document.getElementById("Axels").innerHTML = localStorage.getItem("Axels");
+  document.getElementById("Toungues").innerHTML = localStorage.getItem("Toungues");
+  document.getElementById("Wheels").innerHTML = localStorage.getItem("Wheels");
+  documant.getElementById("Health").innerHTML = localStorage.getItem("Health");
+  documant.getElementById("Pace").innerHTML = localStorage.getItem("Pace");
+  documant.getElementById("Rations").innerHTML = localStorage.getItem("Rations");
+  documant.getElementById("milesD").innerHTML = localStorage.getItem("milesD");
+  documant.getElementById("miles2LM").innerHTML = localStorage.getItem("miles2LM");
 }
 if (localStorage.getItem("River") = "Kanses") {
   localStorage.setItem("Depth", 3.5);
@@ -135,28 +175,30 @@ function Day() {
   if (localStorage.getItem("Wheather") = "hot") {
     Change("HealthNum", randint(-2, -1));
   } else if (localStorage.getItem("Wheather") = "cold") {
-    Change("HealthNum", -(randint(10, 15) - localStorage.getItem("Clothing")));
+    Change("HealthNum", randint(-15, -10));
+    Change("HealthNum", localStorage.getItem("Clothing"));
   } else if (localStorage.getItem("Wheather") = "very-cold") {
-    localStorage.setItem("HealthNum", localStorage.getItem("HealthNum") - (randint(15, 20) - localStorage.getItem("Clothing")));
+    Change("HealthNum", randint(-20, -15));
+    Change("HealthNum", localStorage.getItem("Clothing"));
   } else if (localStorage.getItem("Wheather") = "rainy") {
-    localStorage.setItem("HealthNum", localStorage.getItem("HealthNum") - (randint(5, 10) - localStorage.getItem("Clothing")));
+    Change("HealthNum", randint(-10, -5));
+    Change("HealthNum", localStorage.getItem("Clothing"));
   } else if (localStorage.getItem("Wheather") = "snowy") {
-    localStorage.setItem("HealthNum", localStorage.getItem("HealthNum") - (20 - localStorage.getItem("Clothing")));
+    Change("HealthNum", -20);
+    Change("HealthNum", localStorage.getItem("Clothing"));
   }
   if (localStorage.getItem("Wheather") = "hot") {
-    Depth -= randint(1, 2);
-  } else if (localStorage.getItem("Wheather") = "warm") {
-    Depth -= randint(0.5, 1);
+    Change("Depth", randint(-2, -1));
+  } else if ((localStorage.getItem("Wheather") = "warm"||localStorage.getItem("Wheather") = "cold")) {
+    Change("Depth", randint(-1, -0.5));
   } else if (localStorage.getItem("Wheather") = "cool") {
-    Depth += randint(-1, 1);
-  } else if (localStorage.getItem("Wheather") = "cold") {
-    Depth -= randint(0.5, 1);
+    Change("Depth", randint(-1, 1));
   } else if (localStorage.getItem("Wheather") = "very-cold") {
-    Depth -= randint(0.1, 1);
+    Change("Depth", randint(-1, -0.1));
   } else if (localStorage.getItem("Wheather") = "rainy") {
-    Depth += randint(2, 5);
+    Change("Depth", randint(2, 5));
   } else if (localStorage.getItem("Wheather") = "snowy") {
-    Depth +=randint(-5, 5);
+    Change("Depth", randint(-5, 5));
   }
   if (localStorage.getItem("HealthNum") > 400) {
     localStorage.setItem("Health", "good");
@@ -353,37 +395,6 @@ function Day() {
     }
   }
 }
-function Maintain() {
-  localStorage.setItem("Wdied", Wdied);
-  localStorage.setItem("Wsick", Wsick);
-  localStorage.setItem("K1died", K1died);
-  localStorage.setItem("K1sick", K1sick);
-  localStorage.setItem("K2died", K2died);
-  localStorage.setItem("K2sick", K2sick);
-  localStorage.setItem("K3died", K3died);
-  localStorage.setItem("K3sick", K3sick);
-  localStorage.setItem("Oxen", Oxen);
-  localStorage.setItem("Foodlb", Foodlb);
-  document.getElementById('Foodlb').innerHTML = "Food:" + Foodlb + "pounds";
-  localStorage.setItem("Clothing", Clothing);
-  localStorage.setItem("Ammo", Ammo);
-  localStorage.setItem("Axels", Axels);
-  localStorage.setItem("Toungues", Toungues);
-  localStorage.setItem("Wheels", Wheels);
-  localStorage.setItem("Day", Day);
-  localStorage.setItem("Month", Month);
-  localStorage.setItem("Year", Year);
-  document.getElementById('Date').innerHTML = "Date:" + Day + "th_Of_" + Month + "_in_" + Year;
-  localStorage.setItem("Wheather", Wheather);
-  document.getElementById('Wheather').innerHTML = "Wheather:" + Wheather;
-  localStorage.setItem("Health", Health);
-  document.getElementById('Health').innerHTML = "Health:" + Health;
-  localStorage.setItem("HealthNum", HealthNum);
-  localStorage.setItem("miles2LM", miles2LM);
-  document.getElementById('miles2LM').innerHTML = "Next_Landmark" + miles2LM + "miles";
-  localStorage.setItem("milesD", milesD);
-  document.getElementById('milesD').innerHTML = "Miles_Traveled:" + milesD + "miles";
-}
 function Fairy() {
   if (localStorage.getItem("Depth") <= 3) {
     alert("The_River_Is_Shallow.-The_Fairy_Is_Inoperable_Today");
@@ -404,11 +415,11 @@ function Fairy() {
 function Culk() {
   if (localStorage.getItem("Depth") <= 3 && Math.percentChance(50)) {
     alert("Your_Wagon_Tiped_Over.-You_Lose_1_Ox,_half_Of_Your_Food,_1_Wagon_Axel,_1_Wagon_Toungue,_1_Wagon_Wheel");
-    localStorage.setItem("Oxen", localStorage.getItem("Oxen") - 1);
-    localStorage.setItem("Foodlb", localStorage.getItem("Foodlb") / 2);
-    localStorage.setItem("Axels", localStorage.getItem("Axels") - 1);
-    localStorage.setItem("Toungues", localStorage.getItem("Toungues") - 1);
-    localStorage.setItem("Wheels", localStorage.getItem("Wheels") - 1);
+    Change("Oxen", -1);
+    ChangeX("Foodlb", 0.5);
+    Change("Axels", -1);
+    Change("Toungues", -1);
+    Change("Wheels", -1);
     Maintain();
   } else {
     alert("You_Crosed_The_River_Just_Fine");
@@ -432,13 +443,13 @@ function Ford() {
     Day();
   } else {
     alert("Your_Wagon_Is_Now_A_Submarien.-Lose_Half_Your_Supplies");
-    localStorage.setItem("Oxen", localStorage.getItem("Oxen") / 2);
-    localStorage.setItem("Foodlb", localStorage.getItem("Foodlb") / 2);
-    localStorage.setItem("Clothing", localStorage.getItem("Clothing") / 2);
-    localStorage.setItem("Ammo", localStorage.getItem("Ammo") / 2);
-    localStorage.setItem("Axels", localStorage.getItem("Axels") / 2);
-    localStorage.setItem("Toungues", localStorage.getItem("Toungues") / 2);
-    localStorage.setItem("Wheels", localStorage.getItem("Wheels") / 2);
+    ChangeX("Oxen", 0.5);
+    ChangeX("Foodlb", 0.5);
+    ChangeX("Clothing", 0.5);
+    ChangeX("Ammo", 0.5);
+    ChangeX("Axels", 0.5);
+    ChangeX("Toungues", 0.5);
+    ChangeX("Wheels", 0.5);
     Maintain();
   }
   window.location.assign("https://0038509gd.github.io/Greg.com/Gregame/OregonTrail");
@@ -446,7 +457,7 @@ function Ford() {
 function IndianGuide() {
   if (localStorage.getItem("River") = "Snake") {
     if (confirm("An_Indian_Has_Agreed_To_Guide_Your_Wagon_Across_The_River_For_3_Sets_Of_Clothing.-Do_You_Accept?")) {
-      localStorage.setItem("Clothing", localStorage.getItem("Clothing") - 3);
+      Change("Clothing", -3);
       Maintain();
       window.location.assign("https://0038509gd.github.io/Greg.com/Gregames/OregonTrail");
     }
