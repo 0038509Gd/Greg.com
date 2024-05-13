@@ -11,62 +11,81 @@
 <a href="https://0038509gd.github.io/Greg.com/Gregames/OregonTrail/Segment-Month"><button>8</button></a> Leave_Store
 <p id="$" style="color:white"></p>
 <script>
-var money = localStorage.getItem("money");
+function Change(name, action, num, type) {
+  if (action = "+/-") {
+    localStorage.setItem(name, localStorage.getItem(name) + num);
+  } else if (action = "round") {
+    if (type = "up") {
+      localStorage.setItem(name, Math.ceil(localStorage.getItem(name)));
+    } else if (type = "down") {
+      localStorage.setItem(name, Math.floor(localStorage.getItem(name)));
+    } else {
+      localStorage.setItem(name, Math.round(localStorage.getItem(name)));
+    }
+  } else if (action = "Exp") {
+    localStorage.setItem(name, Math.pow(localStorage.getItem(name), num));
+  } else if (action = "root") {
+    localStorage.setItem(name, Math.pow(localStorge.getItem(name), 1/num));
+  }
+}
+function randint(a, b) {
+  return Math.random() * b + a;
+}
+function getInfo(name, action) {
+  if (action = "abselute") {
+    return Math.abs(localStorage.getItem(name));
+  } else if (action = "signe") {
+    return Math.signe(localStorage.getItem(name));
+  }
+}
 function buyOx() {
   var Oxen = docment.getElementById("box").value;
-  localStorage.setItem("Oxen", Oxen + localStorage.getItem("Oxen"));
-  var oxPrice = Oxen * 20;
-  money -= oxPrice;
-  document.getElementById("$").innerHTML = "money_left" + money;
-  localStorage.setItem("money", money);
+  Change("Oxen", "+/-", Oxen);
+  var oxPrice = Oxen * -20;
+  Change("money", "+/-", oxPrice);
+  document.getElementById("$").innerHTML = "money_left" + localStorage.getItem("money");
 }
 function buyFood() {
   var Foodlb = document.getElementById("box").value;
-  localStorage.setItem("Foodlb", Foodlb + localStorage.getItem("Foodlb"));
-  var foodPrice = Foodlb * 0.2;
-  money -= foodPrice;
-  document.getElementById("$").innerHTML = "money_left" + money;
-  localStorage.setItem("money", money);
+  Change("Foodlb", "+/-", Foodlb);
+  var foodPrice = Foodlb * -0.2;
+  Change("money", "+/-", foodPrice)
+  document.getElementById("$").innerHTML = "money_left" + localStorage.getItem("money");
 }
 function buyClothing() {
   var Clothing = document.getElementById("box").value;
-  localStorage.setItem("Clothing", Clothing + localStorage.getItem("Clothing"));
-  var clothingPrice = Clothing * 10;
-  money -= clothingPrice;
-  document.getElementById("$").innerHTML = "money_left" + money;
-  localStorage.setItem("money", money);
+  Change("Clothing", "+/-", Clothing);
+  var clothingPrice = Clothing * -10;
+  Change("money", "+/-", clothingPrice);
+  document.getElementById("$").innerHTML = "money_left" + localStorage.getItem("money");
 }
 function buyAmo() {
   var Ammo = document.getElementById("box").value * 20;
-  localStorage.setItem("Ammo", Ammo + localStorage.getItem("Ammo"));
-  var ammoPrice = Ammo * 0.1;
-  money -= ammoPrice;
-  document.getElementById("$").innerHTML = "money_left" + money;
-  localStorage.setItem("money", money);
+  Change("Ammo", "+/-", Ammo);
+  var ammoPrice = Ammo * -0.1;
+  Change("money", "+/-", ammoPrice);
+  document.getElementById("$").innerHTML = "money_left" + localStorage.getItem("money",);
 }
 function buyAxel() {
   var Axels = document.getElementById("box").value;
-  localStorage.setItem("Axels", Axels + localStorage.getItem("Axels"));
-  var axelPrice = Axels * 10;
-  money -= axelPrice;
-  document.getElementById("$").innerHTML = "money_left" + money;
-  localStorage.setItem("money", money);
+  Change("Axels", "+/-", Axels);
+  var axelPrice = Axels * -10;
+  Change("money", "+/-", axelPrice);
+  document.getElementById("$").innerHTML = "money_left" + localStorage.getItem("money");
 }
 function buyToungue() {
   var Toungues = document.getElementById("box").value;
-  localStorage.setItem("Toungues", Toungues + localStorage.getItem("Toungues"));
-  var tounguePrice = Toungs * 10;
-  money -= tounguePrice;
-  document.getElementById("$").innerHTML = "money_left" + money;
-  localStorage.setItem("money", money);
+  Change("Toungues", "+/-", Toungues);
+  var tounguePrice = Toungs * -10;
+  Change("money", "+/-", tounguePrice);
+  document.getElementById("$").innerHTML = "money_left" + localStorage.getItem("money");
 }
 function buyWheel() {
   var Wheels = document.getElementById("box").value;
-  localStorage.setItem("Wheels", Wheels + localStorage.getItem("Wheels"))
-  var wheelPrice = Wheels * 10
-  money -= wheelPrice
-  document.getElementById("$").innerHTML = "money_left" + money;
-  localStorage.setItem("money", money)
+  Change("Wheels", "+/-", Wheels);
+  var wheelPrice = Wheels * -10
+  Change("money", "+/-", wheelPrice);
+  document.getElementById("$").innerHTML = "money_left" + localStorage.getItem("money");
 }
 </script></body2></body1></html><script>
   document.body.style.background = "black";
