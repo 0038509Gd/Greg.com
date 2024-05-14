@@ -1,0 +1,97 @@
+<!DOCTYPE html><html><body>
+<input onkeydown="ASWD(event);" value="ASWD" size="1">
+<input onkeydown="<+>(event);" value=" <+>" size="1">
+<input onkeydown="<->(event);" value=" <->" size="1">
+<script>
+sessionStorage.setItem("FACING", "down");
+sessionStorage.setItem("FACINGnum", 4);
+function ASWD(event) {
+	if (event.key === "Enter") {
+    	event.preventDefault();
+    	// startMove(sessionStorage.getItem("FACING")) //
+    }
+    if (event.key === " ") {
+    	event.preventDefault();
+    	// shootBullet(sessionStorage.getItem("FACING")) //
+        Change("Ammo", "+/-", -1);
+    }
+    if ((event.key === "a"||event.key === "A")) {
+    	event.preventDefault();
+        while (sessionStorage.getItem("FACINGnum") != 6) {
+        	sessionChange("FACINGnum", "+/-", -1);
+        }
+    }
+    if ((event.key === "s"||event.key === "S")) {
+    	event.preventDefault();
+        while (sessionStorage.getItem("FACINGnum") != 4) {
+        	sessionChange("FACINGnum", "+/-", 1);
+        }
+    }
+    if ((event.key === "w"||event.key === "W")) {
+    	event.preventDefault();
+        while (sessionStorage.getItem("FACINGnum") != 0) {
+        	sessionChange("FACINGnum", "+/-", -1);
+        }
+    }
+    if ((event.key === "d"||event.key === "D")) {
+    	event.preventDefault();
+        while (sessionStorage.getItem("FACINGnum") != 2) {
+        	sessionChange("FACINGnum", "+/-", 1);
+        }
+    }
+}
+function <+>(event) {
+	if (event.key === "Enter") {
+    	event.preventDefault();
+    	// startMove(sessionStorage.getItem("FACING")) //
+    }
+    if (event.key === " ") {
+    	event.preventDefault();
+    	// shootBullet(sessionStorage.getItem("FACING")) //
+        Change("Ammo", "+/-", -1);
+    }
+    if (event.key === "ArrowLeft") {
+    	event.preventDefault();
+        while (sessionStorage.getItem("FACINGnum") != 6) {
+        	sessionChange("FACINGnum", "+/-", -1);
+        }
+    }
+    if (event.key === "ArrowDown") {
+    	event.preventDefault();
+        while (sessionStorage.getItem("FACINGnum") != 4) {
+        	sessionChange("FACINGnum", "+/-", 1);
+        }
+    }
+    if (event.key === "ArrowUp") {
+    	event.preventDefault();
+        while (sessionStorage.getItem("FACINGnum") != 0) {
+        	sessionChange("FACINGnum", "+/-", -1);
+        }
+    }
+    if (event.key === "ArrowRight") {
+    	event.preventDefault();
+        while (sessionStorage.getItem("FACINGnum") != 2) {
+        	sessionChange("FACINGnum", "+/-", 1);
+        }
+    }
+}
+function <->(event) {
+	if (event.key === "Enter") {
+    	event.preventDefault();
+    	// startMove(sessionStorage.getItem("FACING")) //
+    }
+    if (event.key === " ") {
+    	event.preventDefault();
+    	// shootBullet(sessionStorage.getItem("FACING")) //
+        Change("Ammo", "+/-", -1);
+    }
+    if ((event.key === ">"||event.key === ".")) {
+    	event.preventDefault();
+        sessionChange("FACINGnum", "+/-", 1);
+    }
+    if ((event.key === "<"||event.key === ",")) {
+    	event.preventDefault();
+        sessionChange("FACING", "+/-", -1);
+    }
+}
+</script></body></html>
